@@ -1,0 +1,66 @@
+server:
+    port: 8080
+
+    servlet:
+      jsp:
+        init-parameters:
+          development: true
+
+
+
+
+logging:
+        com.example.WChatMonkey: DEBUG
+#    tomcat:
+#      redirect-context-root:
+
+
+spring:
+    profiles:
+       active: dev
+
+    datasource:
+        url: jdbc:mysql://111.230.196.33:3306/gjsyoung?useSSL=false
+        username: cairuojin
+        password: 44052100
+        driver-class-name: com.mysql.jdbc.Driver
+
+
+    redis:
+      database: 1 # Redis数据库索引（默认为0）
+      host: localhost #192.168.8.128 #localhost # Redis服务器地址
+      port: 6379 # Redis服务器连接端口
+      password: # Redis服务器连接密码（默认为空）
+
+#    resources:
+#          static-locations: /WEB-INF/static/
+    mvc:
+        static:
+          static-path-pattern: /**
+        view:
+            prefix: /WEB-INF/jsp/
+            suffix: .jsp
+
+#    jackson:  #json格式返回前端时间格式化
+#      date-format: yyyy-MM-dd HH:mm:ss
+#      time-zone: GMT+8 #必须加上时区，否则会显示会晚于数据库8小时
+
+#    rabbitmq:
+#        host: localhost
+#        port: 5672
+#        username: rabbitmqroot
+#        password: NPSrabbitmq
+#        publisher-confirms: true
+
+mybatis:
+    mapper-locations: classpath:mapper/*.xml
+    typeAliasesPackage: com.gjsyoung.iteach.model #设置别名，xml上可以直接引用，不需要写全类的包路径
+    configuration:
+      map-underscore-to-camel-case: true  #开启驼峰命名映射，当resultType填写为实体类，而不是BaseResultMap的时候，不会导致有下划线的字段无法映射到对应的属性
+
+
+
+
+
+#配置默认路径
+defaultUrl: "GjsYoung"

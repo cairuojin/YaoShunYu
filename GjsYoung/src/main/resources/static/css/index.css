@@ -1,0 +1,60 @@
+body {
+	
+	background-color: #ffffff;
+	font-family: 'Open Sans', sans-serif;
+	line-height: 24px;
+	font-size: 16px;
+	color: #000000;
+	background-repeat:no-repeat;
+}
+.bigTitle{
+	font-family: myFirstFont;
+	font-size: 80px;
+}
+@font-face{
+	font-family:'myFirstFont';
+	src:url('../font/hanyi.ttf') format('truetype');
+}
+.recommend{
+	width: 300px;
+	margin: 0 auto;
+	background-color: rgba(226, 145, 127, 0.55);
+	border-radius: 20px;
+	height: 70px;
+	outline: none;
+	border: none;
+	transition: 1s;
+}
+/*鼠标移入*/
+.recommend:hover {
+	background: rgba(224, 224, 224, 0);
+}
+.recommendFont{
+	width: 100%;
+	display: inline-table;
+	height: 100%;
+	font-family: 微软雅黑;
+	font-size: 36px;
+	color: white;
+	line-height: 70px;
+	transition: .4s;
+}
+.recommendFont:hover{
+	font-size: 20px;
+	color: #2d2d2d;
+}
+.articleImg{
+	transition: 1s;
+	border-radius: 10px;
+}
+.articleImg:hover{
+	filter:alpha(opacity:80);
+	opacity:0.8;
+}
+.IndexLogo {
+	transition: 1.5s;
+}
+.IndexLogo:hover{
+	opacity:0.0;
+	filter:alpha(opacity=0);
+}

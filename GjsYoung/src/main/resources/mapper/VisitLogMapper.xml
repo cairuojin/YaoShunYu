@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gjsyoung.iteach.mapper.VisitLogMapper">
+  <resultMap id="BaseResultMap" type="com.gjsyoung.iteach.domain.VisitLog">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="sid" jdbcType="VARCHAR" property="sid" />
+    <result column="ip" jdbcType="VARCHAR" property="ip" />
+    <result column="visitTime" jdbcType="TIMESTAMP" property="visittime" />
+    <result column="country" jdbcType="VARCHAR" property="country" />
+    <result column="area" jdbcType="VARCHAR" property="area" />
+    <result column="region" jdbcType="VARCHAR" property="region" />
+    <result column="city" jdbcType="VARCHAR" property="city" />
+    <result column="county" jdbcType="VARCHAR" property="county" />
+    <result column="isp" jdbcType="VARCHAR" property="isp" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="errMessage" jdbcType="VARCHAR" property="errmessage" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, sid, ip, visitTime, country, area, region, city, county, isp, status, errMessage
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from visitlog
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from visitlog
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.gjsyoung.iteach.domain.VisitLog">
+    insert into visitlog (id, sid, ip, 
+      visitTime, country, area, 
+      region, city, county, 
+      isp, status, errMessage
+      )
+    values (#{id,jdbcType=INTEGER}, #{sid,jdbcType=VARCHAR}, #{ip,jdbcType=VARCHAR}, 
+      #{visittime,jdbcType=TIMESTAMP}, #{country,jdbcType=VARCHAR}, #{area,jdbcType=VARCHAR}, 
+      #{region,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{county,jdbcType=VARCHAR}, 
+      #{isp,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{errmessage,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.gjsyoung.iteach.domain.VisitLog">
+    insert into visitlog
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="sid != null">
+        sid,
+      </if>
+      <if test="ip != null">
+        ip,
+      </if>
+      <if test="visittime != null">
+        visitTime,
+      </if>
+      <if test="country != null">
+        country,
+      </if>
+      <if test="area != null">
+        area,
+      </if>
+      <if test="region != null">
+        region,
+      </if>
+      <if test="city != null">
+        city,
+      </if>
+      <if test="county != null">
+        county,
+      </if>
+      <if test="isp != null">
+        isp,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="errmessage != null">
+        errMessage,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="sid != null">
+        #{sid,jdbcType=VARCHAR},
+      </if>
+      <if test="ip != null">
+        #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="visittime != null">
+        #{visittime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="country != null">
+        #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="area != null">
+        #{area,jdbcType=VARCHAR},
+      </if>
+      <if test="region != null">
+        #{region,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null">
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="county != null">
+        #{county,jdbcType=VARCHAR},
+      </if>
+      <if test="isp != null">
+        #{isp,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="errmessage != null">
+        #{errmessage,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gjsyoung.iteach.domain.VisitLog">
+    update visitlog
+    <set>
+      <if test="sid != null">
+        sid = #{sid,jdbcType=VARCHAR},
+      </if>
+      <if test="ip != null">
+        ip = #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="visittime != null">
+        visitTime = #{visittime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="country != null">
+        country = #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="area != null">
+        area = #{area,jdbcType=VARCHAR},
+      </if>
+      <if test="region != null">
+        region = #{region,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null">
+        city = #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="county != null">
+        county = #{county,jdbcType=VARCHAR},
+      </if>
+      <if test="isp != null">
+        isp = #{isp,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="errmessage != null">
+        errMessage = #{errmessage,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gjsyoung.iteach.domain.VisitLog">
+    update visitlog
+    set sid = #{sid,jdbcType=VARCHAR},
+      ip = #{ip,jdbcType=VARCHAR},
+      visitTime = #{visittime,jdbcType=TIMESTAMP},
+      country = #{country,jdbcType=VARCHAR},
+      area = #{area,jdbcType=VARCHAR},
+      region = #{region,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR},
+      county = #{county,jdbcType=VARCHAR},
+      isp = #{isp,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      errMessage = #{errmessage,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

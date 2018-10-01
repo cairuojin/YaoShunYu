@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gjsyoung.iteach.mapper.ArticleMapper">
+  <resultMap id="BaseResultMap" type="com.gjsyoung.iteach.domain.Article">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="introduction" jdbcType="VARCHAR" property="introduction" />
+    <result column="authorId" jdbcType="INTEGER" property="authorid" />
+    <result column="support" jdbcType="INTEGER" property="support" />
+    <result column="nonsupport" jdbcType="INTEGER" property="nonsupport" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="image" jdbcType="VARCHAR" property="image" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="lastUpdateTime" jdbcType="TIMESTAMP" property="lastupdatetime" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.gjsyoung.iteach.domain.Article">
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+  </resultMap>
+
+  <resultMap extends="ResultMapWithBLOBs" id="ResultMapWithAuthor" type="com.gjsyoung.iteach.vo.ArticleVo">
+    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+  </resultMap>
+
+
+  <sql id="Base_Column_List">
+    article.id, title, introduction, authorId, support, nonsupport, article.status, article.image, article.createTime,
+    article.lastUpdateTime
+  </sql>
+  <sql id="Blob_Column_List">
+    content
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from article
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from article
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.gjsyoung.iteach.domain.Article">
+    insert into article (id, title, introduction, 
+      authorId, support, nonsupport, 
+      status, image, createTime, 
+      lastUpdateTime, content)
+    values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{introduction,jdbcType=VARCHAR}, 
+      #{authorid,jdbcType=INTEGER}, #{support,jdbcType=INTEGER}, #{nonsupport,jdbcType=INTEGER}, 
+      #{status,jdbcType=INTEGER}, #{image,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, 
+      #{lastupdatetime,jdbcType=TIMESTAMP}, #{content,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.gjsyoung.iteach.domain.Article">
+    insert into article
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="title != null">
+        title,
+      </if>
+      <if test="introduction != null">
+        introduction,
+      </if>
+      <if test="authorid != null">
+        authorId,
+      </if>
+      <if test="support != null">
+        support,
+      </if>
+      <if test="nonsupport != null">
+        nonsupport,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="image != null">
+        image,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="lastupdatetime != null">
+        lastUpdateTime,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="introduction != null">
+        #{introduction,jdbcType=VARCHAR},
+      </if>
+      <if test="authorid != null">
+        #{authorid,jdbcType=INTEGER},
+      </if>
+      <if test="support != null">
+        #{support,jdbcType=INTEGER},
+      </if>
+      <if test="nonsupport != null">
+        #{nonsupport,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="image != null">
+        #{image,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastupdatetime != null">
+        #{lastupdatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gjsyoung.iteach.domain.Article">
+    update article
+    <set>
+      <if test="title != null">
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="introduction != null">
+        introduction = #{introduction,jdbcType=VARCHAR},
+      </if>
+      <if test="authorid != null">
+        authorId = #{authorid,jdbcType=INTEGER},
+      </if>
+      <if test="support != null">
+        support = #{support,jdbcType=INTEGER},
+      </if>
+      <if test="nonsupport != null">
+        nonsupport = #{nonsupport,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="image != null">
+        image = #{image,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastupdatetime != null">
+        lastUpdateTime = #{lastupdatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.gjsyoung.iteach.domain.Article">
+    update article
+    set title = #{title,jdbcType=VARCHAR},
+      introduction = #{introduction,jdbcType=VARCHAR},
+      authorId = #{authorid,jdbcType=INTEGER},
+      support = #{support,jdbcType=INTEGER},
+      nonsupport = #{nonsupport,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER},
+      image = #{image,jdbcType=VARCHAR},
+      createTime = #{createtime,jdbcType=TIMESTAMP},
+      lastUpdateTime = #{lastupdatetime,jdbcType=TIMESTAMP},
+      content = #{content,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gjsyoung.iteach.domain.Article">
+    update article
+    set title = #{title,jdbcType=VARCHAR},
+      introduction = #{introduction,jdbcType=VARCHAR},
+      authorId = #{authorid,jdbcType=INTEGER},
+      support = #{support,jdbcType=INTEGER},
+      nonsupport = #{nonsupport,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER},
+      image = #{image,jdbcType=VARCHAR},
+      createTime = #{createtime,jdbcType=TIMESTAMP},
+      lastUpdateTime = #{lastupdatetime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="selectByStatus" parameterType="java.lang.Integer" resultMap="ResultMapWithAuthor">
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    ,user.nickname
+    from article
+    LEFT JOIN
+    USER ON
+    article.authorId = user.id
+    where article.status = #{status,jdbcType=INTEGER}
+  </select>
+
+  <select id="selectRandomByStatusLimit" resultMap="ResultMapWithAuthor">
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    ,user.nickname
+    from article
+    LEFT JOIN
+    USER ON
+    article.authorId = user.id
+    where article.status = #{status,jdbcType=INTEGER}
+    order by rand()
+    limit #{limit,jdbcType=INTEGER}
+  </select>
+
+  <select id="searchTitleLike" parameterType="java.lang.String" resultMap="ResultMapWithAuthor">
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    ,user.nickname
+    from article
+    LEFT JOIN
+    user
+    ON article.authorId = user.id
+    where title like CONCAT('%',#{title,jdbcType=VARCHAR},'%')
+  </select>
+
+  <select id="searchContentLike" parameterType="java.lang.String" resultMap="ResultMapWithAuthor">
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    ,user.nickname
+    from article
+    LEFT JOIN
+    user
+    ON article.authorId = user.id
+    where content like CONCAT('%',#{content,jdbcType=VARCHAR},'%')
+  </select>
+
+  <select id="selectByAuthorId" parameterType="java.lang.Integer" resultMap="ResultMapWithAuthor">
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    ,user.nickname
+    from article
+    LEFT JOIN
+    user
+    ON article.authorId = user.id
+    where authorId =  #{authorId,jdbcType=INTEGER}
+  </select>
+
+  <select id="selectWithAuthor" resultMap="ResultMapWithAuthor">
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    ,user.nickname
+    from article
+    LEFT JOIN
+    user
+    ON article.authorId = user.id;
+  </select>
+
+  <select id="queryDetailById" parameterType="java.lang.Integer" resultType="java.util.HashMap">
+    select
+    title, content,support,nonsupport,article.createTime,article.lastUpdateTime
+    ,user.image,user.nickname
+    from article
+    left join
+    user
+    on article.authorId = user.id
+    where article.id = #{articleId,jdbcType=INTEGER};
+  </select>
+</mapper>

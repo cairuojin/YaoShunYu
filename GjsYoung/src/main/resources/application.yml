@@ -54,7 +54,7 @@ spring:
 
 mybatis:
     mapper-locations: classpath:mapper/*.xml
-    typeAliasesPackage: com.gjsyoung.iteach.model #设置别名，xml上可以直接引用，不需要写全类的包路径
+    typeAliasesPackage: com.gjsyoung.iteach.domain #设置别名，xml上可以直接引用，不需要写全类的包路径
     configuration:
       map-underscore-to-camel-case: true  #开启驼峰命名映射，当resultType填写为实体类，而不是BaseResultMap的时候，不会导致有下划线的字段无法映射到对应的属性
 

@@ -1,5 +1,5 @@
 server:
-    port: 8080
+    port: 9001
 
     servlet:
       jsp:
@@ -14,22 +14,24 @@ logging:
 #    tomcat:
 #      redirect-context-root:
 
-spring:
-    profiles:
-       active: dev
 
-    datasource:
-        url: jdbc:mysql://localhost:3306/gjsyoung?useSSL=false
+spring:
+#    profiles:
+#       active: dev
+
+    iteach:
+      datasource:
+        jdbc-url: jdbc:mysql://localhost:3306/gjsyoung?useSSL=false
         username: root
         password: 44052100
         driver-class-name: com.mysql.jdbc.Driver
 
-
-    redis:
-      database: 1 # Redis数据库索引（默认为0）
-      host: localhost #192.168.8.128 #localhost # Redis服务器地址
-      port: 6379 # Redis服务器连接端口
-      password: # Redis服务器连接密码（默认为空）
+    admin:
+      datasource:
+        jdbc-url: jdbc:mysql://localhost:3306/gjsyoung-admin?useSSL=false
+        username: root
+        password: 44052100
+        driver-class-name: com.mysql.jdbc.Driver
 
 #    resources:
 #          static-locations: /WEB-INF/static/
@@ -51,14 +53,11 @@ spring:
 #        password: NPSrabbitmq
 #        publisher-confirms: true
 
-mybatis:
-    mapper-locations: classpath:mapper/*.xml
-    typeAliasesPackage: com.gjsyoung.iteach.domain #设置别名，xml上可以直接引用，不需要写全类的包路径
-    configuration:
-      map-underscore-to-camel-case: true  #开启驼峰命名映射，当resultType填写为实体类，而不是BaseResultMap的时候，不会导致有下划线的字段无法映射到对应的属性
-
-
+#mybatis:
+#    mapper-locations: classpath:mapper/*.xml
+#    typeAliasesPackage: com.gjsyoung.admin.domain #设置别名，xml上可以直接引用，不需要写全类的包路径
+#    configuration:
+#      map-underscore-to-camel-case: true  #开启驼峰命名映射，当resultType填写为实体类，而不是BaseResultMap的时候，不会导致有下划线的字段无法映射到对应的属性
 
 #配置默认路径
 defaultUrl: "GjsYoung"
-server.max-http-header-size: 10000000

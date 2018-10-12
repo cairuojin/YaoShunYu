@@ -20,9 +20,9 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <div class="section_heading">
-                    <div class="myTitle">鸾翔凤集</div>
-                    <p style="margin-top: 30px">学而不思则惘，思而不学则殆。——孔子</p>
+                <div class="section_heading myTitle">
+                    <div style="font-family: myFirstFont;font-size: 80px;color: #e67e22;">鸾翔凤集</div>
+                    <p style="margin-top: 30px;font-size: 16px;color: black;">学而不思则惘，思而不学则殆。——孔子</p>
                 </div>
             </div>
         </div>

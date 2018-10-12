@@ -31,12 +31,12 @@ public class DefaultView {
         session.setAttribute("pageHeader", 0);
         return nav;
     }
-//    @RequestMapping("/text")
-//    public ModelAndView text(HttpSession session){
-//        ModelAndView nav = new ModelAndView();
-//        nav.setViewName("celebrityEdit");
-//        return nav;
-//    }
+    @RequestMapping("/text")
+    public ModelAndView text(HttpSession session){
+        ModelAndView nav = new ModelAndView();
+        nav.setViewName("entertainment");
+        return nav;
+    }
 
 
 }

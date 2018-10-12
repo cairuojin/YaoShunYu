@@ -12,15 +12,14 @@
     <link href="/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
     <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
     <link href="/css/animate.css" rel="stylesheet" type="text/css" media="all">
-    <link href="css/character.css" rel="stylesheet" type="text/css" media="all"/>
-
+    <link href="/css/character.css" rel="stylesheet" type="text/css" media="all"/>
     <script type="text/javascript" src="/js/jquery-2.2.4.min.js"></script>
 </head>
 <body>
 
     <jsp:include page="header.jsp"></jsp:include>
 
-    <div class="banner-bottom pt-section" data-name="about" id="ptsection-two"style="background-image: url(/images/main/leaves2.png);width: 100%;border:1px solid #CCCCCC;;">
+    <div class="banner-bottom pt-section" data-name="about" id="ptsection-two"style="background-image: url(/images/main/leaves2.png);width: 100%;border:1px solid #CCCCCC;">
         <div class="container">
             <div class="about-grids">
                 <div class="about-grid1">
@@ -42,9 +41,9 @@
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <div class="section_heading">
-                        <div class="myTitle">开卷有益</div>
-                        <p style="margin-top: 30px;color: black;font-size: 14px">读书之法，在循序而渐进，熟读而精思。——朱熹</p>
+                    <div class="section_heading myTitle1">
+                        <div style="font-family: myFirstFont;font-size: 80px;color: #e67e22;">开卷有益</div>
+                        <p style="margin-top: 30px;font-size: 16px;font-family: 微软雅黑;">读书之法，在循序而渐进，熟读而精思。——朱熹</p>
                     </div>
                 </div>
             </div>

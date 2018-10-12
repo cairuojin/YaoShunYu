@@ -23,9 +23,9 @@
 
     <div class="col-xs-12" style="padding-bottom: 30px">
         <!-- Section Heading Start -->
-        <div class="section_heading">
-            <div class="myTitle">博古通今</div>
-            <p style="font-family: 微软雅黑;">别裁伪体亲风雅，转益多师是汝师。——杜甫</p>
+        <div class="section_heading myTitle">
+            <div style="font-family: myFirstFont;font-size: 80px;color: #e67e22;">博古通今</div>
+            <p style="font-family: 微软雅黑;font-size: 16px;">别裁伪体亲风雅，转益多师是汝师。——杜甫</p>
         </div>
     </div>
 

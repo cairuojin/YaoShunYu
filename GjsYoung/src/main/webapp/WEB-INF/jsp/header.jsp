@@ -51,6 +51,13 @@
                         <li><a href="${pageContext.request.contextPath }/atricle?page=1">鸾翔凤集  </a></li>
                     </c:if>
 
+                    <c:if test="${pageHeader == 4 }">
+                        <li><a href="${pageContext.request.contextPath }/atricle?page=1" class="active">觥筹交错  </a></li>
+                    </c:if>
+                    <c:if test="${pageHeader != 4 }">
+                        <li><a href="${pageContext.request.contextPath }/atricle?page=1">觥筹交错  </a></li>
+                    </c:if>
+
                     <c:if test="${user == null }">
                             <li><a href="${pageContext.request.contextPath }/toLogin">登录</a><a>/</a><a href="${pageContext.request.contextPath }/toRegister">注册  </a></li>
                     </c:if>

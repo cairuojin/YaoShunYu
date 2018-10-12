@@ -2691,13 +2691,11 @@ ol.breadcrumb {
 .dark_version .gallery_area .single_gallery_item > a {
 }
 .myTitle{
-    font-family: myFirstFont;
-    font-size: 80px;
-    color: #e67e22;
     transition: 1s;
 }
 .myTitle:hover{
     color: rgba(230, 126, 34, 0.5);
+    margin-left:160px;
 }
 @font-face{
     font-family:'myFirstFont';

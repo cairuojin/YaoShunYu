@@ -1804,13 +1804,10 @@ ul.wmuSliderPagination {
     font-family: 微软雅黑;
 }
 .section_heading {
-    margin-bottom: 100px;
-    margin-top: 100px;
+    width: 100%;
     position: relative;
     z-index: 1;
     text-align: center;
-    width: 400px;
-    margin: 0 auto;
 }
 .classicalItem{
     border-radius: 25px;
@@ -1863,11 +1860,14 @@ ul.wmuSliderPagination {
     font-family:'myFirstFont';
     src:url('../font/hanyi.ttf') format('truetype');
 }
-.myTitle{
-    font-size: 60px;
+.myTitle1{
     margin-top: 30px;
-    color: #e67e22;
-    font-family: 'myFirstFont'
+    transition: 1s;
+}
+
+.myTitle1:hover{
+    margin-left: 100px;
+    color: rgba(230, 126, 34, 0.5);
 }
 .mainContent {
     margin: 0 auto;

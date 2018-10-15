@@ -14,6 +14,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
  * create by chenguitao on 2017/12/4
+ * redis缓存配置工具
  */
 @Component
 public class RedisCache {

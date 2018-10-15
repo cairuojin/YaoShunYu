@@ -52,10 +52,10 @@
                     </c:if>
 
                     <c:if test="${pageHeader == 4 }">
-                        <li><a href="${pageContext.request.contextPath }/atricle?page=1" class="active">觥筹交错  </a></li>
+                        <li><a href="${pageContext.request.contextPath }/entertainment" class="active">觥筹交错  </a></li>
                     </c:if>
                     <c:if test="${pageHeader != 4 }">
-                        <li><a href="${pageContext.request.contextPath }/atricle?page=1">觥筹交错  </a></li>
+                        <li><a href="${pageContext.request.contextPath }/entertainment">觥筹交错  </a></li>
                     </c:if>
 
                     <c:if test="${user == null }">

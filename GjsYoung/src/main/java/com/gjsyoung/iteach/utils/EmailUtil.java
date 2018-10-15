@@ -15,6 +15,7 @@ import java.util.Properties;
 
 /**
  * create by cairuojin on 2018/09/10
+ * 邮箱工具
  */
 @Component
 public class EmailUtil {

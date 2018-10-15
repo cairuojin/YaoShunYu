@@ -33,14 +33,12 @@ html, body{
 }
 .footLogo{
     color: #5094F2;
-    width: 160px;
-    height: 160px;
     margin-left: 100px;
-    margin-top: -27px;
+    margin-top: 2px;
     float:left;
 }
 .footText{
-    line-height: 7;
+    padding: 2em 0;
     margin: auto;
     width: 600px;
 }
@@ -483,7 +481,6 @@ ul.dropdown-menu {
 /*-- about --*/
 .about{
     padding: 5em 0;
-    background: url(../images/10.png) no-repeat -73px 0px;
 }
 /*-- about-bottom --*/
 .about-bottom{
@@ -800,7 +797,6 @@ h2.typoh2{
 /*-- gallery --*/
 .gallery-top {
     padding: 5em 0;
-    background: url(../images/10.png) no-repeat -116px 0px;
 }
 .gallery-grids-top {
     margin: 4em 0 0 0;
@@ -1083,7 +1079,6 @@ ul.pagination {
 /*-- contact --*/
 .contact {
     padding: 4em 0;
-    background: url(../images/10.png) no-repeat -116px 0px;
 }
 .contact-info {
     text-align: center;

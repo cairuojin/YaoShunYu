@@ -14,7 +14,7 @@
 <body>
 
     <jsp:include page="header.jsp"></jsp:include>
-    <div class="banner-bottom pt-section" data-name="about" id="ptsection-two"style="background-size:cover;background-image: url(/images/main/sky1.png);height: 500px;border:1px solid #CCCCCC;">
+    <div class="banner-bottom pt-section" data-name="about" id="ptsection-two"style="background-size:cover;background-image: url(/images/main/entertainment1.png);height: 500px;border:1px solid #CCCCCC;">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
@@ -30,7 +30,7 @@
         </div>
     </div>
 
-    <div style="background: url(/images/main/background.jpg)"">
+    <div style="background: url(/images/main/background.jpg)">
         <div class="singleEntertainment">
             <div class="col-grid-left">
                 <h3>淡泊名利，动静相济，劳逸适度。——华佗</h3>
@@ -58,9 +58,9 @@
                         </div>
                         <div class="col-1-bottom">
                             <div class="info-text">
-                                <h3>皇帝装</h3>
-                                <p>想体验一把穿越到古代穿上皇帝装的感觉吗？快进来这里，通过人脸融合技术，让你过一把瘾。</p>
-                                <button href=""  class="singleButton">立即体验</button>
+                                <h3>粉墨登场</h3>
+                                <p>想体验一把穿越到古代穿上古装的感觉吗？快来体验这个功能，通过人脸融合技术，让你过一把瘾。</p>
+                                <a href="/entertainmentFuse"><button class="singleButton">立即体验</button></a>
                             </div>
                         </div>
                     </div>

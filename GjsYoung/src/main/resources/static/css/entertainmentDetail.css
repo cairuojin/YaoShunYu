@@ -1,0 +1,113 @@
+@font-face{
+    font-family:'myFirstFont';
+    src:url('../font/hanyi.ttf') format('truetype');
+}
+.section_heading {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+.myTitle1{
+    margin-top: 80px;
+    font-family: myFirstFont;
+    font-size: 80px;
+    color: #393939;
+    transition: 1s;
+}
+.myTitle1:hover{
+    color: rgba(187, 187, 187, 0.5);
+    margin-top: 140px;
+}
+.myTitle1:hover .imabackground1{
+    opacity: 0.6;
+}
+.imabackground1{
+    margin: 0 auto;
+    transition: 1s;
+    background: url(/images/main/sky2.png) no-repeat;
+    height: 120px;
+    width: 120px;
+    opacity: 0;
+}
+
+html, body {
+    position: relative;
+    height: 100%;
+}
+body {
+    background: #000;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color:#000;
+    margin: 0;
+    padding: 0;
+}
+.swiper-container {
+    width: 300px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.swiper-slide {
+    background-size: cover;
+    background-position: center;
+}
+.gallery-top1 {
+    height: 300px;
+    width: 300px;
+}
+.gallery-thumbs {
+    box-sizing: border-box;
+    padding: 10px 0;
+}
+.gallery-thumbs .swiper-slide {
+    height: 100%;
+    opacity: 0.4;
+}
+.gallery-thumbs .swiper-slide-thumb-active {
+    opacity: 1;
+}
+.confirmButton{
+    float: left;
+    text-align: center;
+    height: 120px;
+    width: 120px;
+    background: rgba(251, 64, 64, 0.7);
+    color: #FFF;
+    font-weight: 400;
+    border: none;
+    border-radius: 60px 60px 60px 60px;
+    transition: 1s;
+}
+.confirmButton:hover{
+    color: #2d2d2d;
+    background: rgba(140, 178, 255, 0);
+    border-radius: 30px 30px 30px 30px;
+}
+.uploadButton{
+    margin-top: 40px;
+    height: 40px;
+    width: 230px;
+    background: #40A2FB;
+    color: #FFF;
+    border: none;
+    border-radius: 40px 40px 40px 40px;
+    margin-left: -4px;
+    transition: 1s;
+}
+.uploadButton:hover{
+    color: #2d2d2d;
+    background: rgba(49, 204, 251, 0.45);
+}
+.uploadImg{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 100%;
+    max-height: 100%;
+}
+.cropedBigImg1{
+
+}

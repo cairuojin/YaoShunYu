@@ -14,6 +14,7 @@ logging:
 #    tomcat:
 #      redirect-context-root:
 
+
 spring:
     profiles:
        active: dev
@@ -60,5 +61,8 @@ mybatis:
 
 
 #配置默认路径
-defaultUrl: "GjsYoung"
 server.max-http-header-size: 10000000
+
+#Face++ 密钥私钥
+APIKey: LK951u8Sv8pU7NgHi0i5-xylwN494vC1
+APISecret: EGGBj1niNMgiQ8zX_0TFnjm88WROHObZ

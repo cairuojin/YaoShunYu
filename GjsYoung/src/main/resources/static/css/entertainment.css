@@ -23,7 +23,7 @@
 }
 .imabackground{
     transition: 1s;
-    background: url(/images/main/sky2.png) no-repeat;
+    background: url(/images/main/sky1.png) no-repeat;
     height: 120px;
     opacity: 0;
 }

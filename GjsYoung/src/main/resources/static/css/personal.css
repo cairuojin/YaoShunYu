@@ -2222,9 +2222,9 @@ p.stats-info {
     width: 20px;
 }
 .head-portrait{
+    position: absolute;
     margin-top: 30px;
-    width: 200px;
-    height: 200px;
+    max-width: 100%;
     border-radius: 100px;
     border: solid rgb(100,100,100) 1px;
 }

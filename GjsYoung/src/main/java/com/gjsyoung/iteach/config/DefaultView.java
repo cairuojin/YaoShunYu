@@ -24,7 +24,7 @@ public class DefaultView {
     public ModelAndView index(HttpSession session, HttpServletRequest request){
         String clientIpAddress = GetIpAddress.getClientIpAddress(request);
         if(clientIpAddress != null){
-            //visitLogService.recordVisitLog(clientIpAddress, session.getId());       //访问记录
+            //visitLogService.recordVisitLog(clientIpAddress, session.getId());       //todo 访问记录
         }
         ModelAndView nav = new ModelAndView();
         nav.setViewName("index");
@@ -34,7 +34,7 @@ public class DefaultView {
     @RequestMapping("/text")
     public ModelAndView text(HttpSession session){
         ModelAndView nav = new ModelAndView();
-        nav.setViewName("entertainment");
+        nav.setViewName("entertainmentFuse");
         return nav;
     }
 

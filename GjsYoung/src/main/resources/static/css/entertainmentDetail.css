@@ -108,6 +108,19 @@ body {
     max-width: 100%;
     max-height: 100%;
 }
-.cropedBigImg1{
-
+.loading{
+    color: #242424;
+    float: left;
+    text-align: center;
+    height: 120px;
+    width: 120px;
+    font-weight: 400;
+    border: none;
+    border-radius: 60px 60px 60px 60px;
+    transition: 0.3s;
+    background: rgb(153, 153, 153) url(/images/main/loading.gif);
+}
+.loading:hover{
+    color: #2d2d2d;
+    background: rgba(251, 64, 64, 0) url(/images/main/loading.gif);
 }

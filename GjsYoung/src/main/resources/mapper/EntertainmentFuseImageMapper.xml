@@ -7,9 +7,13 @@
     <result column="image" jdbcType="VARCHAR" property="image" />
     <result column="status" jdbcType="INTEGER" property="status" />
     <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="topsize" jdbcType="INTEGER" property="topsize" />
+    <result column="leftsize" jdbcType="INTEGER" property="leftsize" />
+    <result column="widthsize" jdbcType="INTEGER" property="widthsize" />
+    <result column="heightsize" jdbcType="INTEGER" property="heightsize" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, name, image, status, createTime
+    id, name, image, status, createTime, topsize, leftsize, widthsize, heightsize
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -23,9 +27,13 @@
   </delete>
   <insert id="insert" parameterType="com.gjsyoung.iteach.domain.EntertainmentFuseImage">
     insert into entertainmentfuseimage (id, name, image, 
-      status, createTime)
+      status, createTime, topsize, 
+      leftsize, widthsize, heightsize
+      )
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{image,jdbcType=VARCHAR}, 
-      #{status,jdbcType=INTEGER}, #{createtime,jdbcType=TIMESTAMP})
+      #{status,jdbcType=INTEGER}, #{createtime,jdbcType=TIMESTAMP}, #{topsize,jdbcType=INTEGER}, 
+      #{leftsize,jdbcType=INTEGER}, #{widthsize,jdbcType=INTEGER}, #{heightsize,jdbcType=INTEGER}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.gjsyoung.iteach.domain.EntertainmentFuseImage">
     insert into entertainmentfuseimage
@@ -45,6 +53,18 @@
       <if test="createtime != null">
         createTime,
       </if>
+      <if test="topsize != null">
+        topsize,
+      </if>
+      <if test="leftsize != null">
+        leftsize,
+      </if>
+      <if test="widthsize != null">
+        widthsize,
+      </if>
+      <if test="heightsize != null">
+        heightsize,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -61,6 +81,18 @@
       </if>
       <if test="createtime != null">
         #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="topsize != null">
+        #{topsize,jdbcType=INTEGER},
+      </if>
+      <if test="leftsize != null">
+        #{leftsize,jdbcType=INTEGER},
+      </if>
+      <if test="widthsize != null">
+        #{widthsize,jdbcType=INTEGER},
+      </if>
+      <if test="heightsize != null">
+        #{heightsize,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -79,6 +111,18 @@
       <if test="createtime != null">
         createTime = #{createtime,jdbcType=TIMESTAMP},
       </if>
+      <if test="topsize != null">
+        topsize = #{topsize,jdbcType=INTEGER},
+      </if>
+      <if test="leftsize != null">
+        leftsize = #{leftsize,jdbcType=INTEGER},
+      </if>
+      <if test="widthsize != null">
+        widthsize = #{widthsize,jdbcType=INTEGER},
+      </if>
+      <if test="heightsize != null">
+        heightsize = #{heightsize,jdbcType=INTEGER},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -87,7 +131,11 @@
     set name = #{name,jdbcType=VARCHAR},
       image = #{image,jdbcType=VARCHAR},
       status = #{status,jdbcType=INTEGER},
-      createTime = #{createtime,jdbcType=TIMESTAMP}
+      createTime = #{createtime,jdbcType=TIMESTAMP},
+      topsize = #{topsize,jdbcType=INTEGER},
+      leftsize = #{leftsize,jdbcType=INTEGER},
+      widthsize = #{widthsize,jdbcType=INTEGER},
+      heightsize = #{heightsize,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
   <select id="selectAllByStatus" parameterType="java.lang.Integer" resultMap="BaseResultMap">

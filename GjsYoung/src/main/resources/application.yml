@@ -41,6 +41,11 @@ spring:
             prefix: /WEB-INF/jsp/
             suffix: .jsp
 
+    servlet:
+      multipart:
+        max-request-size: 100Mb
+        max-file-size: 10Mb
+
 #    jackson:  #json格式返回前端时间格式化
 #      date-format: yyyy-MM-dd HH:mm:ss
 #      time-zone: GMT+8 #必须加上时区，否则会显示会晚于数据库8小时
@@ -58,7 +63,8 @@ mybatis:
     configuration:
       map-underscore-to-camel-case: true  #开启驼峰命名映射，当resultType填写为实体类，而不是BaseResultMap的时候，不会导致有下划线的字段无法映射到对应的属性
 
-
+#文件上传地址
+UploadPath: 'C:\sofeware\GjsYoung\WEB-INF\classes\static\'
 
 #配置默认路径
 server.max-http-header-size: 10000000

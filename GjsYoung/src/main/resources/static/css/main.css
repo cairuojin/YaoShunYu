@@ -902,9 +902,9 @@ ul.external li a:hover {
 }
 
 .social-button li a {
-    border: 2px solid #008ECC;
+    border: 2px solid #8cb2ff;
     border-radius: 50%;
-    color: #008ECC;
+    color: #8cb2ff;
     display: block;
     height: 90px;
     line-height: 96px;
@@ -918,8 +918,8 @@ ul.external li a:hover {
 }
 
 .social-button li a:hover {
-    color: #8cb2ff;
-    border: 2px solid #8cb2ff;
+    color: #008ECC;
+    border: 2px solid #008ECC;
 }
 
 

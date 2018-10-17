@@ -79,39 +79,19 @@
                     </div>
 
                     <div style="margin: 0 auto;width: 120px;padding-bottom: 200px;padding-top: 100px">
-                        <button class="confirmButton" style="font-size: 18px;"  onclick="fuse($('#chooseImage').val(),$('.swiper-slide-duplicate-active').attr('id'))">开始合成</button>
+                        <button class="confirmButton" style="font-size: 18px;background-size:cover" onclick="fuse($('#chooseImage').val(),$('.swiper-slide-duplicate-active').attr('id'))">开始合成</button>
                     </div>
                     <hr style="width:80%;margin:0 auto;border: 0;height: 1px;background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));" />
-
-                    <div id="loadgif" >
-                        　　<img alt="加载中..." style="width:100%;height:100%;" src="images/main/loading.gif"/>
-                    </div>
-
 
                     <div style="text-align: center;margin-top: 40px">
                         <div><h3>合成结果</h3></div>
                         <div style="margin: 0 auto;width: 500px;height: 500px;border:1px solid rgba(0,0,0,0.6);position: relative;">
-                            <a style="font-size: 40px;" class="uploadImg" id="noFuseImage1">尚无合成效果</a>
-                            <img id="fuseImage" class="fuseImage"/>
+                            <a style="font-size: 40px;" class="uploadImg" id="noFuseImage">尚无合成效果</a>
+                            <img id="fuseImage" class="fuseImage" data-tag="fuseImage"/>
                         </div>
                     </div>
                 </div>
-            <div class="clearfix" style="margin-top:60px;text-align: center;font-size: 20px">
-                <p>分享照片给好友</p>
-                <tr>
-                    <td>
-                        <div class="bdsharebuttonbox" style="width: 230px;margin: 0 auto" >
-                            <a href="#" class="bds_more" data-cmd="more"></a>
-                            <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
-                            <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-                            <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
-                            <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到qq"></a>
-                            <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
-                        </div>
-                        <br>
-                    </td>
-                </tr>
-            </div>
+            <div class="clearfix" style="margin-top:60px;text-align: center;height: 60px"> </div>
         </div>
 
         <hr style="width:80%;margin:0 auto;border: 0;height: 1px;background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));" />
@@ -122,28 +102,37 @@
             <p>如果您喜欢该功能，不要忘了为我们点赞，并分享给您的好友哦。</p>
             <p>感谢Face++旷视提供技术支持</p>
             <hr>
-                <ul class="social-button" style="margin-bottom: 100px">
+            <ul class="social-button" style="margin-bottom: 60px">
                 <li>
                     <a href="#">
                         <span class="glyphicon glyphicon-thumbs-up"></span>
                     </a>
                 </li>
             </ul>
-            <div class="clearfix"></div>
+            <p>分享该页面给您的好友</p>
+            <tr>
+                <td>
+                    <div class="bdsharebuttonbox" style="width: 230px;margin: 0 auto" >
+                        <a href="#" class="bds_more" data-cmd="more"></a>
+                        <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+                        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+                        <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+                        <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到qq"></a>
+                        <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+                    </div>
+                    <br>
+                </td>
+            </tr>
+            <div class="clearfix" style="height: 60px"></div>
         </div>
 
-        <%--<div class="advert" style="height: 300px;width: 100%;text-align: center;background-color: rgba(255,5,0,0.3)">广告位招租</div>--%>
+        <div class="advert" style="height: 300px;width: 100%;text-align: center;background-color: rgba(255,5,0,0.3)">广告位招租</div>
     </div>
 
 
 
 
     <jsp:include page="footer.jsp"></jsp:include>
-
-    <!-- 隐藏加载图 -->
-    <script>
-        $(document).ready(function () { $("#loadgif").hide();});
-    </script>
 
 
     <!-- 图片切换 -->
@@ -200,7 +189,10 @@
                 alert('上传错误,文件格式必须为：png/jpg/jpeg');
                 return;
             } else {
-                $("#loadgif").show();
+                $('.confirmButton').removeAttr('onclick');
+                $('.confirmButton').attr('class','loading');
+                $('.loading').html('穿越中')
+
                 alert("正在穿越中，请您稍等一会。");
                 var fileObj = $('#chooseImage')[0].files[0];
                 var formFile = new FormData();
@@ -215,10 +207,13 @@
                     contentType: false, //必须
                     "data":data,
                     "success":function(data){
-                        $("#loadgif").hide();
-                        if( "OK" == data){
-                            alert("头像修改成功");    //todo 更改图片attr
-
+                        $('.loading').html('开始合成');
+                        $('.loading').attr('class','confirmButton');
+                        $('.confirmButton').attr('onclick','fuse($(\'#chooseImage\').val(),$(\'.swiper-slide-duplicate-active\').attr(\'id\'))');
+                        if( "OK" == data.substring(0,2)){
+                            alert("图片已生成完毕，请客官查看。");
+                            $('#fuseImage').attr('src',data.substring(2));
+                            $('#noFuseImage').remove();
                         } else {
                             alert(data);
                         }
@@ -230,19 +225,25 @@
 
     <!-- 百度分享代码-->
     <script>window._bd_share_config=
-        {'common':
-                {
+        {
+            'common': {
                     'bdSnsKey':{},
-                    'bdText':'我生成了张照片很有趣哦',
-                    'bdMini':'2',
-                    'bdPic':'',
-                    'bdStyle':'0',
+                    'bdText':'尧舜禹---以史为鉴，指导未来，启发智能，感动人心。我在这里生成了一张很有趣的照片哦，快点来试一试吧',
+                    'bdUrl':'http://cairuojin.club/entertainmentFuse',
                     'bdSize':'16'
                 },
-            'share':{
+            'share': {
                 "bdSize" : 32,
-            }
-        };with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+            },
+            'image':[{
+                "tag" : "fuseImage",
+                viewType : 'list',
+                viewPos : 'top',
+                viewColor : 'black',
+                viewSize : '16',
+                viewList : ['more','qzone','tsina','tieba','tqq','weixin']
+            }]
+        };with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
     </script>
 </body>
 </html>

@@ -61,4 +61,7 @@ dependencies {
 	compile group: 'com.sun.mail', name: 'javax.mail', version: '1.6.0'
 	compile group: 'com.github.pagehelper', name: 'pagehelper', version: '4.2.1'
 
+	//谷歌开源Thumbnailator
+	compile group:'net.coobird',name:'thumbnailator',version:'0.4.8'
+
 }

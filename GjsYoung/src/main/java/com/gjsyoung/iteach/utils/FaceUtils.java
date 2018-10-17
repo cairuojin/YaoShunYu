@@ -1,17 +1,17 @@
 package com.gjsyoung.iteach.utils;
 
 import com.alibaba.fastjson.JSON;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+import sun.misc.BASE64Decoder;
 
 import javax.net.ssl.SSLException;
-import java.io.ByteArrayOutputStream;
-import java.io.DataOutputStream;
-import java.io.File;
-import java.io.InputStream;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
@@ -36,21 +36,56 @@ public class FaceUtils {
     @Autowired
     RestTemplate restTemplate;
 
+    @Autowired
+    ImageUtils imageUtils;
+
+    private static final Logger logger = LoggerFactory.getLogger(FaceUtils.class);
 
     /**
-     * 检测照片
+     * 检测照片Detect API接口
      * @param buff 文件的字节流
+     * @param type 需要查询的类型
      * @return
      */
-    public Map DetectFace(byte[] buff) throws Exception {
+    public Map DetectFace(byte[] buff,String type) throws Exception {
+        logger.debug("--人脸检测--");
         String url = "https://api-cn.faceplusplus.com/facepp/v3/detect";
         HashMap map = new HashMap<>();
         HashMap<String, byte[]> byteMap = new HashMap<>();
         map.put("api_key",APIKey);
-        map.put("return_landmark","2");
-        map.put("return_attributes","gender,age,smiling,headpose,facequality,blur,eyestatus,emotion,ethnicity,beauty,mouthstatus,eyegaze,skinstatus");
         map.put("api_secret",APISecret);
+        if(type != null){
+            switch (type){
+                case "allMessage":map.put("return_attributes","gender,age,smiling,headpose,facequality,blur,eyestatus,emotion,ethnicity,beauty,mouthstatus,eyegaze,skinstatus");break;
+
+                default:
+            }
+        }
         byteMap.put("image_file",buff);
+        byte[] bacd = post(url, map, byteMap);
+        String str = new String(bacd);
+        Map data = JSON.parseObject(str, Map.class);
+        return data;
+    }
+
+    /**
+     * 人脸融合MergeFaceAPI接口
+     * @param merge_file        融合图
+     * @param template_file     模板图
+     * @param template_rectangle    模板图人脸位置
+     * @return                  调用接口后的数据
+     * @throws Exception
+     */
+    public Map MergeFace(byte[] merge_file, byte[] template_file,String template_rectangle) throws Exception {
+        logger.debug("--调用人脸融合接口--");
+        String url = "https://api-cn.faceplusplus.com/imagepp/v1/mergeface";
+        HashMap map = new HashMap<>();
+        HashMap<String, byte[]> byteMap = new HashMap<>();
+        map.put("api_key",APIKey);
+        map.put("api_secret",APISecret);
+        map.put("template_rectangle",template_rectangle);       //模板图四个参数
+        byteMap.put("template_file",template_file); //模板图
+        byteMap.put("merge_file",merge_file);       //用户上传图
         byte[] bacd = post(url, map, byteMap);
         String str = new String(bacd);
         Map data = JSON.parseObject(str, Map.class);
@@ -71,6 +106,7 @@ public class FaceUtils {
         conne.setRequestMethod("POST");
         conne.setConnectTimeout(CONNECT_TIME_OUT);
         conne.setReadTimeout(READ_OUT_TIME);
+        conne.setUseCaches(false);
         conne.setRequestProperty("accept", "*/*");
         conne.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + boundaryString);
         conne.setRequestProperty("connection", "Keep-Alive");
@@ -103,6 +139,7 @@ public class FaceUtils {
         obos.writeBytes("\r\n");
         obos.flush();
         obos.close();
+        conne.connect();
         InputStream ins = null;
         int code = conne.getResponseCode();
         try{
@@ -136,6 +173,4 @@ public class FaceUtils {
     private static String encode(String value) throws Exception{
         return URLEncoder.encode(value, "UTF-8");
     }
-
-
 }

@@ -13,6 +13,14 @@ public class EntertainmentFuseImage {
 
     private Date createtime;
 
+    private Integer topsize;
+
+    private Integer leftsize;
+
+    private Integer widthsize;
+
+    private Integer heightsize;
+
     public Integer getId() {
         return id;
     }
@@ -51,5 +59,37 @@ public class EntertainmentFuseImage {
 
     public void setCreatetime(Date createtime) {
         this.createtime = createtime;
+    }
+
+    public Integer getTopsize() {
+        return topsize;
+    }
+
+    public void setTopsize(Integer topsize) {
+        this.topsize = topsize;
+    }
+
+    public Integer getLeftsize() {
+        return leftsize;
+    }
+
+    public void setLeftsize(Integer leftsize) {
+        this.leftsize = leftsize;
+    }
+
+    public Integer getWidthsize() {
+        return widthsize;
+    }
+
+    public void setWidthsize(Integer widthsize) {
+        this.widthsize = widthsize;
+    }
+
+    public Integer getHeightsize() {
+        return heightsize;
+    }
+
+    public void setHeightsize(Integer heightsize) {
+        this.heightsize = heightsize;
     }
 }

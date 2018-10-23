@@ -143,5 +143,6 @@
     <include refid="Base_Column_List" />
     from entertainmentfuseimage
     where status = #{status,jdbcType=INTEGER}
+    ORDER by rand();
   </select>
 </mapper>

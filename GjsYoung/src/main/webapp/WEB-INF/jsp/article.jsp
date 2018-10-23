@@ -15,7 +15,7 @@
 
 <body style="background: url(images/main/background.jpg)">
 
-    <jsp:include page="header.jsp"></jsp:include>
+        <jsp:include page="header.jsp"></jsp:include>
 
     <div class="container">
         <div class="row">

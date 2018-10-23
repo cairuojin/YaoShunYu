@@ -76,10 +76,14 @@
                                 <input type="file" id="chooseImage" name="chooseImage" style="margin-left: 10px;">
                             </button>
                         </div>
+
+                        <div style="margin-top: 20px">
+                            <p style="font-size: 16px">为保证融合效果，建议不要上传美颜过度的照片哦</p>
+                        </div>
                     </div>
 
                     <div style="margin: 0 auto;width: 120px;padding-bottom: 200px;padding-top: 100px">
-                        <button class="confirmButton" style="font-size: 18px;background-size:cover" onclick="fuse($('#chooseImage').val(),$('.swiper-slide-duplicate-active').attr('id'))">开始合成</button>
+                        <button class="confirmButton" style="font-size: 18px;background-size:cover" onclick="fuse($('#chooseImage').val())">开始合成</button>
                     </div>
                     <hr style="width:80%;margin:0 auto;border: 0;height: 1px;background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));" />
 
@@ -177,9 +181,10 @@
         });
     </script>
 
-    <!-- 上传到后台 -->
+    <!-- 上传到后台,开始融合 -->
     <script>
-        function fuse(image,id){
+        function fuse(image){
+            var id = ($(".swiper-slide-active").attr("id"));    //当前选择的模板id
             if(image == ''){
                 alert('您还未上传图片');
                 return;

@@ -10,6 +10,8 @@
     <link href="/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
     <script type="text/javascript" src="/js/jquery-2.2.4.min.js"></script>
     <link href="/css/entertainment.css" rel="stylesheet" type="text/css" media="all">
+
+
 </head>
 <body>
 
@@ -40,11 +42,11 @@
                 <div class="col-md-6 col-grid-1">
                     <div class="col-1 bottom">
                         <div class="col-1-top">
-                            <img src="images/cc.jpg" class="img-responsive" alt="">
+                            <img src="images/entertainment/module1.png" class="img-responsive" href="">
                         </div>
                         <div class="col-1-bottom">
                             <div class="info-text">
-                                <h3>颜值大比拼</h3>
+                                <h3 style="color: white">颜值大比拼</h3>
                                 <p>利用人脸识别接口，识别颜值，根据评分得出美貌值并排名。</p>
                                 <button href=""  class="singleButton">立即体验</button>
                             </div>
@@ -54,11 +56,11 @@
                 <div class="col-md-6 col-grid-1">
                     <div class="col-1 bottom">
                         <div class="col-1-top">
-                            <img src="images/cc1.jpg" class="img-responsive" alt="">
+                            <a href="/entertainmentFuse"><img src="images/entertainment/module2.png" class="img-responsive"></a>
                         </div>
                         <div class="col-1-bottom">
                             <div class="info-text">
-                                <h3>粉墨登场</h3>
+                                <h3 style="color: white">粉墨登场</h3>
                                 <p>想体验一把穿越到古代穿上古装的感觉吗？快来体验这个功能，通过人脸融合技术，让你过一把瘾。</p>
                                 <a href="/entertainmentFuse"><button class="singleButton">立即体验</button></a>
                             </div>
@@ -68,11 +70,11 @@
                 <div class="col-md-6 col-grid-1">
                     <div class="col-1 bottom">
                         <div class="col-1-top">
-                            <img src="images/cc3.jpg" class="img-responsive" alt="">
+                            <img src="images/entertainment/module3.png" class="img-responsive" alt="">
                         </div>
                         <div class="col-1-bottom">
                             <div class="info-text">
-                                <h3>我要当导演</h3>
+                                <h3 style="color: white">我要当导演</h3>
                                 <p>通过为我们提供的模板图配上一句话的字幕并展示，点赞多者有奖哦。</p>
                                 <button href=""  class="singleButton">立即体验</button>
                             </div>
@@ -82,11 +84,11 @@
                 <div class="col-md-6 col-grid-1">
                     <div class="col-1 bottom">
                         <div class="col-1-top">
-                            <img src="images/cc2.jpg" class="img-responsive" alt="">
+                            <img src="images/entertainment/module4.png" class="img-responsive" alt="">
                         </div>
                         <div class="col-1-bottom">
                             <div class="info-text">
-                                <h3>更多互动</h3>
+                                <h3 style="color: white">更多互动</h3>
                                 <p>我们将继续加入更多互动游戏，敬请您的期待。</p>
                                 <button class="singleButton">敬请期待</button>
                             </div>
@@ -99,7 +101,7 @@
         </div>
         <div class="advert" style="height: 300px;width: 100%;text-align: center;background-color: rgba(255,5,0,0.3)">广告位招租</div>
     </div>
-
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script><script>!function(i){localStorage.setItem("designId",i);if(!localStorage.getItem("referenceTime")){localStorage.setItem("referenceTime",new Date().getTime());} var w = document.createElement("script");w.src="http://nps.survetchina.com/js/webSurvey.js";document.body.appendChild(w);}("acb28c519619449187813c16d0901d3b");</script>
     <jsp:include page="footer.jsp"></jsp:include>
 
 </body>

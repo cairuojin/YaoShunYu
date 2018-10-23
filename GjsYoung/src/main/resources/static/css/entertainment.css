@@ -46,11 +46,12 @@
     margin-top: 80px;
     float: left;
     width: 40%;
-    background-color: rgba(255,212,56,0.30);
+    background-color: rgba(185, 185, 185, 0.6);
     padding: 5em;
+    transition: 1s;
 }
 .col-grid-left:hover{
-    background-color: rgba(255, 212, 56, 0.4);
+    background-color: rgba(185, 185, 185, 0.3);
 }
 .col-grid-right {
     padding: 0;
@@ -99,7 +100,8 @@
     z-index: 1;
 }
 .col-1 .col-1-bottom {
-    background: rgba(230, 145, 27, 0.3);
+    background: rgba(56, 56, 56, 0.6);
+    color: white;
     z-index: 2;
     filter: alpha(opacity=0);
     -wekbit-opacity: 0;

@@ -3,6 +3,7 @@
 <!DOCTYPE html >
 <html>
 <head>
+    <meta name="baidu-site-verification" content="BgzDAdNjvW" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>尧舜禹</title>
     <link rel="icon" href="images/main/icon.jpg" type="image/x-icon">

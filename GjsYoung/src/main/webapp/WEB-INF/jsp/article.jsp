@@ -9,8 +9,6 @@
     <link rel="icon" href="images/main/icon.jpg" type="image/x-icon">
     <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
     <link href="css/article.css" rel="stylesheet" type="text/css" media="all"/>
-
-    <script src="js/jquery-1.11.1.min.js"></script>
 </head>
 
 <body style="background: url(images/main/background.jpg)">

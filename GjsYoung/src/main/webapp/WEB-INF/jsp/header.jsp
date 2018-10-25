@@ -4,7 +4,7 @@
 <head>
     <title>头导航</title>
 
-    <link href="/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
     <link href="/css/style.css" rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="/css/jquery.fancybox.css">
     <link rel="stylesheet" href="/css/main.css">
@@ -75,7 +75,7 @@
     </div>
 </header>
 
-<script src="/js/jquery-1.11.1.min.js"></script>
+<script src="/js/jquery-2.2.4.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/jquery.singlePageNav.min.js"></script>
 <script src="/js/jquery.fancybox.pack.js"></script>
@@ -85,6 +85,5 @@
 <script src="/js/jquery.ba-cond.min.js"></script>
 <script src="/js/wow.min.js"></script>
 <script src="/js/main.js"></script>
-<script src="/js/bootstrap.js"></script>
 
 </html>

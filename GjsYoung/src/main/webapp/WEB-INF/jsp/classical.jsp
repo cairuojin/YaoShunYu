@@ -9,7 +9,6 @@
     <link rel="icon" href="images/main/icon.jpg" type="image/x-icon">
 
     <link href="/css/classical.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
     <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
     <link href="/css/animate.css" rel="stylesheet" type="text/css" media="all">
     <link href="/css/character.css" rel="stylesheet" type="text/css" media="all"/>

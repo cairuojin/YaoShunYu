@@ -8,7 +8,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>尧舜禹-开卷有益</title>
     <link rel="icon" href="images/main/icon.jpg" type="image/x-icon">
-    <script src="/js/jquery-1.11.1.min.js"></script>
     <link href="/css/classical.css" rel="stylesheet" type="text/css" media="all"/>
     <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
 </head>

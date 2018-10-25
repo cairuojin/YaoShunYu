@@ -8,7 +8,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>尧舜禹-鸾翔凤集</title>
     <link rel="icon" href="images/main/icon.jpg" type="image/x-icon">
-    <script src="/js/jquery-1.11.1.min.js"></script>
 
     <%--<link href="/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">--%>
     <link href="/css/article.css" rel="stylesheet" type="text/css" media="all"/>

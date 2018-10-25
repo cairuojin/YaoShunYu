@@ -9,8 +9,6 @@
     <link rel="icon" href="images/main/icon.jpg" type="image/x-icon">
 
     <link rel="stylesheet" href="css/index.css"/>
-    <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
-    <script src="js/jquery-1.11.1.min.js"></script>
 </head>
 
 <body>

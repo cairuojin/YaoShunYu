@@ -10,7 +10,6 @@
     <link href="css/character.css" rel="stylesheet" type="text/css" media="all"/>
     <link rel="stylesheet" href="/css/author.css">
     <link href="css/personal.css" rel="stylesheet" type="text/css"/>
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
     <link href="css/article.css" rel="stylesheet" type="text/css" media="all"/>
     <script type="text/javascript" src="/js/jquery-2.2.4.min.js"></script>
 

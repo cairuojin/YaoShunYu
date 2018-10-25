@@ -7,7 +7,6 @@
     <title>尧舜禹-觥筹交错</title>
     <link rel="icon" href="images/main/icon.jpg" type="image/x-icon">
 
-    <link href="/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
     <script type="text/javascript" src="/js/jquery-2.2.4.min.js"></script>
     <link href="/css/entertainment.css" rel="stylesheet" type="text/css" media="all">
 

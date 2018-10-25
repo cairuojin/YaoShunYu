@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>尾声明</title>
-    <link href="/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
     <link rel="stylesheet" href="/css/main.css">
 </head>
 

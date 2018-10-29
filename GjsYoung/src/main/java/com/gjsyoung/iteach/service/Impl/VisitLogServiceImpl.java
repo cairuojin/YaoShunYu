@@ -44,7 +44,5 @@ public class VisitLogServiceImpl implements VisitLogService {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
     }
 }

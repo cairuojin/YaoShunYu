@@ -9,15 +9,9 @@
     <title>尧舜禹-鸾翔凤集</title>
     <link rel="icon" href="images/main/icon.jpg" type="image/x-icon">
 
-    <%--<link href="/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">--%>
     <link href="/css/article.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
 
-    <!-- 引入socket -->
-    <!--<script src="/webjars/jquery/jquery.min.js"></script>-->
-    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
-    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
-    <script src="/js/socketApp.js"></script>
+
 </head>
 
 <body style="background: url(/images/main/background.jpg)">
@@ -104,6 +98,22 @@
     </div>
 </div>
 <jsp:include page="footer.jsp"></jsp:include>
+<script src="/js/jquery-2.2.4.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.singlePageNav.min.js"></script>
+<script src="/js/jquery.fancybox.pack.js"></script>
+<script src="/js/owl.carousel.min.js"></script>
+<script src="/js/jquery.easing.min.js"></script>
+<script src="/js/jquery.slitslider.js"></script>
+<script src="/js/jquery.ba-cond.min.js"></script>
+<script src="/js/wow.min.js"></script>
+<script src="/js/main.js"></script>
+
+<!-- 引入socket -->
+<!--<script src="/webjars/jquery/jquery.min.js"></script>-->
+<script src="/webjars/sockjs-client/sockjs.min.js"></script>
+<script src="/webjars/stomp-websocket/stomp.min.js"></script>
+<script src="/js/socketApp.js"></script>
 </body>
 <script>
     $(function () {

@@ -4,7 +4,8 @@
 <head>
     <title>头导航</title>
 
-    <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
     <link href="/css/style.css" rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="/css/jquery.fancybox.css">
     <link rel="stylesheet" href="/css/main.css">
@@ -59,14 +60,20 @@
                     </c:if>
 
                     <c:if test="${user == null }">
-                            <li><a href="${pageContext.request.contextPath }/toLogin">登录</a><a>/</a><a href="${pageContext.request.contextPath }/toRegister">注册  </a></li>
+                            <li style="margin-right: 0px!important;"><a href="${pageContext.request.contextPath }/toLogin" >登录</a></li>
+                            <li style="margin-left: 4px!important;margin-right: 0px!important;"><a>/</a></li>
+                            <li style="margin-left: 0px!important;"><a href="${pageContext.request.contextPath }/toRegister">注册  </a></li>
                     </c:if>
                     <c:if test="${user != null }">
                         <c:if test="${pageHeader == 6 }">
-                            <li><a href="${pageContext.request.contextPath }/personal" class="active">个人中心</a><a>/</a><a href="${pageContext.request.contextPath }/cancellation">注销  </a></li>
+                            <li style="margin-right: 0px!important;"><a href="${pageContext.request.contextPath }/personal" class="active">个人中心</a></li>
+                            <li style="margin-left: 4px!important;margin-right: 0px!important;"><a>/</a></li>
+                            <li style="margin-left: 0px!important;"><a href="${pageContext.request.contextPath }/cancellation">注销  </a></li>
                         </c:if>
                         <c:if test="${pageHeader != 6 }">
-                            <li><a href="${pageContext.request.contextPath }/personal">个人中心</a><a>/</a><a href="${pageContext.request.contextPath }/cancellation">注销  </a></li>
+                            <li style="margin-right: 0px!important;"><a href="${pageContext.request.contextPath }/personal">个人中心</a></li>
+                            <li style="margin-left: 4px!important;margin-right: 0px!important;"><a>/</a></li>
+                            <li style="margin-left: 0px!important;"><a href="${pageContext.request.contextPath }/cancellation">注销  </a></li>
                         </c:if>
                     </c:if>
                 </ul>
@@ -74,16 +81,5 @@
         </div>
     </div>
 </header>
-
-<script src="/js/jquery-2.2.4.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/jquery.singlePageNav.min.js"></script>
-<script src="/js/jquery.fancybox.pack.js"></script>
-<script src="/js/owl.carousel.min.js"></script>
-<script src="/js/jquery.easing.min.js"></script>
-<script src="/js/jquery.slitslider.js"></script>
-<script src="/js/jquery.ba-cond.min.js"></script>
-<script src="/js/wow.min.js"></script>
-<script src="/js/main.js"></script>
 
 </html>

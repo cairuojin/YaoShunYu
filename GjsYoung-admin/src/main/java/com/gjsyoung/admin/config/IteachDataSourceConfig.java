@@ -19,8 +19,7 @@ import javax.sql.DataSource;
 @MapperScan(basePackages = {"com.gjsyoung.admin.mapper.iteach"}, sqlSessionTemplateRef = "iteachSqlSessionTemplate")
 public class IteachDataSourceConfig {
 
-    @Bean(name = "iteachDataSource")
-    @Primary
+    @Bean
     @ConfigurationProperties(prefix = "spring.iteach.datasource")
     public DataSource iteachDataSource(){
         return DataSourceBuilder.create().build();
@@ -30,10 +29,9 @@ public class IteachDataSourceConfig {
     public SqlSessionFactory iteachSqlSessionFactory(@Qualifier("iteachDataSource") DataSource dataSource){
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(dataSource);
-        //添加XML目录
         ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
         try{
-            bean.setMapperLocations(resolver.getResources("classpath:mapper/*.xml"));
+            bean.setMapperLocations(resolver.getResources("classpath:mapper/iteach/*.xml"));
             return bean.getObject();
         } catch (Exception e) {
             e.printStackTrace();

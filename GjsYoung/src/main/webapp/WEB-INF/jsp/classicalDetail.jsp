@@ -9,7 +9,6 @@
     <title>尧舜禹-开卷有益</title>
     <link rel="icon" href="images/main/icon.jpg" type="image/x-icon">
     <link href="/css/classical.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
 </head>
 
 <body style="background: url(/images/main/background.jpg)">
@@ -60,6 +59,16 @@
 
 </div>
 <jsp:include page="footer.jsp"></jsp:include>
+<script src="/js/jquery-2.2.4.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.singlePageNav.min.js"></script>
+<script src="/js/jquery.fancybox.pack.js"></script>
+<script src="/js/owl.carousel.min.js"></script>
+<script src="/js/jquery.easing.min.js"></script>
+<script src="/js/jquery.slitslider.js"></script>
+<script src="/js/jquery.ba-cond.min.js"></script>
+<script src="/js/wow.min.js"></script>
+<script src="/js/main.js"></script>
 </body>
 <script>
 

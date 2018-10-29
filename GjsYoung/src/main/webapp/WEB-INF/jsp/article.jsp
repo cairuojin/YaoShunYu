@@ -7,13 +7,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>尧舜禹-鸾翔凤集</title>
     <link rel="icon" href="images/main/icon.jpg" type="image/x-icon">
-    <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
     <link href="css/article.css" rel="stylesheet" type="text/css" media="all"/>
 </head>
 
 <body style="background: url(images/main/background.jpg)">
 
-        <jsp:include page="header.jsp"></jsp:include>
+    <jsp:include page="header.jsp"></jsp:include>
 
     <div class="container">
         <div class="row">
@@ -44,10 +43,10 @@
                     </c:if>
                 </select>
                 <c:if test="${empty searchHistory}">
-                    <input class="input" placeholder="搜索文章或作者" name="value">
+                    <input class="input" placeholder="搜索文章或作者" name="value" required>
                 </c:if>
                 <c:if test="${!empty searchHistory}">
-                    <input class="input" placeholder="${searchHistory}" name="value">
+                    <input class="input" placeholder="${searchHistory}" name="value" required>
                 </c:if>
                 <button class="search-btn">搜索</button>
             </form>
@@ -188,7 +187,16 @@
     </div>
 
     <jsp:include page="footer.jsp"></jsp:include>
-
+    <script src="/js/jquery-2.2.4.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.singlePageNav.min.js"></script>
+    <script src="/js/jquery.fancybox.pack.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/jquery.easing.min.js"></script>
+    <script src="/js/jquery.slitslider.js"></script>
+    <script src="/js/jquery.ba-cond.min.js"></script>
+    <script src="/js/wow.min.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 
 </html>

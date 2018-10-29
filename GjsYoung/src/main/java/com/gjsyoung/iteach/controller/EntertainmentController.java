@@ -54,7 +54,7 @@ public class EntertainmentController {
     public ModelAndView entertainmentFuse(HttpSession session){
 //        Object obj = session.getAttribute("user");
 //        if(obj == null){
-//            return commonUtils.throwException("该模块为内测功能，请您登录后再重试！");
+//            return commonUtils.throwException("该模块为内测功能，请您登录后再重试！");  //todo 开启注册
 //        }
         ModelAndView mav = new ModelAndView("entertainmentFuse");
         List<EntertainmentFuseImage> entertainmentFuseImages = entertainmentFuseImageMapper.selectAllByStatus(0);//查找全部可用的模板

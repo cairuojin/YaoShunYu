@@ -9,6 +9,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * create by cairuojin on 2018/09/05
@@ -24,7 +28,7 @@ public class DefaultView {
     public ModelAndView index(HttpSession session, HttpServletRequest request){
         String clientIpAddress = GetIpAddress.getClientIpAddress(request);
         if(clientIpAddress != null){
-            visitLogService.recordVisitLog(clientIpAddress, session.getId());       //todo 访问记录
+            visitLogService.recordVisitLog(clientIpAddress, session.getId());       //访问记录
         }
         ModelAndView nav = new ModelAndView();
         nav.setViewName("index");
@@ -32,11 +36,6 @@ public class DefaultView {
         return nav;
     }
     @RequestMapping("/text")
-    public ModelAndView text(HttpSession session){
-        ModelAndView nav = new ModelAndView();
-        nav.setViewName("entertainmentFuse");
-        return nav;
+    public void text(HttpSession session){
     }
-
-
 }

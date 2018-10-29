@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="/css/author.css">
     <link href="css/personal.css" rel="stylesheet" type="text/css"/>
     <link href="css/article.css" rel="stylesheet" type="text/css" media="all"/>
-    <script type="text/javascript" src="/js/jquery-2.2.4.min.js"></script>
 
 </head>
 
@@ -59,10 +58,10 @@
        <div class="header-search">
            <form action="${pageContext.request.contextPath }/celebritySearch">
                <c:if test="${empty searchHistory}">
-                   <input class="input" placeholder="搜索人物" name="celebrityName">
+                   <input class="input" placeholder="搜索人物" name="celebrityName" required>
                </c:if>
                <c:if test="${!empty searchHistory}">
-                   <input class="input" value="" placeholder="${searchHistory}" name="celebrityName">
+                   <input class="input" value="" placeholder="${searchHistory}" name="celebrityName" required>
                </c:if>
                <button class="search-btn">搜索</button>
            </form>
@@ -186,6 +185,19 @@
     
 
     <jsp:include page="footer.jsp"></jsp:include>
+
+    <script src="/js/jquery-2.2.4.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.singlePageNav.min.js"></script>
+    <script src="/js/jquery.fancybox.pack.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/jquery.easing.min.js"></script>
+    <script src="/js/jquery.slitslider.js"></script>
+    <script src="/js/jquery.ba-cond.min.js"></script>
+    <script src="/js/wow.min.js"></script>
+    <script src="/js/main.js"></script>
+
+
 </body>
 <script>
     function goToDetail(id) {

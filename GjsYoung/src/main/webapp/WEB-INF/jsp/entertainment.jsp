@@ -7,7 +7,6 @@
     <title>尧舜禹-觥筹交错</title>
     <link rel="icon" href="images/main/icon.jpg" type="image/x-icon">
 
-    <script type="text/javascript" src="/js/jquery-2.2.4.min.js"></script>
     <link href="/css/entertainment.css" rel="stylesheet" type="text/css" media="all">
 
 
@@ -102,6 +101,15 @@
     </div>
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script><script>!function(i){localStorage.setItem("designId",i);if(!localStorage.getItem("referenceTime")){localStorage.setItem("referenceTime",new Date().getTime());} var w = document.createElement("script");w.src="http://nps.survetchina.com/js/webSurvey.js";document.body.appendChild(w);}("acb28c519619449187813c16d0901d3b");</script>
     <jsp:include page="footer.jsp"></jsp:include>
-
+    <script src="/js/jquery-2.2.4.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.singlePageNav.min.js"></script>
+    <script src="/js/jquery.fancybox.pack.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/jquery.easing.min.js"></script>
+    <script src="/js/jquery.slitslider.js"></script>
+    <script src="/js/jquery.ba-cond.min.js"></script>
+    <script src="/js/wow.min.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 </html>

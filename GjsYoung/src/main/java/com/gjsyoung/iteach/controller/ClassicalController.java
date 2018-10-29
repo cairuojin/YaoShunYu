@@ -62,7 +62,7 @@ public class ClassicalController {
      */
     @RequestMapping("/classicalDetail/{id}")
     public ModelAndView celebrityEdit(@PathVariable("id") int classicalId){
-        //todo 保留历史记录
+        //todo 保留历史记录，文章点击量
         Classical classical = classicalMapper.selectByPrimaryKey(classicalId);
         if(classical == null)
             return commonUtils.throwException("找不到该文言文信息哦！");

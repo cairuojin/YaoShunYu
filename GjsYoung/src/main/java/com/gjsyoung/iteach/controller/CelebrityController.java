@@ -41,9 +41,6 @@ public class CelebrityController {
 
 
 
-    final String OrdeyByTime = "lastUpdateTime desc";
-    final String OrdeyByRandom = "";
-
     /**
      * 跳转到人物百科页面
      * @param page
@@ -54,7 +51,7 @@ public class CelebrityController {
     public ModelAndView celebrity(Integer page, HttpSession session){
         ModelAndView nav = new ModelAndView("celebrity");
         List<Dynasty> dynasties = dynastyMapper.selectAll();
-        PageHelper.startPage(page,24);      //todo 随机查询
+        PageHelper.startPage(page,24);      //todo 朝代排序 添加生辰字段或排序依据
         List<Celebrity> celebrities = celebrityMapper.selectAll();
         PageInfo pageInfo = new PageInfo<>(celebrities,24);  //分页信息
         nav.addObject("celebrities",celebrities);
@@ -102,14 +99,14 @@ public class CelebrityController {
             if(celebrityDetails == null || celebrityDetails.size() == 0){
                 return commonUtils.throwException("找不到该人物信息哦！");
             } else {
-                mav.addObject("celebrityDetails",celebrityDetails);   //todo 检查完整性
+                mav.addObject("celebrityDetails",celebrityDetails);
                 mav.addObject("celebrity",celebrity);
                 return mav;
             }
         } else{
             List<Celebrity> celebrities = celebrityMapper.selectByNameLike(celebrityName);
             ModelAndView mav = new ModelAndView("/celebrity");
-            List<Dynasty> dynasties = dynastyMapper.selectAll();
+            List<Dynasty> dynasties = dynastyMapper.selectAll();    //todo 分页查询
             mav.addObject("dynasties",dynasties);
             mav.addObject("celebrities",celebrities);
             mav.addObject("searchHistory",celebrityName);

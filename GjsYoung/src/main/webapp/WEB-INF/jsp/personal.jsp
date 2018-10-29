@@ -7,7 +7,7 @@
     <title>尧舜禹-个人中心</title>
     <link rel="icon" href="images/main/icon.jpg" type="image/x-icon">
 
-    <script type="text/javascript" src="/js/jquery-2.2.4.min.js"></script>
+
 
     <link href="css/personal.css" rel="stylesheet" type="text/css" media="all"/>
     <link rel="stylesheet" href="css/login.css" />
@@ -210,6 +210,7 @@
 
         <jsp:include page="footer.jsp"></jsp:include>
     </body>
+<script type="text/javascript" src="/js/jquery-2.2.4.min.js"></script>
 <script src="js/supersized.3.2.7.min.js"></script>
 <script src="js/supersized-init.js"></script>
 <script src="js/jquery.validate.min.js?var1.14.0"></script>

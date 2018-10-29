@@ -23,8 +23,8 @@ public class ClassicalController {
     public String test(){
         User user = userMapper.selectByPrimaryKey(1);
         Author author = authorMapper.selectByPrimaryKey(1);
-        System.out.println(user);
-        System.out.println(author);
+        System.out.println(user.toString());
+        System.out.println(author.toString());
         return "";
     }
 

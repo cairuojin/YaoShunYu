@@ -75,11 +75,13 @@ public class AtricleController {
 
     /**
      * 跳转到文章页面
+     * @param page
+     * @param session
      * @return
      */
     @RequestMapping("/atricle")
     public ModelAndView atricle(Integer page, HttpSession session){
-        Map map = articleService.findArticle(page);//找寻文章列表信息
+        Map map = articleService.findArticle(page);//分页找寻文章列表信息
         List<User> authors = userMapper.selectAuthorsLimit(5);      //作家列表
         List<ArticleVo> articles = (List<ArticleVo>) map.get("articles");//文章列表
         PageInfo pageInfo = (PageInfo) map.get("pageInfo");     //分页信息
@@ -152,7 +154,7 @@ public class AtricleController {
 //                history += "-" + articleId;
 //            }
 //        }
-
+        //todo 文章浏览次数
 
         Map data = articleMapper.queryDetailById(articleId);
         ModelAndView nav = new ModelAndView();
@@ -168,12 +170,10 @@ public class AtricleController {
     /**
      * lzy
      * 跳转到编辑页
-     *
      * @return
      */
     @RequestMapping("/toEditor")
     public String toEditor() {
-
         return "articleEditor";
     }
 

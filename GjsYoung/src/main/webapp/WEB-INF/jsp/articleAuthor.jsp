@@ -7,10 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>尧舜禹-鸾翔凤集</title>
     <link rel="icon" href="images/main/icon.jpg" type="image/x-icon">
-    <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
     <link rel="stylesheet" href="/css/author.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
 
     <script type="text/javascript" src="/js/jquery-2.2.4.min.js"></script>
 </head>
@@ -135,5 +132,18 @@
 
 
 <jsp:include page="footer.jsp"></jsp:include>
+<script src="/js/jquery-2.2.4.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.singlePageNav.min.js"></script>
+<script src="/js/jquery.fancybox.pack.js"></script>
+<script src="/js/owl.carousel.min.js"></script>
+<script src="/js/jquery.easing.min.js"></script>
+<script src="/js/jquery.slitslider.js"></script>
+<script src="/js/jquery.ba-cond.min.js"></script>
+<script src="/js/wow.min.js"></script>
+<script src="/js/main.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
 </body>
 </html>

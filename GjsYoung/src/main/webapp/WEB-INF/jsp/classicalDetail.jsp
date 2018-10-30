@@ -9,6 +9,7 @@
     <title>尧舜禹-开卷有益</title>
     <link rel="icon" href="images/main/icon.jpg" type="image/x-icon">
     <link href="/css/classical.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="/css/animate.css" rel="stylesheet" type="text/css" media="all">
 </head>
 
 <body style="background: url(/images/main/background.jpg)">
@@ -18,7 +19,7 @@
     <div class="clearfix"></div>
     <div class="mainContent">
         <section>
-            <article class="blogPost">
+            <article class="blogPost wow animate fadeInUp">
                 <header>
                     <h2 class="classicalTitle">${classical.title}</h2>
                 </header>
@@ -32,26 +33,28 @@
         </section>
         <div style="margin-top: 50px">
             <c:forEach items="${classicalDetails}" var="classicalDetail" varStatus="i">
-                <div style="float: left;">${i.index+1}、</div>${classicalDetail.question}
-                <div style="height: 100px;">
-                    <div class="answer " style="display: none;">
-                        <div style="float:left;margin-top: 30px;color: #0031e2">答案 : &nbsp;</div>
-                        <div style="clear: both; margin-top: 30px;margin-bottom: 30px">${classicalDetail.answer}</div>
+                <div class="wow animate fadeInUp">
+                    <div style="float: left;">${i.index+1}、</div>${classicalDetail.question}
+                    <div style="height: 100px;">
+                        <div class="answer " style="display: none;">
+                            <div style="float:left;margin-top: 30px;color: #0031e2">答案 : &nbsp;</div>
+                            <div style="clear: both; margin-top: 30px;margin-bottom: 30px">${classicalDetail.answer}</div>
+                        </div>
                     </div>
                 </div>
             </c:forEach>
         </div>
 
-        <div>
+        <div class="wow animate fadeInUp">
             <input type="button" value="显示答案" id="btnShow"/>
         </div>
 
-        <div style="margin-top: 50px;margin-bottom: 30px">
+        <div style="margin-top: 50px;margin-bottom: 30px" class="wow animate fadeInUp">
             <div style="float: left;font-size: 30px">原文翻译：</div><br>
             <div style="margin-top: 20px"><p>${classical.translation}</p></div>
         </div>
     </div>
-    <div style="text-align: center;margin-top: 50px;margin-bottom: 50px">
+    <div style="text-align: center;margin-top: 50px;margin-bottom: 50px" class="wow animate fadeInUp">
         <p style="font-size: 30px">您觉得这篇文章难度如何？</p>
         <input type="button" id="hard" value="太难了" style="margin-right: 20px;height: 40px">
         <input type="button" id="easy" value="很简单" style="height: 40px">

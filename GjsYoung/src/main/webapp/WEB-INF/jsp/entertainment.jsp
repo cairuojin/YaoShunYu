@@ -31,12 +31,12 @@
     </div>
 
     <div style="background: url(/images/main/background.jpg)">
-        <div class="singleEntertainment">
+        <div class="singleEntertainment  wow animate fadeInUp">
             <div class="col-grid-left">
                 <h3>淡泊名利，动静相济，劳逸适度。——华佗</h3>
                 <p>提供一系列有趣的互动休闲方式，欢迎您来体验。<br>平衡，是一种美好的境界。生态平衡了，就会风调雨顺；营养平衡了，身体健康就能得到保障；而劳逸的平衡，使人精力充沛；心理的平衡，让人舒坦愉快平衡需要一种胸怀，学会平衡，就能站立起来。</p>
             </div>
-            <div class="col-md-6 col-grid-right agile-info-wthree">
+            <div class="col-md-6 col-grid-right agile-info-wthree ">
                 <div class="col-md-6 col-grid-1">
                     <div class="col-1 bottom">
                         <div class="col-1-top">

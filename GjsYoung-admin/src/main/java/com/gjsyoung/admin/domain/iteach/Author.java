@@ -1,4 +1,4 @@
-package com.gjsyoung.admin.domain;
+package com.gjsyoung.admin.domain.iteach;
 
 public class Author {
     private Integer id;

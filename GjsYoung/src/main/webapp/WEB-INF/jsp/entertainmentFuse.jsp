@@ -30,8 +30,7 @@
     </div>
 
     <div style="background: url(/images/main/background.jpg)">
-
-        <div style="height: 360px;margin:0 auto;text-align: center;width:80%;background-color: rgba(192,209,255,0.20)">
+        <div style="height: 360px;margin:0 auto;text-align: center;width:80%;background-color: rgba(192,209,255,0.20)" class="wow animate fadeInUp">
             <div class="clearfix"></div>
             <h3 style=" margin-top: 80px">功能简介</h3>
             <hr>
@@ -39,9 +38,8 @@
             <p>该功能是基于Face++人脸识别功能实现，可以对模板图和融合图中的人脸进行融合操作。融合后的图片中将包含融合图中的人脸特征，以及模板图中的其他外貌特征与内容。</p>
             <img src="images/main/click.png" style="margin-top: 20px">
         </div>
-
         <hr style="width:80%;margin:0 auto;border: 0;height: 1px;background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));" />
-        <div style="width:80%;margin:0 auto;background-color: rgba(192,209,255,0.20)">
+        <div style="width:80%;margin:0 auto;background-color: rgba(192,209,255,0.20)" class="wow animate fadeInUp">
                 <div style="width: 800px;font-size: 0;margin: 0 auto;text-align: center" >
                     <div style="text-align: center">
                         <div style="display: inline-block;margin-right: 30px;vertical-align: top">
@@ -98,7 +96,7 @@
 
         <hr style="width:80%;margin:0 auto;border: 0;height: 1px;background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));" />
         <div class="clearfix"></div>
-        <div style="margin:0 auto;text-align: center;width:80%;background-color: rgba(192,209,255,0.20);">
+        <div style="margin:0 auto;text-align: center;width:80%;background-color: rgba(192,209,255,0.20);" class="wow animate fadeInUp">
             <div class="clearfix"></div>
             <h2  style="margin-top: 80px">给我们支持</h2>
             <p>如果您喜欢该功能，不要忘了为我们点赞，并分享给您的好友哦。</p>

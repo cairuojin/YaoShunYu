@@ -61,7 +61,7 @@
                 </c:if>
 
                 <c:forEach items="${articles }" var="article">
-                    <div class="prod">
+                    <div class="prod wow animate fadeInUp">
                         <c:if test="${article.status == 1}">
                             <div class="nullDiv">[置顶]</div>
                         </c:if>
@@ -96,7 +96,7 @@
                 <!-- 页码 -->
                 <div class="section">
                     <!-- container -->
-                    <div class="container">
+                    <div class="container wow animate fadeInUp">
                         <!-- row -->
                         <div class="row">
                             <div id="store" class="col-md-9">
@@ -168,10 +168,11 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-md-3 product-right rightDiv">
                 <h3>文人雅士</h3>
                 <c:forEach items="${authors }" var="author">
-                    <div class="product-right1">
+                    <div class="product-right1 wow animate fadeInUp">
                         <div class="pro">
                             <img src="${author.image}" class="articleImg" alt="${pageContext.request.contextPath }/author/${author.id}" />
                         </div>

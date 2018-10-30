@@ -22,4 +22,6 @@ public interface AuthorMapper {
     Author selectByAuthorId(Integer AuthorId);
 
     Author selectByNickname(String nickname);
+
+
 }

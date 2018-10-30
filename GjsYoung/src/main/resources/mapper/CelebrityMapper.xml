@@ -228,4 +228,8 @@
     from celebrity
     WHERE Dynasty = #{dynasty,jdbcType=INTEGER}
   </select>
+  
+  <select id="countAll" resultType="java.lang.Integer">
+    select count(id) FROM celebrity
+  </select>
 </mapper>

@@ -30,4 +30,6 @@ public interface CelebrityMapper {
     List<Celebrity> selectByNameLike(String name);
 
     List<Celebrity> selectByDynasty(Integer dynasty);
+
+    int countAll();
 }

@@ -1,6 +1,6 @@
 package com.gjsyoung.admin.mapper.iteach;
 
-import com.gjsyoung.admin.domain.Author;
+import com.gjsyoung.admin.domain.iteach.Author;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 

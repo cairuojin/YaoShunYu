@@ -204,10 +204,10 @@ ul.dropdown-menu {
     background: rgba(36, 42, 74, 0.71);
 }
 .green{
-    background: rgba(39, 39, 39, 0.41);
+    background: rgba(39, 39, 39, 0.52);
 }
 .green:hover{
-    background: rgba(77, 77, 77, 0.42);
+    background: rgba(14, 14, 14, 0.52);
 }
 .banner-left-grid-img h3{
   font-size: 26px;
@@ -304,10 +304,6 @@ ul.dropdown-menu {
     margin: 0;
     line-height: 1.8em;
 }
-/*-- work --*/
-.work,.news{
-    padding-top: 100px;
-}
 .work-grids {
     margin: 5em 0 0 0;
 }
@@ -373,7 +369,7 @@ ul.dropdown-menu {
 }
 /*-- news --*/
 .news {
-    background: url(../images/2.png) no-repeat 128% 123%;
+    background: url(../images/2.png) no-repeat 100% 100%;
 }
 .news-grid img{
 	width:100%;

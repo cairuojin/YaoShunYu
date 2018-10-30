@@ -9,7 +9,6 @@
     <link rel="icon" href="images/main/icon.jpg" type="image/x-icon">
 
     <link href="/css/classical.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="/css/animate.css" rel="stylesheet" type="text/css" media="all">
     <link href="/css/character.css" rel="stylesheet" type="text/css" media="all"/>
 </head>
 <body>
@@ -53,7 +52,7 @@
             <div style="background-image: url(/images/main/leaves1.png); background-repeat: no-repeat; background-position-x:left; background-position-y:bottom;background-size: 30%">
                 <div>
                     <c:forEach items="${classicals}" var="classical" varStatus="i" begin="0" end="5">
-                        <div class="classicalItem ">
+                        <div class="classicalItem wow animate fadeInUp">
                             <div class="clearfix"></div>
                             <div class="classicalTitle">
                                 <a href="/classicalDetail/${classical.id}">${classical.title}</a>
@@ -81,7 +80,7 @@
             <div class="classicalBackgroound">
                 <div style="margin-bottom: 30px;">
                     <c:forEach items="${classicals}" var="classical" varStatus="i" begin="6" end="${classicals.size()}">
-                        <div class="classicalItem ">
+                        <div class="classicalItem wow animate fadeInUp">
                             <div class="clearfix"></div>
                             <div class="classicalTitle">
                                 <a>${classical.title}</a>
@@ -112,7 +111,7 @@
             <div style="background-image: url(/images/2.png); background-repeat: no-repeat; background-position-x:right; background-position-y:bottom;">
                 <div style="margin-bottom: 30px;">
                     <c:forEach items="${classicals}" var="classical">
-                        <div class="classicalItem ">
+                        <div class="classicalItem wow animate fadeInUp">
                             <div class="clearfix"></div>
                             <div class="classicalTitle">
                                 <a href="/classicalDetail/${classical.id}">${classical.title}</a>

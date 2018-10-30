@@ -1,4 +1,4 @@
-package com.gjsyoung.admin.domain;
+package com.gjsyoung.admin.domain.admin;
 
 import java.util.Date;
 

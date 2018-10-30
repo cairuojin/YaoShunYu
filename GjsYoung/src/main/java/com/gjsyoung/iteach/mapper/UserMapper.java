@@ -28,4 +28,6 @@ public interface UserMapper {
     List<User> selectAuthorsLimit(Integer limit);
 
     Integer selectByNickname(String nickname);
+
+    int countAll();
 }

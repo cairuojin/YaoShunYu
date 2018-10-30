@@ -45,56 +45,58 @@
         <hr/>
     </div>
 
-    <div class="myTitle1" style="text-align: center">
-        论今评古
-    </div>
 
     <!-- 聊天室 -->
-    <div class="interaction" style="margin-top: 30px">
-        <div id="main-content" class="container">
-            <div class="row">
-                <div class="col-md-12 addBorder">
-                    <table id="conversation" class="table table-striped">
-                        <div style="margin-top: 30px;margin-bottom: 30px">
-                            <c:if test="${empty  user}">
-                                <span class="glyphicon glyphicon-user f_left10 articleSpan"></span>
-                                <a>当前用户:游客</a>
-                            </c:if>
-                            <c:if test="${not empty  user}">
-                                <span class="glyphicon glyphicon-user articleSpan"></span>
-                                <a>当前用户:${user.nickname }</a>
-                            </c:if>
-                            <span class="glyphicon glyphicon-time f_left10 articleSpan"></span>
-                            <a id="time"></a>
-                            <span class="glyphicon glyphicon-globe f_left10 articleSpan"></span>
-                            <a>在线人数:5</a>
-                            <a style="float:right;color: #4D4DF9;">欢迎来到论今评古，请大家文明发言，营造绿色环境。</a>
-                        </div>
-                        <tbody id="greetings">
-                        <c:forEach items="${ChatHistory}" var="chat">
-                            <tr>
-                                <td>
-                                   ${chat}<br>
-                                </td>
-                            </tr>
-                        </c:forEach>
-                        </tbody>
-                    </table>
+    <div class="wow animate fadeInUp">
+        <div style="text-align: center">
+            <h1>论今评古</h1>
+        </div>
+        <div class="interaction" style="margin-top: 30px">
+            <div id="main-content" class="container">
+                <div class="row">
+                    <div class="col-md-12 addBorder">
+                        <table id="conversation" class="table table-striped">
+                            <div style="margin-top: 30px;margin-bottom: 30px">
+                                <c:if test="${empty  user}">
+                                    <span class="glyphicon glyphicon-user f_left10 articleSpan"></span>
+                                    <a>当前用户:游客</a>
+                                </c:if>
+                                <c:if test="${not empty  user}">
+                                    <span class="glyphicon glyphicon-user articleSpan"></span>
+                                    <a>当前用户:${user.nickname }</a>
+                                </c:if>
+                                <span class="glyphicon glyphicon-time f_left10 articleSpan"></span>
+                                <a id="time"></a>
+                                <span class="glyphicon glyphicon-globe f_left10 articleSpan"></span>
+                                <a>在线人数:5</a>
+                                <a style="float:right;color: #4D4DF9;">欢迎来到论今评古，请大家文明发言，营造绿色环境。</a>
+                            </div>
+                            <tbody id="greetings">
+                            <c:forEach items="${ChatHistory}" var="chat">
+                                <tr>
+                                    <td>
+                                            ${chat}<br>
+                                    </td>
+                                </tr>
+                            </c:forEach>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-        </div>
-        <hr/>
-        <div class="row">
-            <div class="col-md-12">
-                <form class="form-inline" style="margin-left: 550px;margin-bottom: 30px;float: right;">
-                    <div class="form-group">
-                        <input type="text" id="message" class="form-control" placeholder="输入消息" style="width: 300px;height:30px;margin-right: 20px;padding-left: 20px;border: 1px solid #CCCCD0">
-                    </div>
-                    <button id="send" class="btn btn-default" type="submit" style="float: right;margin-right: 30px;height:30px;width: 60px;font-size: 6px;border: 1px solid #CCCCD0">发送</button>
-                </form>
+            <hr/>
+            <div class="row">
+                <div class="col-md-12">
+                    <form class="form-inline" style="margin-left: 550px;margin-bottom: 30px;float: right;">
+                        <div class="form-group">
+                            <input type="text" id="message" class="form-control" placeholder="输入消息" style="width: 300px;height:30px;margin-right: 20px;padding-left: 20px;border: 1px solid #CCCCD0">
+                        </div>
+                        <button id="send" class="btn btn-default" type="submit" style="float: right;margin-right: 30px;height:30px;width: 60px;font-size: 6px;border: 1px solid #CCCCD0">发送</button>
+                    </form>
+                </div>
             </div>
+            <hr/>
         </div>
-        <hr/>
     </div>
 </div>
 <jsp:include page="footer.jsp"></jsp:include>

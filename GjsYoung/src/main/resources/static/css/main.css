@@ -552,17 +552,18 @@ h1.navbar-brand {
 ==================================================================*/
 
 .service-icon {
+    font-size: 30px;
     border: 3px solid transparent;
     display: inline-block;
-    height: 85px;
-    width: 85px;
+    height: 100px;
+    width: 100px;
     line-height: 101px;
 
-    -webkit-transform: rotate(47deg);
-       -moz-transform: rotate(47deg);
-        -ms-transform: rotate(47deg);
-         -o-transform: rotate(47deg);
-            transform: rotate(47deg);
+    -webkit-transform: rotate(48deg);
+       -moz-transform: rotate(48deg);
+        -ms-transform: rotate(48deg);
+         -o-transform: rotate(48deg);
+            transform: rotate(48deg);
 
     -webkit-transition: all 0.3s ease 0s;
        -moz-transition: all 0.3s ease 0s;
@@ -585,10 +586,6 @@ h1.navbar-brand {
             transform: rotate(-48deg);
 }
 
-.service-item h3 {
-    font-size: 20px;
-    text-transform: uppercase;
-}
 
 /*=================================================================
 	Portfolio
@@ -877,12 +874,12 @@ ul.external li a:hover {
 ==================================================================*/
 
 #social {
-    background-image: url(../img/slider/banner.jpg);
+    background-image: url(../images/2.jpg);
     padding: 0;
 }
 
 #social .overlay {
-    background: url("../img/slide_bg.png") repeat scroll 0 0 transparent;
+    background: url("../images/2.jpg") repeat scroll 0 0 transparent;
     padding: 100px 0 120px;
 }
 
@@ -935,7 +932,7 @@ ul.external li a:hover {
     border: 1px solid #ececec;
     border-radius: 0;
     box-shadow: none;
-    color: #818181;
+    color: #212121;
     font-size: 16px;
     height: 50px;
 }
@@ -1023,7 +1020,7 @@ textarea.form-control {
 
 .subscribe.form-control {
     background-color: transparent;
-    border: 1px solid #7f7f7f;
+    border: 1px solid #212121;
 }
 
 .subscribe.form-control:focus {
@@ -1033,10 +1030,10 @@ textarea.form-control {
 }
 
 .submit-icon {
-    background-color: #7f7f7f;
+    background-color: rgb(33, 33, 33);
     border: 0 none;
     border-radius: 0;
-    color: #c1c1c1;
+    color: rgba(255, 255, 255, 0.88);
     padding: 13px 20px;
     position: absolute;
     overflow: hidden;
@@ -1044,7 +1041,7 @@ textarea.form-control {
     top: 0;
 }
 
-.submit-icon .fa-paper-plane {
+.submit-icon .glyphicon {
     position: relative;
     top: 0;
     
@@ -1061,9 +1058,9 @@ textarea.form-control {
             transition: all 0.3s ease 0.2s;
 }
 
-.submit-icon:hover .fa-paper-plane {
+.submit-icon:hover .glyphicon {
     position: relative;
-    top: -37px;
+    top: -40px;
     
     -webkit-transform: translateX(30px);
        -moz-transform: translateX(30px);
@@ -1160,9 +1157,6 @@ textarea.form-control {
         margin-bottom: 50px;
     }
 
-    .service-item {
-        margin-bottom: 50px;
-    }
 
 /* portfolio */
     .portfolio-item {
@@ -1267,10 +1261,6 @@ textarea.form-control {
         margin: 0 25px 15px 0;
     }
 
-/* service */
-    .service-item {
-        width: 100%;
-    }
 
 /*portfolio*/
     .portfolio-item {
@@ -1371,10 +1361,6 @@ textarea.form-control {
 
 /* service */
 
-    .service-item {
-        margin: 0 auto 50px;
-        width: 55%;
-    }
 
 /* portfolio */
     .portfolio-item {

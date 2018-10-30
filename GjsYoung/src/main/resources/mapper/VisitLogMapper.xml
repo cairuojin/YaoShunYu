@@ -173,4 +173,8 @@
       errMessage = #{errmessage,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="countAll" resultType="java.lang.Integer">
+    select count(id) FROM visitlog
+  </select>
 </mapper>

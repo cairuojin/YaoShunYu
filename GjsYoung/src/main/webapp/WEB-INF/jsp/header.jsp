@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
     <link href="/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="/css/animate.css" rel="stylesheet" type="text/css" media="all">
     <link rel="stylesheet" href="/css/jquery.fancybox.css">
     <link rel="stylesheet" href="/css/main.css">
 </head>

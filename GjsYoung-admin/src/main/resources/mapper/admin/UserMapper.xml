@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gjsyoung.admin.mapper.admin.UserMapper">
-  <resultMap id="BaseResultMap" type="com.gjsyoung.admin.domain.User">
+  <resultMap id="BaseResultMap" type="com.gjsyoung.admin.domain.admin.User">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="email" jdbcType="VARCHAR" property="email" />
@@ -22,7 +22,7 @@
     delete from user
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.gjsyoung.admin.domain.User">
+  <insert id="insert" parameterType="com.gjsyoung.admin.domain.admin.User">
     insert into user (id, username, email, 
       password, create_time, activeTime
       )
@@ -30,7 +30,7 @@
       #{password,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{activetime,jdbcType=TIMESTAMP}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.gjsyoung.admin.domain.User">
+  <insert id="insertSelective" parameterType="com.gjsyoung.admin.domain.admin.User">
     insert into user
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -73,7 +73,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.gjsyoung.admin.domain.User">
+  <update id="updateByPrimaryKeySelective" parameterType="com.gjsyoung.admin.domain.admin.User">
     update user
     <set>
       <if test="username != null">
@@ -94,7 +94,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.gjsyoung.admin.domain.User">
+  <update id="updateByPrimaryKey" parameterType="com.gjsyoung.admin.domain.admin.User">
     update user
     set username = #{username,jdbcType=VARCHAR},
       email = #{email,jdbcType=VARCHAR},

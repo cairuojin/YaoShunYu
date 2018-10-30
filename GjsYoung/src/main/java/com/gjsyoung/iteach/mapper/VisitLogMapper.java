@@ -18,4 +18,7 @@ public interface VisitLogMapper {
     int updateByPrimaryKeySelective(VisitLog record);
 
     int updateByPrimaryKey(VisitLog record);
+
+    int countAll();
+
 }

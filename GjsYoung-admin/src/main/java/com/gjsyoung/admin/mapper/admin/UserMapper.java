@@ -1,6 +1,6 @@
 package com.gjsyoung.admin.mapper.admin;
 
-import com.gjsyoung.admin.domain.User;
+import com.gjsyoung.admin.domain.admin.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 

@@ -138,6 +138,8 @@
     from author
     where nickname = #{nickname,jdbcType=INTEGER}
   </select>
-
+  <select id="countAll" resultType="java.lang.Integer">
+    select count(id) FROM author
+  </select>
 
 </mapper>

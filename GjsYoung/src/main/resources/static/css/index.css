@@ -11,6 +11,12 @@ body {
 	font-family: myFirstFont;
 	font-size: 80px;
 }
+.bigTitle1{
+	font-family: myFirstFont;
+	font-size: 80px;
+	margin-bottom: 20px;
+	text-align: center;
+}
 @font-face{
 	font-family:'myFirstFont';
 	src:url('../font/hanyi.ttf') format('truetype');
@@ -57,4 +63,66 @@ body {
 .IndexLogo:hover{
 	opacity:0.0;
 	filter:alpha(opacity=0);
+}
+.fact-counter-column{
+	position:relative;
+	padding:115px 0px 80px 0px;
+	background-attachment: fixed;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.fact-counter-column:before{
+	position: absolute;
+	content: '';
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	display: block;
+	background-color: rgba(57,53,58,0.80);
+}
+.inner-column{
+	position:relative;
+	z-index:5;
+	width:25%;
+	float:left;
+	padding:33px 0px 40px;
+	text-align:center;
+	background-color: rgba(49, 204, 251, 0.15);
+}
+
+.inner-column.light-bg{
+	background-color: rgba(49, 204, 251, 0.35);
+}
+.inner-column .inner{
+	position:relative;
+	text-align:center;
+}
+.count-outer{
+	position:relative;
+	font-size:50px;
+	line-height:1em;
+	font-weight:600;
+	margin:0px 0px;
+}
+.count-outer .count-text{
+	position:relative;
+	font-weight:700;
+	font-size:35px;
+}
+.inner-column .counter-title{
+	position:relative;
+	font-weight:400;
+	color: rgba(0, 0, 0, 0.80);
+}
+.auto-container{
+	position:static;
+	max-width:1200px;
+	padding:0px 15px;
+	margin:0 auto;
+}
+.numberChange{
+	width: 100%;
 }

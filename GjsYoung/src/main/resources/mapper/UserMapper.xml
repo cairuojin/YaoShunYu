@@ -220,4 +220,7 @@
     from user
     where nickname = #{nickname,jdbcType=VARCHAR}
   </select>
+  <select id="countAll" resultType="java.lang.Integer">
+    select count(id) FROM user
+  </select>
 </mapper>

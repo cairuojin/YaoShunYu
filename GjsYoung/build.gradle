@@ -57,9 +57,14 @@ dependencies {
 	compile("org.webjars:sockjs-client:1.0.2")
 	compile("org.webjars:stomp-websocket:2.3.3")
 
+	//dom4j
     compile group: 'dom4j', name: 'dom4j', version: '1.1'
+	//邮箱
 	compile group: 'com.sun.mail', name: 'javax.mail', version: '1.6.0'
+	//分页
 	compile group: 'com.github.pagehelper', name: 'pagehelper', version: '4.2.1'
+	//rabbitmq
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-amqp', version: '1.5.8.RELEASE'
 
 	//谷歌开源Thumbnailator
 	compile group:'net.coobird',name:'thumbnailator',version:'0.4.8'

@@ -7,8 +7,8 @@
     <meta name="baidu-site-verification" content="P3fhdeuY8D"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="keywords" content="尧舜禹_yaoteach_历史知识_博古通今_开卷有益_鸾翔凤集_觥筹交错_历史知识学习平台">
-    <meta name="description" content="尧舜禹-优秀历史学习平台_yaoteach_历史知识_博古通今_开卷有益_鸾翔凤集_觥筹交错_历史知识学习平台尽在尧舜禹。我们更专业、更了解您的需求。">
-    <title>尧舜禹-优秀历史学习平台-指导未来,启发智能,感动人心</title>
+    <meta name="description" content="吾生也有涯,而知也无涯。胸中有历史能让人“思接千载,视通万里”。尧舜禹-优秀历史学习平台，秉承传统精髓 丰富文化内涵尽在尧舜禹。我们更专业、更了解您的需求。">
+    <title>尧舜禹(yaoteach)-优秀历史学习平台_启发智能,感动人心</title>
     <link rel="icon" href="images/main/icon.jpg" type="image/x-icon">
     <link rel="stylesheet" href="css/index.css"/>
     <link rel="stylesheet" href="css/animate.css"/>

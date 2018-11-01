@@ -33,7 +33,6 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 }
 .header-search {
     padding: 0px 0px;
-    width: 900px;
 }
 .header-search form .input-select {
     margin-right: -10px;
@@ -46,7 +45,6 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
     height: 40px;
 }
 .input::-webkit-input-placeholder {
-    /* placeholder颜色  */
     color: #6F7188;!important;
     margin-left: 10px;
 }

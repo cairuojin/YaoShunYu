@@ -42,5 +42,9 @@ dependencies {
 	// 添加 alibaba 的 fastjson 依赖
 	compile group: 'com.alibaba', name: 'fastjson', version: '1.2.36'
 
+	//分页
 	compile group: 'com.github.pagehelper', name: 'pagehelper', version: '4.2.1'
+
+	//rabbitmq
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-amqp', version: '1.5.8.RELEASE'
 }

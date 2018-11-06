@@ -45,6 +45,5 @@ spring:
 # rabbitMQ config  发送短信队列
 LogQueue: LogQueue
 
-
 #mq开关 0开1关
 MQStatus: 0

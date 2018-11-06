@@ -11,8 +11,6 @@ import javax.servlet.http.HttpServletRequest;
  * 获得用户IP
  */
 public class GetIpAddress {
-    private static Logger logger = LoggerFactory.getLogger(GetIpAddress.class);
-
     private static final String[] IP_HEADER_CANDIDATES = {
             "x-real-ip",
             "X-Forwarded-For",

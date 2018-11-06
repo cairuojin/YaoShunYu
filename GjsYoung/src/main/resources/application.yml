@@ -16,11 +16,11 @@ logging:
 
 
 spring:
-#    profiles:
-#       active: dev
+    profiles:
+       active: dev
 
-    datasource:
-        url: jdbc:mysql://111.230.196.33:3306/gjsyoung?useSSL=false
+    datasource:     # linux地址
+        url: jdbc:mysql://119.29.203.133:3306/gjsyoung?useSSL=false
         username: cairuojin
         password: 44052100
         driver-class-name: com.mysql.jdbc.Driver
@@ -51,7 +51,7 @@ spring:
 #      time-zone: GMT+8 #必须加上时区，否则会显示会晚于数据库8小时
 
     rabbitmq:
-        host: 119.29.203.133
+        host: 111.230.196.33    #windows rabbitmq
         port: 5672
         username: cairuojin
         password: 44052100
@@ -66,7 +66,7 @@ mybatis:
 #文件上传地址
 UploadPath: 'C:\sofeware\GjsYoung\WEB-INF\classes\static\'
 
-#配置默认路径
+#上传的最大大小
 server.max-http-header-size: 10000000
 
 #Face++ 密钥私钥

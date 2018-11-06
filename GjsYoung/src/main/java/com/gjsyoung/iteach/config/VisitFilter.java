@@ -1,19 +1,18 @@
 package com.gjsyoung.iteach.config;
 
+import com.alibaba.fastjson.JSON;
 import com.gjsyoung.iteach.mq.Sender;
-import com.gjsyoung.iteach.service.VisitLogService;
 import com.gjsyoung.iteach.utils.GetIpAddress;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.stereotype.Component;
-import sun.net.www.content.image.png;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * create by cairuojin on 2018/10/31
@@ -25,9 +24,6 @@ public class VisitFilter implements Filter {
 
     @Autowired
     Sender sender;
-
-    @Autowired
-    VisitLogService visitLogService;
 
     //本地开关
     @Value("${Local}")
@@ -48,14 +44,17 @@ public class VisitFilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         if (request.getRequestURI().indexOf(".") == -1) {//拒绝静态请求
-//            HttpSession session = request.getSession();
-//            String clientIpAddress = GetIpAddress.getClientIpAddress(request);
-//            if(clientIpAddress != null && "0".equals(local)){
-//            visitLogService.recordVisitLog(clientIpAddress, session.getId());       //访问记录
-//            }
+            String sessionId = request.getSession().getId();
+            String clientIpAddress = GetIpAddress.getClientIpAddress(request);
+            if(clientIpAddress != null && "0".equals(local)){
+                Map data = new HashMap();
+                data.put("clientIpAddress",clientIpAddress);
+                data.put("sessionId",sessionId);
+                String dataJson = JSON.toJSONString(data);
+                sender.sendLog(dataJson);
+            }
         }
         filterChain.doFilter(request, servletResponse);
-
     }
 
     @Override

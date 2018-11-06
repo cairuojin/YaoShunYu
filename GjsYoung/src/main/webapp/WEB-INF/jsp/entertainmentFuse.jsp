@@ -4,17 +4,19 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>尧舜禹-觥筹交错</title>
+    <title>尧舜禹_觥筹交错</title>
+    <meta name="keywords" content="尧舜禹_yaoteach_觥筹交错_让历史学习乐在其中，尧舜禹-优秀历史学习平台，秉承传统精髓 丰富文化内涵尽在尧舜禹。">
+    <meta name="description" content="吾生也有涯,而知也无涯。胸中有历史能让人“思接千载,视通万里”。尧舜禹-优秀历史学习平台，秉承传统精髓 丰富文化内涵尽在尧舜禹。我们更专业、更了解您的需求。">
     <link rel="icon" href="images/main/icon.jpg" type="image/x-icon">
 
 
-    <link rel="stylesheet" href="/css/swiper.min.css">
-    <link href="/css/entertainmentDetail.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link href="css/entertainmentDetail.css" rel="stylesheet" type="text/css" media="all">
 </head>
 <body>
 
     <jsp:include page="header.jsp"></jsp:include>
-    <div class="banner-bottom pt-section" data-name="about" id="ptsection-two"style="background-size:cover;background-image: url(/images/main/entertainment2.png);height: 400px;border:1px solid #CCCCCC;">
+    <div class="banner-bottom pt-section" data-name="about" id="ptsection-two"style="background-size:cover;background-image: url(images/main/entertainment2.png);height: 400px;border:1px solid #CCCCCC;">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
@@ -29,7 +31,7 @@
         </div>
     </div>
 
-    <div style="background: url(/images/main/background.jpg)">
+    <div style="background: url(images/main/background.jpg)">
         <div style="height: 360px;margin:0 auto;text-align: center;width:80%;background-color: rgba(192,209,255,0.20)" class="wow animate fadeInUp">
             <div class="clearfix"></div>
             <h3 style=" margin-top: 80px">功能简介</h3>
@@ -133,19 +135,9 @@
 
 
     <jsp:include page="footer.jsp"></jsp:include>
-    <script src="/js/jquery-2.2.4.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/jquery.singlePageNav.min.js"></script>
-    <script src="/js/jquery.fancybox.pack.js"></script>
-    <script src="/js/owl.carousel.min.js"></script>
-    <script src="/js/jquery.easing.min.js"></script>
-    <script src="/js/jquery.slitslider.js"></script>
-    <script src="/js/jquery.ba-cond.min.js"></script>
-    <script src="/js/wow.min.js"></script>
-    <script src="/js/main.js"></script>
 
     <!-- 图片切换 -->
-    <script src="/js/swiper.min.js"></script>
+    <script src="js/swiper.min.js"></script>
     <script>
         var galleryThumbs = new Swiper('.gallery-thumbs', {
             spaceBetween: 10,

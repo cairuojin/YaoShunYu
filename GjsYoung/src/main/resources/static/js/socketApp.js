@@ -19,7 +19,7 @@ $(function () {
     $("form").on('submit', function (e) {
         e.preventDefault();
     });
-    var socket = new SockJS('/gs-guide-websocket');
+    var socket = new SockJS('http://cairuojin.club:80/gs-guide-websocket');
     stompClient = Stomp.over(socket);
     stompClient.connect({}, function (frame) {
         stompClient.subscribe('/topic/greetings', function (message) { //订阅 广播模式

@@ -4,11 +4,10 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>尧舜禹-个人中心</title>
+    <title>尧舜禹(yaoteach)</title>
+    <meta name="keywords" content="尧舜禹_yaoteach_让历史学习乐在其中，尧舜禹-优秀历史学习平台，秉承传统精髓 丰富文化内涵尽在尧舜禹。">
+    <meta name="description" content="吾生也有涯,而知也无涯。胸中有历史能让人“思接千载,视通万里”。尧舜禹-优秀历史学习平台，秉承传统精髓 丰富文化内涵尽在尧舜禹。我们更专业、更了解您的需求。">
     <link rel="icon" href="images/main/icon.jpg" type="image/x-icon">
-
-
-
     <link href="css/personal.css" rel="stylesheet" type="text/css" media="all"/>
     <link rel="stylesheet" href="css/login.css" />
 </head>
@@ -210,7 +209,6 @@
 
         <jsp:include page="footer.jsp"></jsp:include>
     </body>
-<script type="text/javascript" src="/js/jquery-2.2.4.min.js"></script>
 <script src="js/supersized.3.2.7.min.js"></script>
 <script src="js/supersized-init.js"></script>
 <script src="js/jquery.validate.min.js?var1.14.0"></script>

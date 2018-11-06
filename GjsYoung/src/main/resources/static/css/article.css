@@ -65,15 +65,6 @@ p {
     color: #5094F2;
 }
 
-.banner {
-    background: url(../images/banner.jpg) no-repeat center top;
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    -ms-background-size: cover;
-    min-height: 556px;
-}
 
 .banner-info {
     padding: 2em 0em;
@@ -101,15 +92,6 @@ p {
     margin: 1em 0em;
 }
 
-i.tick {
-    width: 25px;
-    height: 25px;
-    background: url(../images/img-sprite.png) no-repeat -23px -202px;
-    display: inline-block;
-    position: absolute;
-    left: 26px;
-    top: 157px;
-}
 
 a.sign {
     background: #5094F2;
@@ -189,16 +171,6 @@ ul.wmuSliderPagination {
     margin-bottom: 10px;
 }
 
-.wmuSliderPrev, .wmuSliderNext {
-    position: absolute;
-    width: 27px;
-    height: 62px;
-    text-indent: -9999px;
-    background: url(../images/img-sprite.png) no-repeat;
-    top: 35%;
-    z-index: 2;
-    cursor: pointer;
-}
 
 .wmuSliderNext {
     background-position: -117px -203px;
@@ -227,27 +199,6 @@ ul.wmuSliderPagination {
 
 .cak {
     text-align: center;
-}
-
-i.pencil {
-    width: 190px;
-    height: 190px;
-    background: url(../images/img-sprite.png) no-repeat -1px 1px;
-    display: inline-block;
-}
-
-i.device {
-    width: 190px;
-    height: 190px;
-    background: url(../images/img-sprite.png) no-repeat -200px 1px;
-    display: inline-block;
-}
-
-i.cake {
-    width: 190px;
-    height: 190px;
-    background: url(../images/img-sprite.png) no-repeat -400px 1px;
-    display: inline-block;
 }
 
 .contrary h3 {
@@ -408,9 +359,6 @@ i.cake {
     padding: 0;
 }
 
-/*-- contact-section --*/
-/*-- service-section --*/
-/*-- portfolio --*/
 .service-section {
     margin: 2em 0em 4em;
     position: relative;
@@ -542,24 +490,6 @@ div#portfoliolist {
     visibility: hidden;
     width: 0;
     height: 0;
-}
-
-.zoom-icon {
-    position: absolute;
-    opacity: 0;
-    filter: alpha(opacity=0);
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=0)";
-    display: block;
-    left: 0;
-    top: -152px;
-    width: 290px;
-    height: 219px;
-    background: url(../images/zoom.png) center center no-repeat;
-    cursor: pointer;
-    transition: all .2s ease-in-out;
-    -webkit-transition: all .2s ease-in-out;
-    -moz-transition: all .2s ease-in-out;
-    -o-transition: all .2s ease-in-out;
 }
 
 .grid_box .zoom-icon {
@@ -967,16 +897,6 @@ a.more:hover {
         right: 22px;
     }
 
-    .head-nav span.menu:before {
-        content: url(../images/menu.png);
-        color: #FFF;
-        font-size: 1.3em;
-        text-transform: uppercase;
-        text-align: right;
-        padding: 0.5em 0.3em;
-        cursor: pointer;
-    }
-
     .head-nav ul li a {
         text-decoration: none;
         font-size: 1.2em;
@@ -1067,19 +987,6 @@ a.more:hover {
         background-size: 400px;
     }
 
-    i.device {
-        width: 117px;
-        height: 117px;
-        background: url(../images/img-sprite.png) no-repeat -122px 1px;
-        background-size: 400px;
-    }
-
-    i.cake {
-        width: 117px;
-        height: 117px;
-        background: url(../images/img-sprite.png) no-repeat -246px 1px;
-        background-size: 400px;
-    }
 }
 
 /*--responsive design--*/
@@ -1224,19 +1131,6 @@ a.more:hover {
         background-size: 310px;
     }
 
-    i.cake {
-        width: 92px;
-        height: 92px;
-        background: url(../images/img-sprite.png) no-repeat -190px 1px;
-        background-size: 310px;
-    }
-
-    i.device {
-        width: 92px;
-        height: 92px;
-        background: url(../images/img-sprite.png) no-repeat -94px 1px;
-        background-size: 310px;
-    }
 }
 
 /*--responsive design--*/
@@ -1387,19 +1281,6 @@ a.more:hover {
         background-size: 250px;
     }
 
-    i.device {
-        width: 73px;
-        height: 73px;
-        background: url(../images/img-sprite.png) no-repeat -76px 1px;
-        background-size: 250px;
-    }
-
-    i.cake {
-        width: 73px;
-        height: 73px;
-        background: url(../images/img-sprite.png) no-repeat -154px 1px;
-        background-size: 250px;
-    }
 
 }
 
@@ -1440,11 +1321,6 @@ a.more:hover {
     padding-right: 22px;
 }
 
-aside {
-    display: table-cell;
-    width: 300px;
-    background: url("images/sidebar_background.png") top left;
-}
 
 .articleInfo {
     margin-top: 4em;

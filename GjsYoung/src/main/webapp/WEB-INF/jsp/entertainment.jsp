@@ -4,17 +4,19 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>尧舜禹-觥筹交错</title>
+    <title>尧舜禹_觥筹交错</title>
+    <meta name="keywords" content="尧舜禹_yaoteach_觥筹交错_让历史学习乐在其中，尧舜禹-优秀历史学习平台，秉承传统精髓 丰富文化内涵尽在尧舜禹。">
+    <meta name="description" content="吾生也有涯,而知也无涯。胸中有历史能让人“思接千载,视通万里”。尧舜禹-优秀历史学习平台，秉承传统精髓 丰富文化内涵尽在尧舜禹。我们更专业、更了解您的需求。">
     <link rel="icon" href="images/main/icon.jpg" type="image/x-icon">
 
-    <link href="/css/entertainment.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/entertainment.css" rel="stylesheet" type="text/css" media="all">
 
 
 </head>
 <body>
 
     <jsp:include page="header.jsp"></jsp:include>
-    <div class="banner-bottom pt-section" data-name="about" id="ptsection-two"style="background-size:cover;background-image: url(/images/main/entertainment1.png);height: 500px;border:1px solid #CCCCCC;">
+    <div class="banner-bottom pt-section" data-name="about" id="ptsection-two"style="background-size:cover;background-image: url(images/main/entertainment1.png);height: 500px;border:1px solid #CCCCCC;">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
@@ -30,7 +32,7 @@
         </div>
     </div>
 
-    <div style="background: url(/images/main/background.jpg)">
+    <div style="background: url(images/main/background.jpg)">
         <div class="singleEntertainment  wow animate fadeInUp">
             <div class="col-grid-left">
                 <h3>淡泊名利，动静相济，劳逸适度。——华佗</h3>
@@ -54,13 +56,13 @@
                 <div class="col-md-6 col-grid-1">
                     <div class="col-1 bottom">
                         <div class="col-1-top">
-                            <a href="/entertainmentFuse"><img src="images/entertainment/module2.png" class="img-responsive"></a>
+                            <a href="${pageContext.request.contextPath }/entertainmentFuse"><img src="images/entertainment/module2.png" class="img-responsive"></a>
                         </div>
                         <div class="col-1-bottom">
                             <div class="info-text">
                                 <h3 style="color: white">粉墨登场</h3>
                                 <p>想体验一把穿越到古代穿上古装的感觉吗？快来体验这个功能，通过人脸融合技术，让你过一把瘾。</p>
-                                <a href="/entertainmentFuse"><button class="singleButton">立即体验</button></a>
+                                <a href="${pageContext.request.contextPath }/entertainmentFuse"><button class="singleButton">立即体验</button></a>
                             </div>
                         </div>
                     </div>
@@ -101,15 +103,5 @@
     </div>
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script><script>!function(i){localStorage.setItem("designId",i);if(!localStorage.getItem("referenceTime")){localStorage.setItem("referenceTime",new Date().getTime());} var w = document.createElement("script");w.src="http://nps.survetchina.com/js/webSurvey.js";document.body.appendChild(w);}("acb28c519619449187813c16d0901d3b");</script>
     <jsp:include page="footer.jsp"></jsp:include>
-    <script src="/js/jquery-2.2.4.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/jquery.singlePageNav.min.js"></script>
-    <script src="/js/jquery.fancybox.pack.js"></script>
-    <script src="/js/owl.carousel.min.js"></script>
-    <script src="/js/jquery.easing.min.js"></script>
-    <script src="/js/jquery.slitslider.js"></script>
-    <script src="/js/jquery.ba-cond.min.js"></script>
-    <script src="/js/wow.min.js"></script>
-    <script src="/js/main.js"></script>
 </body>
 </html>

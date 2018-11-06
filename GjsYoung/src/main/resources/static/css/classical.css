@@ -1853,9 +1853,6 @@ ul.wmuSliderPagination {
     -webkit-animation-name: fadeInUp;
     animation-name: fadeInUp;
 }
-.classicalBackgroound{
-    background-image: url(/images/2.png); background-repeat: no-repeat; background-position-x:right; background-position-y:bottom;
-}
 @font-face{
     font-family:'myFirstFont';
     src:url('../font/hanyi.ttf') format('truetype');

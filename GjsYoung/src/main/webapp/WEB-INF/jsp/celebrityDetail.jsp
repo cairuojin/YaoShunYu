@@ -4,13 +4,15 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>尧舜禹-博古通今</title>
+    <title>尧舜禹_博古通今</title>
+    <meta name="keywords" content="尧舜禹_yaoteach_博古通今_古人知识百科大全，尧舜禹-优秀历史学习平台，秉承传统精髓 丰富文化内涵尽在尧舜禹。">
+    <meta name="description" content="吾生也有涯,而知也无涯。胸中有历史能让人“思接千载,视通万里”。尧舜禹-优秀历史学习平台，秉承传统精髓 丰富文化内涵尽在尧舜禹。我们更专业、更了解您的需求。">
     <link rel="icon" href="images/main/icon.jpg" type="image/x-icon">
-
-    <link href="/css/characterDetail.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="css/characterDetail.css" rel="stylesheet" type="text/css" media="all"/>
 
 </head>
-<body style="background: url(/images/main/background.jpg)">
+
+<body style="background: url(images/main/background.jpg)">
 
     <jsp:include page="header.jsp"></jsp:include>
 
@@ -23,7 +25,7 @@
                             <h1 class="celebrityTitle">${celebrity.name}</h1>
                         </div>
                         <div style="padding-top: 30px;">
-                            <img src="/${celebrity.bigimage}" class="detailImg"/>
+                            <img src="${celebrity.bigimage}" class="detailImg"/>
                         </div>
                         <div>
                             <div class="col-sm-6 col-md-3 detailLeftTxt">
@@ -72,7 +74,7 @@
 
     <div class="features">
     <div class="container">
-        <h3 class="head" style="font-family: 微软雅黑"><span aria-hidden="true"><img src="/images/main/menu.png"></span>${celebrity.evaluate}</h3>
+        <h3 class="head" style="font-family: 微软雅黑"><span aria-hidden="true"><img src="images/main/menu.png"></span>${celebrity.evaluate}</h3>
         <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
             <ul id="myTab" class="nav nav-tabs" role="tablist">
                 <li role="presentation" class="active" style="margin-left: 20px"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">${celebrityDetails.get(0).title}</a></li>
@@ -87,7 +89,7 @@
                             ${celebrityDetails.get(0).content}
                         </div>
                         <div class="col-md-5 w3agile_tab_right w3agile_tab_right1">
-                            <img src="/${celebrityDetails.get(0).image}" alt=" " class="img-responsive" />
+                            <img src="${celebrityDetails.get(0).image}" alt=" " class="img-responsive" />
                         </div>
                         <div class="clearfix"> </div>
                     </div>
@@ -97,7 +99,7 @@
                         <div role="tabpanel" class="tab-pane fade" id="Feature${i.index}" aria-labelledby="Feature${i.index}-tab">
                             <div class="w3agile_tabs">
                                 <div class="col-md-5 w3agile_tab_right w3agile_tab_right2">
-                                    <img src="/${single.image}" alt=" " class="img-responsive" />
+                                    <img src="${single.image}" alt=" " class="img-responsive" />
                                 </div>
                                 <div class="col-md-7 w3agile_tab_left">
                                     ${single.content}
@@ -113,7 +115,7 @@
                                     ${single.content}
                                 </div>
                                 <div class="col-md-5 w3agile_tab_right w3agile_tab_right1">
-                                    <img src="/${single.image}" alt=" " class="img-responsive" />
+                                    <img src="${single.image}" alt=" " class="img-responsive" />
                                 </div>
                                 <div class="clearfix"> </div>
                             </div>
@@ -125,15 +127,5 @@
     </div>
 </div>
     <jsp:include page="footer.jsp"></jsp:include>
-    <script src="/js/jquery-2.2.4.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/jquery.singlePageNav.min.js"></script>
-    <script src="/js/jquery.fancybox.pack.js"></script>
-    <script src="/js/owl.carousel.min.js"></script>
-    <script src="/js/jquery.easing.min.js"></script>
-    <script src="/js/jquery.slitslider.js"></script>
-    <script src="/js/jquery.ba-cond.min.js"></script>
-    <script src="/js/wow.min.js"></script>
-    <script src="/js/main.js"></script>
 </body>
 </html>

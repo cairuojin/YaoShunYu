@@ -4,7 +4,9 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>尧舜禹</title>
+    <title>尧舜禹(yaoteach)</title>
+    <meta name="keywords" content="尧舜禹_yaoteach_让历史学习乐在其中，尧舜禹-优秀历史学习平台，秉承传统精髓 丰富文化内涵尽在尧舜禹。">
+    <meta name="description" content="吾生也有涯,而知也无涯。胸中有历史能让人“思接千载,视通万里”。尧舜禹-优秀历史学习平台，秉承传统精髓 丰富文化内涵尽在尧舜禹。我们更专业、更了解您的需求。">
     <link rel="icon" href="images/main/icon.jpg" type="image/x-icon">
 
     <link rel="stylesheet" href="css/login.css" />

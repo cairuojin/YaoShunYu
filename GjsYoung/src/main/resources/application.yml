@@ -16,8 +16,8 @@ logging:
 
 
 spring:
-    profiles:
-       active: dev
+#    profiles:
+#       active: dev
 
     datasource:
         url: jdbc:mysql://111.230.196.33:3306/gjsyoung?useSSL=false
@@ -27,10 +27,10 @@ spring:
 
 
     redis:
-      database: 1 # Redis数据库索引（默认为0）
-      host: localhost #192.168.8.128 #localhost # Redis服务器地址
-      port: 6379 # Redis服务器连接端口
-      password: # Redis服务器连接密码（默认为空）
+      database: 0 # Redis数据库索引（默认为0）
+      host: 119.29.203.133
+      port: 6379
+      password: 44052100
 
 #    resources:
 #          static-locations: /WEB-INF/static/
@@ -51,7 +51,7 @@ spring:
 #      time-zone: GMT+8 #必须加上时区，否则会显示会晚于数据库8小时
 
     rabbitmq:
-        host: 111.230.196.33
+        host: 119.29.203.133
         port: 5672
         username: cairuojin
         password: 44052100

@@ -4,12 +4,14 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>尧舜禹-博古通今</title>
+    <title>尧舜禹_博古通今</title>
+    <meta name="keywords" content="尧舜禹_yaoteach_博古通今_古人知识百科大全，尧舜禹-优秀历史学习平台，秉承传统精髓 丰富文化内涵尽在尧舜禹。">
+    <meta name="description" content="吾生也有涯,而知也无涯。胸中有历史能让人“思接千载,视通万里”。尧舜禹-优秀历史学习平台，秉承传统精髓 丰富文化内涵尽在尧舜禹。我们更专业、更了解您的需求。">
     <link rel="icon" href="images/main/icon.jpg" type="image/x-icon">
 
     <link href="css/character.css" rel="stylesheet" type="text/css" media="all"/>
-    <link rel="stylesheet" href="/css/author.css">
-    <link href="css/personal.css" rel="stylesheet" type="text/css"/>
+    <link href="css/author.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="css/personal.css" rel="stylesheet" type="text/css" media="all"/>
     <link href="css/article.css" rel="stylesheet" type="text/css" media="all"/>
 
 </head>
@@ -72,7 +74,7 @@
                     <a href="javascript:void(0);" class="DynasttOne" style="color: black">${dynasty.name}</a>
                 </c:if>
                 <c:if test="${nowDynasty != dynasty.id}">
-                    <a href="/celebrityDynasty?dynasty=${dynasty.id}" class="DynasttOne">${dynasty.name}</a>
+                    <a href="${pageContext.request.contextPath }/celebrityDynasty?dynasty=${dynasty.id}" class="DynasttOne">${dynasty.name}</a>
                 </c:if>
             </c:forEach>
         </div>
@@ -102,7 +104,7 @@
                                 </div>
                             </div>
                             <div class="learn_more" onclick="goToDetail(${celebritie.id})">
-                                <a data-target="#service_details" data-toggle="modal" href="/celebrityDetail/${celebritie.id}"><h4 style="background: rgb(234, 155, 86);">了解更多</h4></a>
+                                <a data-target="#service_details" data-toggle="modal" href="${pageContext.request.contextPath }/celebrityDetail?celebrityId="+${celebritie.id}><h4 style="background: rgb(234, 155, 86);">了解更多</h4></a>
                             </div>
                         </div>
                     </div>
@@ -186,22 +188,11 @@
 
     <jsp:include page="footer.jsp"></jsp:include>
 
-    <script src="/js/jquery-2.2.4.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/jquery.singlePageNav.min.js"></script>
-    <script src="/js/jquery.fancybox.pack.js"></script>
-    <script src="/js/owl.carousel.min.js"></script>
-    <script src="/js/jquery.easing.min.js"></script>
-    <script src="/js/jquery.slitslider.js"></script>
-    <script src="/js/jquery.ba-cond.min.js"></script>
-    <script src="/js/wow.min.js"></script>
-    <script src="/js/main.js"></script>
-
 
 </body>
 <script>
-    function goToDetail(id) {
-        window.location.href = "/celebrityDetail/"+id;
+    function goToDetail(ids) {
+        window.location.href = "${pageContext.request.contextPath }/celebrityDetail?celebrityId="+ids;
     }
 </script>
 </html>

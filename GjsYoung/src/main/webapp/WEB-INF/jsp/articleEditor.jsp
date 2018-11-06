@@ -16,7 +16,7 @@
     <button id="btn">获取html</button>
 
     <script src="js/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="/wangEditor-3.1.1/release/wangEditor.min.js"></script>
+    <script type="text/javascript" src="wangEditor-3.1.1/release/wangEditor.min.js"></script>
     <script type="text/javascript">
         var E = window.wangEditor;
         var editor = new E('#centent');

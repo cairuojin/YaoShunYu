@@ -6,10 +6,10 @@
     <meta name="baidu-site-verification" content="BgzDAdNjvW"/>
     <meta name="baidu-site-verification" content="P3fhdeuY8D"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="icon" href="images/main/icon.jpg" type="image/x-icon">
+    <title>尧舜禹(yaoteach)-优秀历史学习平台_启发智能,感动人心</title>
     <meta name="keywords" content="尧舜禹_yaoteach_历史知识_博古通今_开卷有益_鸾翔凤集_觥筹交错_历史知识学习平台">
     <meta name="description" content="吾生也有涯,而知也无涯。胸中有历史能让人“思接千载,视通万里”。尧舜禹-优秀历史学习平台，秉承传统精髓 丰富文化内涵尽在尧舜禹。我们更专业、更了解您的需求。">
-    <title>尧舜禹(yaoteach)-优秀历史学习平台_启发智能,感动人心</title>
-    <link rel="icon" href="images/main/icon.jpg" type="image/x-icon">
     <link rel="stylesheet" href="css/index.css"/>
     <link rel="stylesheet" href="css/animate.css"/>
 </head>
@@ -69,7 +69,7 @@
 
 
 <!-- 树叶部分 -->
-<div class="welcome" style="background-image: url(/images/main/leaves2.png);width: 100%">
+<div class="welcome" style="background-image: url(images/main/leaves2.png);width: 100%">
     <div class="container wow animate fadeInUp">
         <div class="welcome-info">
             <div class="bigTitle">尧舜禹</div>
@@ -80,7 +80,7 @@
 </div>
 
 
-<div style="background: url(/images/main/background.jpg);border-top: 1px solid #d4faff">
+<div style="background: url(images/main/background.jpg);border-top: 1px solid #d4faff">
     <div style="background-color: rgba(49, 204, 251, 0.05);width: 100%;height: 720px;text-align: center">
         <div class="clearfix" style="height: 50px"></div>
         <div class="container">
@@ -305,18 +305,6 @@
 
 
 <jsp:include page="footer.jsp"></jsp:include>
-<script src="/js/jquery-2.2.4.min.js"></script>
-<script src="js/wow.js"></script>
-<script src="js/script.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/jquery.singlePageNav.min.js"></script>
-<script src="/js/jquery.fancybox.pack.js"></script>
-<script src="/js/owl.carousel.min.js"></script>
-<script src="/js/jquery.easing.min.js"></script>
-<script src="/js/jquery.slitslider.js"></script>
-<script src="/js/jquery.ba-cond.min.js"></script>
-<script src="/js/wow.min.js"></script>
-<script src="/js/main.js"></script>
 </body>
 <script>
     $(function () {

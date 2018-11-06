@@ -4,19 +4,18 @@
 <head>
     <title>头导航</title>
 
-
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
-    <link href="/css/style.css" rel='stylesheet' type='text/css' />
-    <link href="/css/animate.css" rel="stylesheet" type="text/css" media="all">
-    <link rel="stylesheet" href="/css/jquery.fancybox.css">
-    <link rel="stylesheet" href="/css/main.css">
+    <link href="css/style.css" rel='stylesheet' type='text/css' />
+    <link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" href="css/jquery.fancybox.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <header id="navigation" class="navbar-inverse navbar-fixed-top animated-header">
     <div class="container">
         <div class="navbar-header">
             <h1 class="navbar-brand">
-                <h1 class="navbar-brand"><a href="/index"><img src="/images/main/Logo.png" class="logoHeaderImg"></a></h1>
+                <h1 class="navbar-brand"><a href="${pageContext.request.contextPath }/index"><img src="images/main/Logo.png" class="logoHeaderImg"></a></h1>
             </h1>
             <h1 class="navbar-brand">
                 <a href="#body" style="font-size: 24px;">读万卷书行万里路</a>

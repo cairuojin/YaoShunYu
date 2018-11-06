@@ -5,17 +5,18 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>尧舜禹-开卷有益</title>
-    <link rel="icon" href="images/main/icon.jpg" type="image/x-icon">
-
-    <link href="/css/classical.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="/css/character.css" rel="stylesheet" type="text/css" media="all"/>
+    <title>尧舜禹_开卷有益</title>
+    <meta name="keywords" content="尧舜禹_yaoteach_开卷有益_文言能力提升，尧舜禹-优秀历史学习平台，秉承传统精髓 丰富文化内涵尽在尧舜禹。">
+    <meta name="description" content="吾生也有涯,而知也无涯。胸中有历史能让人“思接千载,视通万里”。尧舜禹-优秀历史学习平台，秉承传统精髓 丰富文化内涵尽在尧舜禹。我们更专业、更了解您的需求。">
+    <link rel="icon" href="/images/main/icon.jpg" type="image/x-icon">
+    <link href="css/classical.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="css/character.css" rel="stylesheet" type="text/css" media="all"/>
 </head>
 <body>
 
     <jsp:include page="header.jsp"></jsp:include>
 
-    <div class="banner-bottom pt-section" data-name="about" id="ptsection-two"style="background-image: url(/images/main/leaves2.png);width: 100%;border:1px solid #CCCCCC;">
+    <div class="banner-bottom pt-section" data-name="about" id="ptsection-two"style="background-image: url(images/main/leaves2.png);width: 100%;border:1px solid #CCCCCC;">
         <div class="container">
             <div class="about-grids">
                 <div class="about-grid1">
@@ -46,16 +47,16 @@
         </div>
     </div>
 
-    <div style="background: url(/images/main/background.jpg)">
+    <div style="background: url(images/main/background.jpg)">
         <div class="clearfix"></div>
         <c:if test="${classicals.size() > 5}">
-            <div style="background-image: url(/images/main/leaves1.png); background-repeat: no-repeat; background-position-x:left; background-position-y:bottom;background-size: 30%">
+            <div style="background-image: url(images/main/leaves1.png); background-repeat: no-repeat; background-position-x:left; background-position-y:bottom;background-size: 30%">
                 <div>
                     <c:forEach items="${classicals}" var="classical" varStatus="i" begin="0" end="5">
                         <div class="classicalItem wow animate fadeInUp">
                             <div class="clearfix"></div>
                             <div class="classicalTitle">
-                                <a href="/classicalDetail/${classical.id}">${classical.title}</a>
+                                <a href="${pageContext.request.contextPath }/classicalDetail?classicalId=${classical.id}">${classical.title}</a>
                             </div>
                             <div style="text-align: center;margin-top: 10px">
                                 更新时间：
@@ -70,7 +71,7 @@
                                     ${classical.introduce}
                             </div>
                             <div class="classicalSearch">
-                                <a href="/classicalDetail/${classical.id}">查看该文章</a>
+                                <a href="${pageContext.request.contextPath }/classicalDetail?classicalId=${classical.id}">查看该文章</a>
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -83,7 +84,7 @@
                         <div class="classicalItem wow animate fadeInUp">
                             <div class="clearfix"></div>
                             <div class="classicalTitle">
-                                <a>${classical.title}</a>
+                                <a href="${pageContext.request.contextPath }/classicalDetail?classicalId=${classical.id}">${classical.title}</a>
                             </div>
                             <div style="text-align: center;margin-top: 10px">
                                 更新时间：
@@ -98,7 +99,7 @@
                                     ${classical.introduce}
                             </div>
                             <div class="classicalSearch">
-                                <a>查看该文章</a>
+                                <a href="${pageContext.request.contextPath }/classicalDetail?classicalId=${classical.id}">查看该文章</a>
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -108,13 +109,13 @@
             </div>
         </c:if>
         <c:if test="${classicals.size() <= 5}">
-            <div style="background-image: url(/images/2.png); background-repeat: no-repeat; background-position-x:right; background-position-y:bottom;">
+            <div style="background-image: url(images/2.png); background-repeat: no-repeat; background-position-x:right; background-position-y:bottom;">
                 <div style="margin-bottom: 30px;">
                     <c:forEach items="${classicals}" var="classical">
                         <div class="classicalItem wow animate fadeInUp">
                             <div class="clearfix"></div>
                             <div class="classicalTitle">
-                                <a href="/classicalDetail/${classical.id}">${classical.title}</a>
+                                <a href="${pageContext.request.contextPath }/classicalDetail?classicalId=${classical.id}">${classical.title}</a>
                             </div>
                             <div style="text-align: center;margin-top: 10px">
                                 更新时间：
@@ -129,7 +130,7 @@
                                     ${classical.introduce}
                             </div>
                             <div class="classicalSearch">
-                                <a href="/classicalDetail/${classical.id}">查看该文章</a>
+                                <a href="${pageContext.request.contextPath }/classicalDetail?classicalId=${classical.id}">查看该文章</a>
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -210,15 +211,5 @@
             </div></div>
     </div>
     <jsp:include page="footer.jsp"></jsp:include>
-    <script src="/js/jquery-2.2.4.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/jquery.singlePageNav.min.js"></script>
-    <script src="/js/jquery.fancybox.pack.js"></script>
-    <script src="/js/owl.carousel.min.js"></script>
-    <script src="/js/jquery.easing.min.js"></script>
-    <script src="/js/jquery.slitslider.js"></script>
-    <script src="/js/jquery.ba-cond.min.js"></script>
-    <script src="/js/wow.min.js"></script>
-    <script src="/js/main.js"></script>
 </body>
 </html>

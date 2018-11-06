@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
@@ -62,6 +63,26 @@ public class CelebrityController {
         session.setAttribute("pageHeader",1);//头
         return nav;
     }
+
+    /**
+     * 跳转到人物详细界面
+     * @param celebrityId  人物id
+     * @return
+     */
+    @RequestMapping("/celebrityDetail")
+    public ModelAndView celebrityDetail(int celebrityId){
+        ModelAndView nav = new ModelAndView("celebrityDetail");
+        Celebrity celebrity = celebrityMapper.selectByPrimaryKey(celebrityId);
+        if(celebrity == null)
+            return commonUtils.throwException("找不到该人物哦！");
+        List<CelebrityDetail> celebrityDetails = celebrityDetailMapper.selectByCelebrityId(celebrityId);
+        if(celebrityDetails == null || celebrityDetails.size() == 0)
+            return commonUtils.throwException("找不到该人物信息哦！");
+        nav.addObject("celebrity",celebrity);
+        nav.addObject("celebrityDetails",celebrityDetails);
+        return nav;
+    }
+
 
     /**
      * 朝代筛选
@@ -115,22 +136,5 @@ public class CelebrityController {
     }
 
 
-    /**
-     * 跳转到人物详细界面
-     * @param celebrityId  人物id
-     * @return
-     */
-    @RequestMapping("/celebrityDetail/{id}")
-    public ModelAndView celebrityDetail(@PathVariable("id") int celebrityId){
-        ModelAndView nav = new ModelAndView("celebrityDetail");
-        Celebrity celebrity = celebrityMapper.selectByPrimaryKey(celebrityId);
-        if(celebrity == null)
-            return commonUtils.throwException("找不到该人物哦！");
-        List<CelebrityDetail> celebrityDetails = celebrityDetailMapper.selectByCelebrityId(celebrityId);
-        if(celebrityDetails == null || celebrityDetails.size() == 0)
-            return commonUtils.throwException("找不到该人物信息哦！");
-        nav.addObject("celebrity",celebrity);
-        nav.addObject("celebrityDetails",celebrityDetails);
-        return nav;
-    }
+
 }

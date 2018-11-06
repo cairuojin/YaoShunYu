@@ -5,7 +5,9 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>尧舜禹-鸾翔凤集</title>
+    <title>尧舜禹_鸾翔凤集</title>
+    <meta name="keywords" content="尧舜禹_yaoteach_鸾翔凤集_优秀历史文章分享，尧舜禹-优秀历史学习平台，秉承传统精髓 丰富文化内涵尽在尧舜禹。">
+    <meta name="description" content="吾生也有涯,而知也无涯。胸中有历史能让人“思接千载,视通万里”。尧舜禹-优秀历史学习平台，秉承传统精髓 丰富文化内涵尽在尧舜禹。我们更专业、更了解您的需求。">
     <link rel="icon" href="images/main/icon.jpg" type="image/x-icon">
     <link href="css/article.css" rel="stylesheet" type="text/css" media="all"/>
 </head>
@@ -70,11 +72,11 @@
                             <img src="${article.image}" class="img-responsive articleImg" alt="" />
                         </div>
                         <div class="col-md-5 product-left1">
-                            <h4><a href="${pageContext.request.contextPath }/articleDetail/${article.id}">${article.title}</a></h4>
+                            <h4><a href="${pageContext.request.contextPath }/articleDetail?articleId=${article.id}">${article.title}</a></h4>
                             <p>${article.introduction}</p>
                         </div>
                         <div class="col-md-4 product-left1">
-                            <a class="more" href="${pageContext.request.contextPath }/articleDetail/${article.id}">进入</a>
+                            <a class="more" href="${pageContext.request.contextPath }/articleDetail?articleId=${article.id}">进入</a>
                         </div>
                         <div class="clearfix"> </div>
                         <div class="updateDiv">
@@ -174,10 +176,10 @@
                 <c:forEach items="${authors }" var="author">
                     <div class="product-right1 wow animate fadeInUp">
                         <div class="pro">
-                            <img src="${author.image}" class="articleImg" alt="${pageContext.request.contextPath }/author/${author.id}" />
+                            <img src="${author.image}" class="articleImg" alt="${pageContext.request.contextPath }/author?authorId=${author.id}" />
                         </div>
                         <div class="data">
-                            <h5><a href="${pageContext.request.contextPath }/author/${author.id}">${author.nickname}</a></h5>
+                            <h5><a href="${pageContext.request.contextPath }/author?authorId=${author.id}">${author.nickname}</a></h5>
                             <h6>${author.moodTxt}</h6>
                             <div class="follow" align="center"><h6><a href="#" style="line-height:30px;color: white">关注他</a></h6></div>
                         </div>
@@ -188,16 +190,6 @@
     </div>
 
     <jsp:include page="footer.jsp"></jsp:include>
-    <script src="/js/jquery-2.2.4.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/jquery.singlePageNav.min.js"></script>
-    <script src="/js/jquery.fancybox.pack.js"></script>
-    <script src="/js/owl.carousel.min.js"></script>
-    <script src="/js/jquery.easing.min.js"></script>
-    <script src="/js/jquery.slitslider.js"></script>
-    <script src="/js/jquery.ba-cond.min.js"></script>
-    <script src="/js/wow.min.js"></script>
-    <script src="/js/main.js"></script>
 </body>
 
 </html>

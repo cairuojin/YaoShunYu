@@ -48,12 +48,11 @@ public class VisitFilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         if (request.getRequestURI().indexOf(".") == -1) {//拒绝静态请求
-            HttpSession session = request.getSession();
-            String clientIpAddress = GetIpAddress.getClientIpAddress(request);
-            if(clientIpAddress != null && "0".equals(local)){
-            visitLogService.recordVisitLog(clientIpAddress, session.getId());       //访问记录
-            }
-
+//            HttpSession session = request.getSession();
+//            String clientIpAddress = GetIpAddress.getClientIpAddress(request);
+//            if(clientIpAddress != null && "0".equals(local)){
+//            visitLogService.recordVisitLog(clientIpAddress, session.getId());       //访问记录
+//            }
         }
         filterChain.doFilter(request, servletResponse);
 

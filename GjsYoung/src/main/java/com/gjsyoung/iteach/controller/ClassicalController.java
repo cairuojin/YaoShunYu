@@ -60,8 +60,8 @@ public class ClassicalController {
      * @param classicalId
      * @return
      */
-    @RequestMapping("/classicalDetail/{id}")
-    public ModelAndView celebrityEdit(@PathVariable("id") int classicalId){
+    @RequestMapping("/classicalDetail")
+    public ModelAndView celebrityEdit(int classicalId){
         //todo 保留历史记录，文章点击量
         Classical classical = classicalMapper.selectByPrimaryKey(classicalId);
         if(classical == null)

@@ -5,13 +5,13 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>尧舜禹-鸾翔凤集</title>
+    <title>尧舜禹_鸾翔凤集</title>
+    <meta name="keywords" content="尧舜禹_yaoteach_鸾翔凤集_优秀历史文章分享，尧舜禹-优秀历史学习平台，秉承传统精髓 丰富文化内涵尽在尧舜禹。">
+    <meta name="description" content="吾生也有涯,而知也无涯。胸中有历史能让人“思接千载,视通万里”。尧舜禹-优秀历史学习平台，秉承传统精髓 丰富文化内涵尽在尧舜禹。我们更专业、更了解您的需求。">
     <link rel="icon" href="images/main/icon.jpg" type="image/x-icon">
-    <link rel="stylesheet" href="/css/author.css">
-
-    <script type="text/javascript" src="/js/jquery-2.2.4.min.js"></script>
+    <link rel="stylesheet" href="css/author.css">
 </head>
-<body class="dark_version" style="background: url(/images/main/background.jpg)">
+<body class="dark_version" style="background: url(images/main/background.jpg)">
 <jsp:include page="header.jsp"></jsp:include>
 <div id="preloader"></div>
     <section class="our_advisor_area section_padding_100" id="advisor">
@@ -21,7 +21,7 @@
                     <div class="single_advisor_profile">
                         <div class="single_advisor_slide">
                             <div class="advisor_thumb">
-                                <img src="/${author.image}">
+                                <img src="${author.image}">
                             </div>
                             <div class="single_advisor_details_info">
                                 <h4>${author.nickname}</h4>
@@ -57,7 +57,7 @@
         </div>
     </section>
 
-    <section class="faq_question_area section_padding_60" data-stellar-background-ratio="0.6" style="background-image: url(/images/author/yizhongtian1.jpg)"    >
+    <section class="faq_question_area section_padding_60" data-stellar-background-ratio="0.6" style="background-image: url(images/author/yizhongtian1.jpg)"    >
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
@@ -129,19 +129,7 @@
         </div>
     </section>
 
-
-
 <jsp:include page="footer.jsp"></jsp:include>
-<script src="/js/jquery-2.2.4.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/jquery.singlePageNav.min.js"></script>
-<script src="/js/jquery.fancybox.pack.js"></script>
-<script src="/js/owl.carousel.min.js"></script>
-<script src="/js/jquery.easing.min.js"></script>
-<script src="/js/jquery.slitslider.js"></script>
-<script src="/js/jquery.ba-cond.min.js"></script>
-<script src="/js/wow.min.js"></script>
-<script src="/js/main.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>

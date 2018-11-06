@@ -59,8 +59,8 @@ public class AtricleController {
      * @param authorId
      * @return
      */
-    @RequestMapping("/author/{id}")
-    public ModelAndView author(@PathVariable("id") int authorId){
+    @RequestMapping("/author")
+    public ModelAndView author(int authorId){
         Author author = authorMapper.selectByAuthorId(authorId);
         if(author == null)
             return commonUtils.throwException("找不到该作者资料呢，请您重新确认！");
@@ -130,8 +130,8 @@ public class AtricleController {
      * @param articleId
      * @return
      */
-    @RequestMapping("/articleDetail/{id}")
-    public ModelAndView articleDetail(@PathVariable("id") int articleId){
+    @RequestMapping("/articleDetail")
+    public ModelAndView articleDetail(int articleId){
         //保留历史记录到cookies
 //        Cookie[] cookies = request.getCookies();
 //        Cookie HistoryCookie = null;

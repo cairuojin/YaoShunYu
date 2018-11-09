@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gjsyoung.iteach.mapper.AuthorMapper">
+  <resultMap id="BaseResultMap" type="com.gjsyoung.iteach.domain.Author">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="authorid" jdbcType="INTEGER" property="authorid" />
+    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+    <result column="moodTxt" jdbcType="VARCHAR" property="moodtxt" />
+    <result column="introduction" jdbcType="VARCHAR" property="introduction" />
+    <result column="comment" jdbcType="VARCHAR" property="comment" />
+    <result column="image" jdbcType="VARCHAR" property="image" />
+    <result column="background" jdbcType="VARCHAR" property="background" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, authorid, nickname, moodTxt, introduction, comment, image, background
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from author
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from author
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.gjsyoung.iteach.domain.Author">
+    insert into author (id, authorid, nickname, 
+      moodTxt, introduction, comment, 
+      image, background)
+    values (#{id,jdbcType=INTEGER}, #{authorid,jdbcType=INTEGER}, #{nickname,jdbcType=VARCHAR}, 
+      #{moodtxt,jdbcType=VARCHAR}, #{introduction,jdbcType=VARCHAR}, #{comment,jdbcType=VARCHAR}, 
+      #{image,jdbcType=VARCHAR}, #{background,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.gjsyoung.iteach.domain.Author">
+    insert into author
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="authorid != null">
+        authorid,
+      </if>
+      <if test="nickname != null">
+        nickname,
+      </if>
+      <if test="moodtxt != null">
+        moodTxt,
+      </if>
+      <if test="introduction != null">
+        introduction,
+      </if>
+      <if test="comment != null">
+        comment,
+      </if>
+      <if test="image != null">
+        image,
+      </if>
+      <if test="background != null">
+        background,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="authorid != null">
+        #{authorid,jdbcType=INTEGER},
+      </if>
+      <if test="nickname != null">
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="moodtxt != null">
+        #{moodtxt,jdbcType=VARCHAR},
+      </if>
+      <if test="introduction != null">
+        #{introduction,jdbcType=VARCHAR},
+      </if>
+      <if test="comment != null">
+        #{comment,jdbcType=VARCHAR},
+      </if>
+      <if test="image != null">
+        #{image,jdbcType=VARCHAR},
+      </if>
+      <if test="background != null">
+        #{background,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gjsyoung.iteach.domain.Author">
+    update author
+    <set>
+      <if test="authorid != null">
+        authorid = #{authorid,jdbcType=INTEGER},
+      </if>
+      <if test="nickname != null">
+        nickname = #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="moodtxt != null">
+        moodTxt = #{moodtxt,jdbcType=VARCHAR},
+      </if>
+      <if test="introduction != null">
+        introduction = #{introduction,jdbcType=VARCHAR},
+      </if>
+      <if test="comment != null">
+        comment = #{comment,jdbcType=VARCHAR},
+      </if>
+      <if test="image != null">
+        image = #{image,jdbcType=VARCHAR},
+      </if>
+      <if test="background != null">
+        background = #{background,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gjsyoung.iteach.domain.Author">
+    update author
+    set authorid = #{authorid,jdbcType=INTEGER},
+      nickname = #{nickname,jdbcType=VARCHAR},
+      moodTxt = #{moodtxt,jdbcType=VARCHAR},
+      introduction = #{introduction,jdbcType=VARCHAR},
+      comment = #{comment,jdbcType=VARCHAR},
+      image = #{image,jdbcType=VARCHAR},
+      background = #{background,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByAuthorId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from author
+    where AuthorId = #{AuthorId,jdbcType=INTEGER}
+  </select>
+
+  <select id="selectByNickname" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from author
+    where nickname = #{nickname,jdbcType=INTEGER}
+  </select>
+  <select id="countAll" resultType="java.lang.Integer">
+    select count(id) FROM author
+  </select>
+
+</mapper>

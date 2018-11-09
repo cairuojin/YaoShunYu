@@ -18,7 +18,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     }
 
     @Override
-    public void registerStompEndpoints(StompEndpointRegistry registry) {
-        registry.addEndpoint("http://cairuojin.club:80/gs-guide-websocket").setAllowedOrigins("*").addInterceptors(new HttpSessionHandshakeInterceptor()).withSockJS();
+    public void registerStompEndpoints(StompEndpointRegistry registry) {           //在本机建立socketJS，远程可以通过这个来访问，添加权限为*任何人
+        registry.addEndpoint("/gs-guide-websocket").setAllowedOrigins("*").addInterceptors(new HttpSessionHandshakeInterceptor()).withSockJS();
     }
 }

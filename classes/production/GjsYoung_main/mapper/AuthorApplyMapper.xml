@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gjsyoung.iteach.mapper.AuthorApplyMapper">
+  <resultMap id="BaseResultMap" type="com.gjsyoung.iteach.domain.AuthorApply">
+    <id column="userId" jdbcType="INTEGER" property="userid" />
+    <result column="realName" jdbcType="VARCHAR" property="realname" />
+    <result column="IDcardNum" jdbcType="VARCHAR" property="idcardnum" />
+    <result column="authorIntroduction" jdbcType="VARCHAR" property="authorintroduction" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="lastUpdateTime" jdbcType="TIMESTAMP" property="lastupdatetime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    userId, realName, IDcardNum, authorIntroduction, status, createTime, lastUpdateTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from authorapply
+    where userId = #{userid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from authorapply
+    where userId = #{userid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.gjsyoung.iteach.domain.AuthorApply">
+    insert into authorapply (userId, realName, IDcardNum, 
+      authorIntroduction, status, createTime, 
+      lastUpdateTime)
+    values (#{userid,jdbcType=INTEGER}, #{realname,jdbcType=VARCHAR}, #{idcardnum,jdbcType=VARCHAR}, 
+      #{authorintroduction,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{createtime,jdbcType=TIMESTAMP}, 
+      #{lastupdatetime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.gjsyoung.iteach.domain.AuthorApply">
+    insert into authorapply
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userid != null">
+        userId,
+      </if>
+      <if test="realname != null">
+        realName,
+      </if>
+      <if test="idcardnum != null">
+        IDcardNum,
+      </if>
+      <if test="authorintroduction != null">
+        authorIntroduction,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="lastupdatetime != null">
+        lastUpdateTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="realname != null">
+        #{realname,jdbcType=VARCHAR},
+      </if>
+      <if test="idcardnum != null">
+        #{idcardnum,jdbcType=VARCHAR},
+      </if>
+      <if test="authorintroduction != null">
+        #{authorintroduction,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastupdatetime != null">
+        #{lastupdatetime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gjsyoung.iteach.domain.AuthorApply">
+    update authorapply
+    <set>
+      <if test="realname != null">
+        realName = #{realname,jdbcType=VARCHAR},
+      </if>
+      <if test="idcardnum != null">
+        IDcardNum = #{idcardnum,jdbcType=VARCHAR},
+      </if>
+      <if test="authorintroduction != null">
+        authorIntroduction = #{authorintroduction,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastupdatetime != null">
+        lastUpdateTime = #{lastupdatetime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where userId = #{userid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gjsyoung.iteach.domain.AuthorApply">
+    update authorapply
+    set realName = #{realname,jdbcType=VARCHAR},
+      IDcardNum = #{idcardnum,jdbcType=VARCHAR},
+      authorIntroduction = #{authorintroduction,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      createTime = #{createtime,jdbcType=TIMESTAMP},
+      lastUpdateTime = #{lastupdatetime,jdbcType=TIMESTAMP}
+    where userId = #{userid,jdbcType=INTEGER}
+  </update>
+</mapper>

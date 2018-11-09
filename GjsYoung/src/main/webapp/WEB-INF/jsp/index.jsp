@@ -69,7 +69,7 @@
 
 
 <!-- 树叶部分 -->
-<div class="welcome" style="background-image: url(images/main/leaves2.png);width: 100%">
+<div class="welcome" style="background-size: 500px;background-image: url(images/main/leaves2.png);width: 100%">
     <div class="container wow animate fadeInUp">
         <div class="welcome-info">
             <div class="bigTitle">尧舜禹</div>
@@ -195,7 +195,7 @@
                         <a href="${pageContext.request.contextPath }/celebrityDetail/1">了解更多</a>
                     </div>
                     <div class="col-md-4 work-grid-middle" style="padding-right: 0;padding-left: 0;">
-                        <a href="#"><img src="images/index/caocao.png"></a>
+                        <a href="#"><img src="images/index/caocao.jpg"></a>
                     </div>
                     <div class="col-md-4 work-grid-left" style="border-radius: 0px 50px 0px 0px;">
                         <h5>朱元璋</h5>
@@ -206,7 +206,7 @@
                 </div>
                 <div class="work-grids-top">
                     <div class="col-md-4 work-grid-middle" style="padding-right: 0;padding-left: 0;">
-                        <img src="images/index/qinshihuang.png">
+                        <img src="images/index/qinshihuang.jpg">
                     </div>
                     <div class="col-md-4 work-grid-left">
                         <h5>李世民</h5>
@@ -215,7 +215,7 @@
                         <a href="${pageContext.request.contextPath }/celebrityDetail/40">了解更多</a>
                     </div>
                     <div class="col-md-4 work-grid-middle" style="padding-right:0;padding-left:0;">
-                        <img src="images/index/lishiming.png">
+                        <img src="images/index/lishiming.jpg">
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -227,7 +227,7 @@
                     </div>
                     <div class="col-md-4 work-grid-middle"
                          style="padding-right: 0;padding-left: 0;border-radius: 0px 0px 100px 0px;">
-                        <img src="images/index/wuzetian.png" style="height: 348px;">
+                        <img src="images/index/wuzetian.jpg" style="height: 348px;">
                     </div>
                     <div class="col-md-4 work-grid-left" style="border-radius: 0px 0px 50px 0px;">
                         <h5>武则天</h5>
@@ -251,7 +251,7 @@
         <div class="container">
             <div class="news-grids">
                 <div class="col-md-6 news-grid">
-                    <img src="images/index/yongantuogu.png" class="articleImg"/>
+                    <img src="images/index/yongantuogu.jpg" class="articleImg"/>
                     <div class="news-grid-info">
                         <a href="${pageContext.request.contextPath }/articleDetail/103">永安托孤</a>
                         <p class="date">2018-09-11 16:26:08</p>
@@ -261,7 +261,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 news-grid">
-                    <img src="images/index/libaihedufu.png" class="articleImg"/>
+                    <img src="images/index/libaihedufu.jpg" class="articleImg"/>
                     <div class="news-grid-info">
                         <a href="${pageContext.request.contextPath }/articleDetail/20">李白与杜甫：唐诗里的兄弟之情</a>
                         <p class="date">2018-09-11 16:42:31</p>

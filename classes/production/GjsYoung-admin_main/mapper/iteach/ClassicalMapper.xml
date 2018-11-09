@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gjsyoung.admin.mapper.iteach.ClassicalMapper">
+  <resultMap id="BaseResultMap" type="com.gjsyoung.admin.domain.iteach.Classical">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="introduce" jdbcType="VARCHAR" property="introduce" />
+    <result column="difficultyId" jdbcType="INTEGER" property="difficultyid" />
+    <result column="image" jdbcType="VARCHAR" property="image" />
+    <result column="simpleNum" jdbcType="INTEGER" property="simplenum" />
+    <result column="hardNum" jdbcType="INTEGER" property="hardnum" />
+    <result column="translation" jdbcType="VARCHAR" property="translation" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="lastUpdateTime" jdbcType="TIMESTAMP" property="lastupdatetime" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, title, content, introduce, difficultyId, image, simpleNum, hardNum, translation, 
+    createTime, lastUpdateTime, status
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from classical
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from classical
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.gjsyoung.admin.domain.iteach.Classical">
+    insert into classical (id, title, content, 
+      introduce, difficultyId, image, 
+      simpleNum, hardNum, translation, 
+      createTime, lastUpdateTime, status
+      )
+    values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
+      #{introduce,jdbcType=VARCHAR}, #{difficultyid,jdbcType=INTEGER}, #{image,jdbcType=VARCHAR}, 
+      #{simplenum,jdbcType=INTEGER}, #{hardnum,jdbcType=INTEGER}, #{translation,jdbcType=VARCHAR}, 
+      #{createtime,jdbcType=TIMESTAMP}, #{lastupdatetime,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.gjsyoung.admin.domain.iteach.Classical">
+    insert into classical
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="title != null">
+        title,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="introduce != null">
+        introduce,
+      </if>
+      <if test="difficultyid != null">
+        difficultyId,
+      </if>
+      <if test="image != null">
+        image,
+      </if>
+      <if test="simplenum != null">
+        simpleNum,
+      </if>
+      <if test="hardnum != null">
+        hardNum,
+      </if>
+      <if test="translation != null">
+        translation,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="lastupdatetime != null">
+        lastUpdateTime,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="introduce != null">
+        #{introduce,jdbcType=VARCHAR},
+      </if>
+      <if test="difficultyid != null">
+        #{difficultyid,jdbcType=INTEGER},
+      </if>
+      <if test="image != null">
+        #{image,jdbcType=VARCHAR},
+      </if>
+      <if test="simplenum != null">
+        #{simplenum,jdbcType=INTEGER},
+      </if>
+      <if test="hardnum != null">
+        #{hardnum,jdbcType=INTEGER},
+      </if>
+      <if test="translation != null">
+        #{translation,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastupdatetime != null">
+        #{lastupdatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gjsyoung.admin.domain.iteach.Classical">
+    update classical
+    <set>
+      <if test="title != null">
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="introduce != null">
+        introduce = #{introduce,jdbcType=VARCHAR},
+      </if>
+      <if test="difficultyid != null">
+        difficultyId = #{difficultyid,jdbcType=INTEGER},
+      </if>
+      <if test="image != null">
+        image = #{image,jdbcType=VARCHAR},
+      </if>
+      <if test="simplenum != null">
+        simpleNum = #{simplenum,jdbcType=INTEGER},
+      </if>
+      <if test="hardnum != null">
+        hardNum = #{hardnum,jdbcType=INTEGER},
+      </if>
+      <if test="translation != null">
+        translation = #{translation,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastupdatetime != null">
+        lastUpdateTime = #{lastupdatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gjsyoung.admin.domain.iteach.Classical">
+    update classical
+    set title = #{title,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      introduce = #{introduce,jdbcType=VARCHAR},
+      difficultyId = #{difficultyid,jdbcType=INTEGER},
+      image = #{image,jdbcType=VARCHAR},
+      simpleNum = #{simplenum,jdbcType=INTEGER},
+      hardNum = #{hardnum,jdbcType=INTEGER},
+      translation = #{translation,jdbcType=VARCHAR},
+      createTime = #{createtime,jdbcType=TIMESTAMP},
+      lastUpdateTime = #{lastupdatetime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="selectAll" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from classical
+  </select>
+
+  <select id="countAll" resultType="java.lang.Integer">
+        select count(id) FROM classical
+  </select>
+</mapper>

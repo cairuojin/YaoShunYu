@@ -53,14 +53,7 @@ public class GetGeographicOfIp {
             return resultMap;
         }
         JSONObject realData = jsonObject.getJSONObject("data");
-//        VisitLog visitLog = new VisitLog();
-//        visitLog.setCountry( new String(realData.getString("country").getBytes(),"UTF-8") );//获取国籍信息
-//        visitLog.setArea( new String(realData.getString("area").getBytes(),"UTF-8"));//获取地区
-//        visitLog.setRegion( new String(realData.getString("region").getBytes(),"UTF-8"));//获取省份
-//        visitLog.setCity( new String(realData.getString("city").getBytes(),"UTF-8"));//获取城市
-//        visitLog.setCounty( new String(realData.getString("county").getBytes(),"UTF-8"));//获取县市
-//        visitLog.setIsp( new String(realData.getString("isp").getBytes(),"UTF-8"));//获取运营商
-//        resultMap.put("visitLog", visitLog);
+        resultMap.put("realData",realData);
         resultMap.put("status", true);
         return resultMap;
     }

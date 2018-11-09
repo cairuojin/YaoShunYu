@@ -5,7 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
 @Mapper
-@Repository
+@Repository("adminUserMapper")
 public interface UserMapper {
     int deleteByPrimaryKey(Integer id);
 

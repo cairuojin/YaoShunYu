@@ -1,0 +1,49 @@
+server:
+    port: 9001
+
+    servlet:
+      jsp:
+        init-parameters:
+          development: true
+
+logging:
+        com.example.WChatMonkey: DEBUG
+
+
+spring:
+#    profiles:
+#       active: dev
+
+    iteach:
+      datasource:
+        jdbc-url: jdbc:mysql://119.29.203.133:3306/gjsyoung?useSSL=false
+        username: cairuojin
+        password: 44052100
+        driver-class-name: com.mysql.jdbc.Driver
+
+    admin:
+      datasource:
+        jdbc-url: jdbc:mysql://119.29.203.133:3306/gjsyoung-admin?useSSL=false
+        username: cairuojin
+        password: 44052100
+        driver-class-name: com.mysql.jdbc.Driver
+
+    mvc:
+        static:
+          static-path-pattern: /**
+        view:
+            prefix: /WEB-INF/jsp/
+            suffix: .jsp
+
+    rabbitmq:
+        host: 111.230.196.33 #windows rabbitmq
+        port: 5672
+        username: cairuojin
+        password: 44052100
+        publisher-confirms: true
+
+# rabbitMQ config  发送短信队列
+LogQueue: LogQueue
+
+#mq开关 0开1关
+MQStatus: 0

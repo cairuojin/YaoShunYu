@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gjsyoung.admin.mapper.iteach.CelebrityDetailMapper">
+  <resultMap id="BaseResultMap" type="com.gjsyoung.admin.domain.iteach.CelebrityDetail">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="celebrityId" jdbcType="INTEGER" property="celebrityid" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="image" jdbcType="VARCHAR" property="image" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.gjsyoung.admin.domain.iteach.CelebrityDetail">
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, celebrityId, title, image
+  </sql>
+  <sql id="Blob_Column_List">
+    content
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from celebritydetail
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from celebritydetail
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.gjsyoung.admin.domain.iteach.CelebrityDetail">
+    insert into celebritydetail (id, celebrityId, title, 
+      image, content)
+    values (#{id,jdbcType=INTEGER}, #{celebrityid,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, 
+      #{image,jdbcType=VARCHAR}, #{content,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.gjsyoung.admin.domain.iteach.CelebrityDetail">
+    insert into celebritydetail
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="celebrityid != null">
+        celebrityId,
+      </if>
+      <if test="title != null">
+        title,
+      </if>
+      <if test="image != null">
+        image,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="celebrityid != null">
+        #{celebrityid,jdbcType=INTEGER},
+      </if>
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="image != null">
+        #{image,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gjsyoung.admin.domain.iteach.CelebrityDetail">
+    update celebritydetail
+    <set>
+      <if test="celebrityid != null">
+        celebrityId = #{celebrityid,jdbcType=INTEGER},
+      </if>
+      <if test="title != null">
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="image != null">
+        image = #{image,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.gjsyoung.admin.domain.iteach.CelebrityDetail">
+    update celebritydetail
+    set celebrityId = #{celebrityid,jdbcType=INTEGER},
+      title = #{title,jdbcType=VARCHAR},
+      image = #{image,jdbcType=VARCHAR},
+      content = #{content,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gjsyoung.admin.domain.iteach.CelebrityDetail">
+    update celebritydetail
+    set celebrityId = #{celebrityid,jdbcType=INTEGER},
+      title = #{title,jdbcType=VARCHAR},
+      image = #{image,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByCelebrityId" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from celebritydetail
+    where celebrityId = #{celebrityId,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="ResultMapWithBLOBs">
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from celebritydetail
+  </select>
+</mapper>

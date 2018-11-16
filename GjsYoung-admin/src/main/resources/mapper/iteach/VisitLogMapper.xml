@@ -181,6 +181,10 @@
     where sid = #{sid,jdbcType=VARCHAR}
   </select>
 
+  <select id="selectAll" resultMap="BaseResultMap">
+    select * FROM visitlog order by visitTime desc
+  </select>
+
   <select id="countAll" resultType="java.lang.Integer">
     select count(id) FROM visitlog
   </select>
@@ -201,14 +205,84 @@
 
   <select id="countHourByDay"  parameterType="java.util.Date"  resultType="java.util.Map">
     SELECT HOUR(visitTime) as hour , count(id) as count FROM visitlog
-    WHERE TO_DAYS(visitTime) = TO_DAYS(#{date,jdbcType=TIMESTAMP})
+    WHERE TO_DAYS(visitTime) = TO_DAYS(#{date,jdbcType=TIMESTAMP})  /* 根据日期查该日 hour  count */
+    group by hour(visitTime);
+  </select>
+  <select id="countHourByDaySelect"  parameterType="java.util.Map"  resultType="java.util.Map">
+    SELECT HOUR(visitTime) as hour , count(id) as count FROM visitlog
+    WHERE TO_DAYS(visitTime) = TO_DAYS(#{date,jdbcType=TIMESTAMP})  /* 根据日期查该日 hour  count */
+    <if test="country != null">
+      and country=#{country}
+    </if>
+    group by hour(visitTime);
+  </select>
+  <select id="countHourByDayNotSelect"  parameterType="java.util.Map"  resultType="java.util.Map">
+    SELECT HOUR(visitTime) as hour , count(id) as count FROM visitlog
+    WHERE TO_DAYS(visitTime) = TO_DAYS(#{date,jdbcType=TIMESTAMP})  /* 根据日期查该日 hour  count */
+    <if test="country != null">
+      and country!=#{country}
+    </if>
     group by hour(visitTime);
   </select>
 
-  <!--<select id="countHourByDay"  parameterType="java.util.Date"  resultType="java.util.Map">-->
-    <!--SELECT HOUR(visitTime) , count(id) FROM visitlog-->
-    <!--WHERE DATE_SUB(CURDATE(),INTERVAL 30 DAY) &lt;= date(visitTime)-->
-    <!--group by hour(visitTime)-->
-  <!--</select>-->
+
+
+
+  <select id="avgHourLastbyDay" parameterType="java.lang.Integer" resultType="java.util.Map">
+    SELECT HOUR(visitTime) as hour, round(count(id) / #{day,jdbcType=INTEGER} ) as count FROM visitlog
+    WHERE DATE_SUB(CURDATE(),INTERVAL #{day,jdbcType=INTEGER} DAY) &lt;= date(visitTime)    /* 近多少天的  hour  count */
+    group by hour(visitTime) order by HOUR(visitTime)
+  </select>
+
+  <select id="countDaybyMonth" parameterType="java.lang.Integer" resultType="java.util.Map">
+    SELECT DATE_FORMAT( visitTime, "%d" ) as day  , COUNT( * ) as count
+	FROM gjsyoung.visitlog
+	WHERE date_format(visitTime, '%Y %m') = date_format(DATE_SUB(curdate(), INTERVAL #{month,jdbcType=INTEGER} MONTH),'%Y %m') /* 格式化本月 = visittime - 1月 */
+    group BY DATE_FORMAT( visitTime, "%d" );
+  </select>
+
+  <select id="countAllGroupByTemptime" resultType="java.util.Map">
+    select
+		count(id) as count,case
+			HOUR(visitTime)
+			 when 0 then '午夜0-4时'
+			  when 1 then '午夜0-4时'
+               when 2 then '午夜0-4时'
+                when 3 then '午夜0-4时'
+			  when 4 then '清晨4-8时'
+               when 5 then '清晨4-8时'
+                when 6 then '清晨4-8时'
+			  when 7 then '清晨4-8时'
+               when 8 then '早上8-12时'
+                when 9 then '早上8-12时'
+			  when 10 then '早上8-12时'
+               when 11 then '早上8-12时'
+                when 12 then '下午12-16时'
+			  when 13 then '下午12-16时'
+               when 14 then '下午12-16时'
+                when 15 then '下午12-16时'
+			  when 16 then '傍晚16-20时'
+               when 17 then '傍晚16-20时'
+                when 18 then '傍晚16-20时'
+			  when 19 then '傍晚16-20时'
+               when 20 then '晚上20-24时'
+                when 21 then '晚上20-24时'
+			  when 22 then '晚上20-24时'
+              when 23 then '晚上20-24时'
+        else 0
+        end as temptime
+        from visitlog group by temptime;
+  </select>
+
+  <select id="countALLChinaGroupByRegion" resultType="java.util.Map">
+    select region,count(id) as count from visitlog where country = '中国' group by region order by count desc;
+  </select>
+  <select id="countALLNotChina" resultType="java.util.Map">
+    select "海外" as region,count(id) as count from visitlog where country != '中国';
+  </select>
+
+  <select id="selectRunningDay" resultType="java.lang.Integer">
+    select to_days(max(visitTime))  - to_days(min(visitTime))  from visitlog ;
+  </select>
 
 </mapper>

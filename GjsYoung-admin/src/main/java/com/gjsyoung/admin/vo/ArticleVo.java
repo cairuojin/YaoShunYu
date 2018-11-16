@@ -1,6 +1,7 @@
 package com.gjsyoung.admin.vo;
 
-import com.gjsyoung.iteach.domain.Article;
+
+import com.gjsyoung.admin.domain.iteach.Article;
 
 /**
  * create by cairuojin on 2018/09/13

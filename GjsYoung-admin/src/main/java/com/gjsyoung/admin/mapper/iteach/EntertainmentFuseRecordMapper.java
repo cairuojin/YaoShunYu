@@ -1,6 +1,6 @@
 package com.gjsyoung.admin.mapper.iteach;
 
-import com.gjsyoung.iteach.domain.EntertainmentFuseRecord;
+import com.gjsyoung.admin.domain.iteach.EntertainmentFuseRecord;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 

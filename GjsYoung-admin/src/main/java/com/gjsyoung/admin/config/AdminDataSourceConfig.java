@@ -1,15 +1,17 @@
 package com.gjsyoung.admin.config;
 
+import com.github.pagehelper.PageHelper;
+import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
 
@@ -21,6 +23,9 @@ import javax.sql.DataSource;
 @Configuration
 @MapperScan(basePackages = {"com.gjsyoung.admin.mapper.admin"}, sqlSessionTemplateRef = "AdminSqlSessionTemplate")  //包为...下的类使用该接口，使用名称为...的sqlSeessionTemplate
 public class AdminDataSourceConfig {
+
+    @Autowired
+    PageHelper pageHelper;
 
     @Bean           //默认情况下，bean名称和方法名相同。即此时生成了adminDataSource bean
     @ConfigurationProperties(prefix = "spring.admin.datasource")   //使用前缀为...的配置
@@ -34,6 +39,11 @@ public class AdminDataSourceConfig {
         bean.setDataSource(dataSource);
         //添加XML目录
         ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
+
+        //注册分页插件
+        Interceptor[] plugins =  new Interceptor[]{pageHelper};
+        bean.setPlugins(plugins);
+
         try{
             bean.setMapperLocations(resolver.getResources("classpath:mapper/admin/*.xml"));   //可以区分mapper.xml文件夹
             return bean.getObject();

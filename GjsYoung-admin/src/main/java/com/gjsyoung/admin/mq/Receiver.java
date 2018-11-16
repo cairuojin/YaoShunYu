@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.gjsyoung.admin.mapper.iteach.VisitLogMapper;
 import com.gjsyoung.admin.utils.GetGeographicOfIp;
-import com.gjsyoung.iteach.domain.VisitLog;
+import com.gjsyoung.admin.domain.iteach.VisitLog;
 import com.rabbitmq.client.Channel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

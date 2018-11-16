@@ -1,9 +1,12 @@
 package com.gjsyoung.admin.config;
 
+import com.github.pagehelper.PageHelper;
+import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
@@ -19,6 +22,9 @@ import javax.sql.DataSource;
 @MapperScan(basePackages = {"com.gjsyoung.admin.mapper.iteach"}, sqlSessionTemplateRef = "iteachSqlSessionTemplate")
 public class IteachDataSourceConfig {
 
+    @Autowired
+    PageHelper pageHelper;
+
     @Bean
     @ConfigurationProperties(prefix = "spring.iteach.datasource")
     public DataSource iteachDataSource(){
@@ -30,6 +36,11 @@ public class IteachDataSourceConfig {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(dataSource);
         ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
+
+        //注册分页插件
+        Interceptor[] plugins =  new Interceptor[]{pageHelper};
+        bean.setPlugins(plugins);
+
         try{
             bean.setMapperLocations(resolver.getResources("classpath:mapper/iteach/*.xml"));
             return bean.getObject();

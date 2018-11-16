@@ -2,7 +2,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/fluid.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/mws.style.css" media="screen" />
 </head>
 <body>
     <div id="mws-header" class="clearfix">

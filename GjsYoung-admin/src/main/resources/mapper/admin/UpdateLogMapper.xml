@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gjsyoung.admin.mapper.admin.UpdateLogMapper">
+  <resultMap id="BaseResultMap" type="com.gjsyoung.admin.domain.admin.UpdateLog">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="updateversion" jdbcType="VARCHAR" property="updateversion" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updatetime" />
+    <result column="updatecontent" jdbcType="VARCHAR" property="updatecontent" />
+    <result column="updatePersion" jdbcType="VARCHAR" property="updatepersion" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, updateversion, updateTime, updatecontent, updatePersion
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from updatelog
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from updatelog
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.gjsyoung.admin.domain.admin.UpdateLog">
+    insert into updatelog (id, updateversion, updateTime, 
+      updatecontent, updatePersion)
+    values (#{id,jdbcType=INTEGER}, #{updateversion,jdbcType=VARCHAR}, #{updatetime,jdbcType=TIMESTAMP}, 
+      #{updatecontent,jdbcType=VARCHAR}, #{updatepersion,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.gjsyoung.admin.domain.admin.UpdateLog">
+    insert into updatelog
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="updateversion != null">
+        updateversion,
+      </if>
+      <if test="updatetime != null">
+        updateTime,
+      </if>
+      <if test="updatecontent != null">
+        updatecontent,
+      </if>
+      <if test="updatepersion != null">
+        updatePersion,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="updateversion != null">
+        #{updateversion,jdbcType=VARCHAR},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatecontent != null">
+        #{updatecontent,jdbcType=VARCHAR},
+      </if>
+      <if test="updatepersion != null">
+        #{updatepersion,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gjsyoung.admin.domain.admin.UpdateLog">
+    update updatelog
+    <set>
+      <if test="updateversion != null">
+        updateversion = #{updateversion,jdbcType=VARCHAR},
+      </if>
+      <if test="updatetime != null">
+        updateTime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatecontent != null">
+        updatecontent = #{updatecontent,jdbcType=VARCHAR},
+      </if>
+      <if test="updatepersion != null">
+        updatePersion = #{updatepersion,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gjsyoung.admin.domain.admin.UpdateLog">
+    update updatelog
+    set updateversion = #{updateversion,jdbcType=VARCHAR},
+      updateTime = #{updatetime,jdbcType=TIMESTAMP},
+      updatecontent = #{updatecontent,jdbcType=VARCHAR},
+      updatePersion = #{updatepersion,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="selectOrderTimeLimit" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from updatelog
+    ORDER BY updateTime desc
+    Limit #{limit,jdbcType=INTEGER}
+  </select>
+
+</mapper>

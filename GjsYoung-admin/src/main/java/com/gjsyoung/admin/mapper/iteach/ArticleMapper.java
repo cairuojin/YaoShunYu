@@ -1,7 +1,7 @@
 package com.gjsyoung.admin.mapper.iteach;
 
-import com.gjsyoung.iteach.domain.Article;
-import com.gjsyoung.iteach.vo.ArticleVo;
+import com.gjsyoung.admin.domain.iteach.Article;
+import com.gjsyoung.admin.vo.ArticleVo;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;

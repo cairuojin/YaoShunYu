@@ -1,6 +1,8 @@
 package com.gjsyoung.admin.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.gjsyoung.admin.domain.admin.UpdateLog;
+import com.gjsyoung.admin.mapper.admin.UpdateLogMapper;
 import com.gjsyoung.admin.mapper.iteach.ArticleMapper;
 import com.gjsyoung.admin.mapper.iteach.CelebrityMapper;
 import com.gjsyoung.admin.mapper.iteach.ClassicalMapper;
@@ -36,11 +38,14 @@ public class IndexController {
     @Autowired
     VisitLogMapper visitLogMapper;
 
+    @Autowired
+    UpdateLogMapper updateLogMapper;
+
     /**
      * 管理系统首页
      * @return
      */
-    @RequestMapping({"/","/index"})
+    @RequestMapping({"/","index"})
     public ModelAndView index(){
         ModelAndView mav = new ModelAndView("index");
         //上端数据
@@ -65,19 +70,26 @@ public class IndexController {
         List<Map> yesterdayLine = visitLogMapper.countHourByDay(yesterday);
 
         StringBuffer bf1 = new StringBuffer();
-        StringBuffer bf2 = new StringBuffer();
-        for(int i = 0; i < 24; i++){
-            bf1.append(  "[" + i + "," + todayMap.get(i) + "] ,");
+        for(Map map : todayLine){
+            bf1.append(  "[" + map.get("hour") + "," + map.get("count") + "] ,");
         }
         String todayData = bf1.deleteCharAt(bf1.length() - 1).toString();
-
         mav.addObject("todayData",todayData);
-        //mav.addObject("yesterdayData",yesterdayData);
+        bf1.setLength(0);
+        for(Map map : yesterdayLine){
+            bf1.append(  "[" + map.get("hour") + "," + map.get("count") + "] ,");
+        }
+        String yesterdayData = bf1.deleteCharAt(bf1.length() - 1).toString();
+        mav.addObject("yesterdayData",yesterdayData);
 
         //近三十天平均
-
-
-
+        bf1.setLength(0);
+        List<Map> avgLine = visitLogMapper.avgHourLastbyDay(30);
+        for(Map map : avgLine){
+            bf1.append(  "[" + map.get("hour") + "," + Long.parseLong(map.get("count").toString()) + "] ,");
+        }
+        String avgData = bf1.deleteCharAt(bf1.length() - 1).toString();
+        mav.addObject("avgData",avgData);
 
         //访问概要
         mav.addObject("todayVisitNum",todayVisitNum);
@@ -89,12 +101,14 @@ public class IndexController {
         double avgMonthVisitNum = visitLogMapper.countThisMonth() * 1.0 / 30;
         mav.addObject("avgMonthVisitNum",Math.round(avgMonthVisitNum));//近30天平均
 
-
-
         //版本表
+        List<UpdateLog> updateLogs = updateLogMapper.selectOrderTimeLimit(5);
+        mav.addObject("updateLogs",updateLogs);
 
+        mav.addObject("pageHeader",0);
         return mav;
     }
+
 
 
 }

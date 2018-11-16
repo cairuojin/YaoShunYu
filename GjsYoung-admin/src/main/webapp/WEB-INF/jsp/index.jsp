@@ -1,33 +1,18 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html >
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="icon" href="images/main/icon.jpg" type="image/x-icon">
     <title>尧舜禹-后台管理系统</title>
-    <!-- Required Stylesheets -->
-    <link rel="stylesheet" type="text/css" href="css/fluid.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="css/mws.style.css" media="screen" />
 
-    <link rel="stylesheet" type="text/css" href="css/icons/icons.css" media="screen" /> <!-- 左边 -->
 
 
     <script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
 
-    <script type="text/javascript" src="plugins/jimgareaselect/jquery.imgareaselect.min.js"></script>
-    <script type="text/javascript" src="plugins/fullcalendar/fullcalendar.min.js"></script>
-    <script type="text/javascript" src="plugins/jquery.dataTables.js"></script>
-    <!--[if lt IE 9]>
-    <script type="text/javascript" src="plugins/flot/excanvas.min.js"></script>
-    <![endif]-->
     <script type="text/javascript" src="plugins/flot/jquery.flot.min.js"></script>
-    <script type="text/javascript" src="plugins/colorpicker/colorpicker.js"></script>
-    <script type="text/javascript" src="plugins/sourcerer/Sourcerer-1.2.js"></script>
-    <script type="text/javascript" src="plugins/jquery.validate.js"></script>
-    <script type="text/javascript" src="js/jquery-ui.js"></script>
-
 
 </head>
 
@@ -35,10 +20,6 @@
 
 <jsp:include page="F-header.jsp"></jsp:include>
 <div id="mws-wrapper">
-    <div id="mws-sidebar-stitch"></div>
-
-    <!-- 背景 -->
-    <div id="mws-sidebar-bg"></div>
 
     <!-- 左导航 -->
     <jsp:include page="F-left.jsp"></jsp:include>
@@ -107,6 +88,7 @@
                     <div class="mws-panel-content">
                         <div id="mws-line-chart" style="width:100%; height:215px; "></div>
                     </div>
+
                 </div>
             </div>
 
@@ -153,18 +135,17 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr class="gradeA">
-                            <td>Gecko</td>
-                            <td>Netscape 7.21</td>
-                            <td>Win 95+ / Mac OS 8.6-9.2</td>
-                            <td class="center">1.7</td>
-                        </tr>
-                        <tr class="gradeA">
-                            <td>Gecko</td>
-                            <td>Netscape 7.2</td>
-                            <td>Win 95+ / Mac OS 8.6-9.2</td>
-                            <td class="center">1.7</td>
-                        </tr>
+                        <c:forEach items="${updateLogs}" var="updateLog" >
+                            <tr class="gradeA">
+                                <td><fmt:formatDate value="${updateLog.updatetime}"
+                                                    pattern="yyyy-MM-dd HH:mm:ss"></fmt:formatDate>
+                                </td>
+                                <td>${updateLog.updateversion}</td>
+                                <td>${updateLog.updatecontent}</td>
+                                <td>${updateLog.updatepersion}</td>
+
+                            </tr>
+                        </c:forEach>
                         </tbody>
                     </table>
                 </div>
@@ -186,12 +167,13 @@
         var yesterday = [], thisday = [], avgday = [];
         thisday.push(${todayData});
         yesterday.push(${yesterdayData});
-        // avgday.push([1,3],[14, 3],[16, 4],[24, 1]);
+        avgday.push(${avgData});
         var plot = $.plot($("#mws-line-chart"),
             [
-                { data: yesterday, label: "昨日访问曲线", color: "#32c753"},
-                { data: thisday, label: "今日访问曲线", color: "#d55360" },
-                // { data: avgday, label: "平均访问曲线", color: "#45b9d5" }
+
+                { data: avgday, label: "三十天平均曲线", color: "#6ec1d5" },
+                { data: yesterday, label: "昨日访问曲线", color: "#4bc762"},
+                { data: thisday, label: "今日访问曲线", color: "#d5284a" }
             ],
             {
                 series: {

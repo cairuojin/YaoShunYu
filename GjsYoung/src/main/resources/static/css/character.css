@@ -278,7 +278,7 @@ img {
 }
 
 .section_heading > p {
-    color: #888;
+    color: #000000;
     font-family: 'Open Sans', sans-serif;
     margin-bottom: 5px;
     letter-spacing: 0.5px;
@@ -646,7 +646,6 @@ header {
     color: #D10024;
 }
 .section {
-    padding-top: 30px;
     padding-bottom: 30px;
 }
 .container:after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
@@ -673,10 +672,6 @@ header {
     width: 0;
     height: 0;
 }
-.store-pagination {
-
-    margin-left: 200px;
-}
 .store-pagination li+li {
     margin-left: 5px;
 }
@@ -698,14 +693,8 @@ header {
 }
 .store-qty {
     margin-right: 30px;
-    font-weight: 500;
-    text-transform: uppercase;
-    font-size: 12px;
+    font-size: 16px;
     margin-top: -10px;
-}
-.store-pagination {
-
-    margin-left: 200px;
 }
 .store-pagination li.active {
     background-color: #d14d6b;

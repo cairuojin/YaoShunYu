@@ -50,4 +50,7 @@ dependencies {
 
 	//rabbitmq
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-amqp', version: '1.5.8.RELEASE'
+
+//	//热部署
+//	compile group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '2.0.4.RELEASE'
 }

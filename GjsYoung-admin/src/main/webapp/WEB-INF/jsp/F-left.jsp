@@ -4,7 +4,7 @@
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="css/icons/icons.css" media="screen"/> <!-- 左边 -->
+    <link rel="stylesheet" type="text/css" href="/css/icons/icons.css" media="screen"/> <!-- 左边 -->
 
 
 </head>
@@ -24,8 +24,7 @@
     <div id="mws-navigation">
         <ul>
             <c:if test="${pageHeader == 0}">
-                <li style="background-color:#5d897e"><a href="${pageContext.request.contextPath }/index"
-                                                        class="mws-i-24 i-home">主页</a></li>
+                <li style="background-color:#5d897e"><a href="${pageContext.request.contextPath }/index"class="mws-i-24 i-home">主页</a></li>
             </c:if>
             <c:if test="${pageHeader != 0}">
                 <li><a href="${pageContext.request.contextPath }/index" class="mws-i-24 i-home">主页</a></li>
@@ -62,14 +61,26 @@
                     <li><a href="form_elements.html">文言文列表</a></li>
                 </ul>
             </li>
+
             <li>
-                <a href="#" class="mws-i-24 i-list">鸾翔凤集</a>
+                <c:if test="${pageHeader >= 6 && pageHeader< 7}">
+                    <a style="background-color:#5d897e"class="mws-i-24 i-list">鸾翔凤集</a>
+                </c:if>
+                <c:if test="${pageHeader < 6 || pageHeader>= 7}">
+                    <a class="mws-i-24 i-list">鸾翔凤集</a>
+                </c:if>
                 <ul>
-                    <li><a href="#" class="mws-i-24 i-list">文章录入</a></li>
+                    <c:if test="${pageHeader == 6.1}">
+                        <li style="background-color:rgba(93,137,126,0.61)"><a href="${pageContext.request.contextPath }/articleAdmin">文章录入</a></li>
+                    </c:if>
+                    <c:if test="${pageHeader != 6.1}">
+                        <li><a href="${pageContext.request.contextPath }/articleAdmin">文章录入</a></li>
+                    </c:if>
                     <li><a href="form_elements.html">作者录入</a></li>
                     <li><a href="form_elements.html">作者申请处理</a></li>
                 </ul>
             </li>
+
             <li>
                 <a href="#" class="mws-i-24 i-list">觥筹交错</a>
                 <ul>

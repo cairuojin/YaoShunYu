@@ -223,9 +223,6 @@
         line-height: 1.8em;
         font-size: 0.8em;
     }
-    .header {
-        height: 376px;
-    }
     .header1 {
         height: 125px;
     }
@@ -487,9 +484,6 @@
     .navbar-top {
         width: 65%;
     }
-    .header {
-        height:650px;
-    }
     .header1 {
         height: 87px;
     }
@@ -547,12 +541,6 @@
     }
     .zoom-icon1 h5 {
         font-size: 1.5em;
-    }
-    .footer {
-        padding: 4em 0;
-    }
-    .footer-bottom1 {
-        margin-top: 2em;
     }
     .map iframe {
         min-height: 300px;
@@ -627,8 +615,5 @@
     }
     .short-top h3 {
         top: 47%;
-    }
-    .header {
-        height: 694px;
     }
 }

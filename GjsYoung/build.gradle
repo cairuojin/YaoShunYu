@@ -26,9 +26,10 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
 repositories {
+	mavenLocal()        //使用本地仓库
+	mavenCentral()      //使用中央仓库
 	maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
 	maven { url 'http://repo2.maven.org/maven2/' }
-	mavenCentral()
 }
 compileJava.options.encoding="UTF-8"
 
@@ -69,4 +70,8 @@ dependencies {
 	//谷歌开源Thumbnailator
 	compile group:'net.coobird',name:'thumbnailator',version:'0.4.8'
 
+	//热部署
+	compile group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '2.0.4.RELEASE'
 }
+
+

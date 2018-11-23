@@ -67,7 +67,7 @@
                     </div>
                 </div>
 
-                <div class="col-xs-12 col-sm-8 col-sm-offset-4 col-md-6 col-md-offset-6">
+                <div class="col-xs-12 col-sm-8 col-sm-offset-5 col-md-6 col-md-offset-6">
                     <div class="faq_area">
                         <div class="accordions" id="accordion" role="tablist" aria-multiselectable="true">
 

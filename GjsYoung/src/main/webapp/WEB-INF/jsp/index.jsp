@@ -81,10 +81,11 @@
 
 
 <div style="background: url(images/main/background.jpg);border-top: 1px solid #d4faff">
-    <div style="background-color: rgba(49, 204, 251, 0.05);width: 100%;height: 720px;text-align: center">
+    <div style="background-color: rgba(49, 204, 251, 0.05);width: 100%;text-align: center">
         <div class="clearfix" style="height: 50px"></div>
         <div class="container">
             <div class="row">
+                <div style="height: 50px"></div>
                 <div class="sec-title">
                     <h2 class="wow animated bounceInLeft">核心能力</h2>
                     <p class="wow animated bounceInRight"><a>尧舜禹</a>经过精心的资料收集和技术创新，为您提供一站式历史知识获取平台。<br>只为传承中华优秀文化精华。</p>
@@ -95,7 +96,7 @@
                     <hr style="width:80%;margin:0 auto;border: 0;height: 1px;background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));">
                 </div>
                 <div class=" wow animate fadeInUp">
-                    <div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn">
+                    <div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" style="height: 340px;">
                         <div class="service-item">
                             <div class="service-icon">
                                 <i class="glyphicon glyphicon-pencil"></i>
@@ -104,7 +105,7 @@
                             <p>&nbsp;&nbsp;清晰的知识呈现，提供高效、便捷的学习渠道，丰富历史知识、提升文化内涵。</p>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.6s">
+                    <div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.6s" style="height: 340px;">
                         <div class="service-item">
                             <div class="service-icon">
                                 <i class="glyphicon glyphicon-th"></i>
@@ -113,7 +114,7 @@
                             <p>&nbsp;&nbsp;专业人员精心整理知识，仔细推敲的页面布局，考究的产品细节，三位一体，展示全面、丰富的知识给用户</p>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.3s">
+                    <div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.3s" style="height: 340px;">
                         <div class="service-item">
                             <div class="service-icon">
                                 <i class="glyphicon glyphicon-cloud "></i>
@@ -122,7 +123,7 @@
                             <p>&nbsp;&nbsp;在“互联网+”的新背景下，利用信息通信技术，让互联网与历史学习进行深度融合，创造新的发展生态。</p>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.9s">
+                    <div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.9s" style="height: 340px;">
                         <div class="service-item">
                             <div class="service-icon">
                                 <i class="glyphicon glyphicon-home"></i>
@@ -134,6 +135,7 @@
                 </div>
             </div>
         </div>
+        <div class="clearfix" style="height: 100px"></div>
     </div>
 
 
@@ -243,8 +245,8 @@
             </div>
         </div>
     </div>
-
-    <div class="news wow animate fadeInUp" style="margin-top: 140px">
+    <div style="height: 200px"></div>
+    <div class="news wow animate fadeInUp">
         <div class="bigTitle1">鸾翔凤集</div>
         <p style="font-size: 60px;width:30px;height:30px;margin: 0 auto">·</p>
         <hr style="width:80%;margin:0 auto;border: 0;height: 1px;background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));">

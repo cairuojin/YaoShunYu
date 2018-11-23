@@ -14,9 +14,7 @@
 <header id="navigation" class="navbar-inverse navbar-fixed-top animated-header">
     <div class="container">
         <div class="navbar-header">
-            <h1 class="navbar-brand">
-                <h1 class="navbar-brand"><a href="${pageContext.request.contextPath }/index"><img src="images/main/Logo.png" class="logoHeaderImg"></a></h1>
-            </h1>
+            <h1 class="navbar-brand" style="margin-left: 100px"><a href="${pageContext.request.contextPath }/index"><img src="images/main/Logo.png" class="logoHeaderImg"></a></h1>
             <h1 class="navbar-brand">
                 <a href="#body" style="font-size: 24px;">读万卷书行万里路</a>
             </h1>

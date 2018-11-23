@@ -86,7 +86,7 @@
                                     [转载]
                                 </c:if>
                                 <c:if test="${article.authorid != 1}">
-                                    作者： <a href="${pageContext.request.contextPath }/author/${article.authorid}">${article.nickname}</a>
+                                    作者： <a href="${pageContext.request.contextPath }/author?authorId=${article.authorid}">${article.nickname}</a>
                                 </c:if>
                             </div>
                         </div>
@@ -103,7 +103,6 @@
                         <div class="row">
                             <div id="store" class="col-md-9">
                                 <div class="store-filter clearfix">
-
                                         <c:choose>
                                             <c:when test="${random == 0}">
                                                 <span class="store-qty">读书患不多,思义患不明。——韩愈</span>

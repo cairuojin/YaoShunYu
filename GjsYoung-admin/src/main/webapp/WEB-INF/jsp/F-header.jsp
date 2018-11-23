@@ -2,16 +2,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="css/fluid.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="css/mws.style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/css/fluid.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/css/reset.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/css/mws.style.css" media="screen" />
 </head>
 <body>
     <div id="mws-header" class="clearfix">
 
         <div id="mws-logo-container">
             <div id="mws-logo-wrap">
-                <img src="images/main/icon.png" alt="mws admin" />
+                <img src="/images/main/icon.png" alt="mws admin" />
             </div>
         </div>
 
@@ -29,7 +29,7 @@
             <!-- 用户名 -->
             <div id="mws-user-info" class="mws-inset">
                 <div id="mws-user-photo">
-                    <img src="example/profile.jpg" alt="User Photo" />
+                    <img src="/example/profile.jpg" alt="User Photo" />
                 </div>
                 <div id="mws-user-functions">
                     <div id="mws-username">

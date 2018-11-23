@@ -19,7 +19,7 @@
 
 <jsp:include page="header.jsp"></jsp:include>
 <div id="content">
-    <div id="mainContent">
+    <div class="mainContent">
         <section>
             <article class="blogPost">
                 <header>
@@ -48,15 +48,15 @@
 
 
     <!-- 聊天室 -->
-    <div class="wow animate fadeInUp">
-        <div style="text-align: center">
+    <div class="wow animate fadeInUp mainContent">
+        <div>
             <h1>论今评古</h1>
         </div>
         <div class="interaction" style="margin-top: 30px">
-            <div id="main-content" class="container">
+            <div id="main-content" class="conta iner">
                 <div class="row">
                     <div class="col-md-12 addBorder">
-                        <table id="conversation" class="table table-striped">
+                        <table id="conversation"  style="width: 98%;margin: 0 auto;" class="table table-striped">
                             <div style="margin-top: 30px;margin-bottom: 30px">
                                 <c:if test="${empty  user}">
                                     <span class="glyphicon glyphicon-user f_left10 articleSpan"></span>
@@ -88,7 +88,7 @@
             <hr/>
             <div class="row">
                 <div class="col-md-12">
-                    <form class="form-inline" style="margin-left: 550px;margin-bottom: 30px;float: right;">
+                    <form class="form-inline" style="margin-bottom: 30px;float: right;">
                         <div class="form-group">
                             <input type="text" id="message" class="form-control" placeholder="输入消息" style="width: 300px;height:30px;margin-right: 20px;padding-left: 20px;border: 1px solid #CCCCD0">
                         </div>
@@ -96,8 +96,8 @@
                     </form>
                 </div>
             </div>
-            <hr/>
         </div>
+        <div style="height: 100px"></div>
     </div>
 </div>
 <jsp:include page="footer.jsp"></jsp:include>

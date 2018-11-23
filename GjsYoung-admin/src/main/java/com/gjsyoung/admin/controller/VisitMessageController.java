@@ -1,6 +1,7 @@
 package com.gjsyoung.admin.controller;
 
 import com.gjsyoung.admin.mapper.iteach.VisitLogMapper;
+import com.gjsyoung.admin.utils.CommonUtils;
 import com.gjsyoung.admin.utils.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,78 +30,39 @@ public class VisitMessageController {
         List<Map> todayLine = visitLogMapper.countHourByDay(new Date());
         List<Map> yesterdayLine = visitLogMapper.countHourByDay(yesterday);
         List<Map> afterYesterdayLine = visitLogMapper.countHourByDay(alterYesterday);
-        StringBuffer bf1 = new StringBuffer();
-        for(Map map : todayLine){
-            bf1.append(  "[" + map.get("hour") + "," + map.get("count") + "] ,");
-        }
-        String todayData = bf1.deleteCharAt(bf1.length() - 1).toString();
+        String todayData = CommonUtils.lineMapToString(todayLine,"hour","count");
         mav.addObject("todayData",todayData);
-
-        bf1.setLength(0);
-        for(Map map : yesterdayLine){
-            bf1.append(  "[" + map.get("hour") + "," + map.get("count") + "] ,");
-        }
-        String yesterdayData = bf1.deleteCharAt(bf1.length() - 1).toString();
+        String yesterdayData = CommonUtils.lineMapToString(yesterdayLine,"hour","count");
         mav.addObject("yesterdayData",yesterdayData);
-
-        bf1.setLength(0);
-        for(Map map : afterYesterdayLine){
-            bf1.append(  "[" + map.get("hour") + "," + map.get("count") + "] ,");
-        }
-        String afterYesterdayData = bf1.deleteCharAt(bf1.length() - 1).toString();
+        String afterYesterdayData = CommonUtils.lineMapToString(afterYesterdayLine,"hour","count");
         mav.addObject("afterYesterdayData",afterYesterdayData);
-        bf1.setLength(0);
-
 
         //平均时间段访问量
         List<Map> avg30Line = visitLogMapper.avgHourLastbyDay(30);
-        for(Map map : avg30Line){
-            bf1.append(  "[" + map.get("hour") + "," + Long.parseLong(map.get("count").toString()) + "] ,");
-        }
-        String avg30Data = bf1.deleteCharAt(bf1.length() - 1).toString();
+        String avg30Data = CommonUtils.lineMapToString(avg30Line,"hour","count");
         mav.addObject("avg30Data",avg30Data);
-        bf1.setLength(0);
         List<Map> avg7Line = visitLogMapper.avgHourLastbyDay(7);
-        for(Map map : avg7Line){
-            bf1.append(  "[" + map.get("hour") + "," + Long.parseLong(map.get("count").toString()) + "] ,");
-        }
-        String avg7Data = bf1.deleteCharAt(bf1.length() - 1).toString();
+        String avg7Data = CommonUtils.lineMapToString(avg7Line,"hour","count");
         mav.addObject("avg7Data",avg7Data);
-        bf1.setLength(0);
         List<Map> avg3Line = visitLogMapper.avgHourLastbyDay(3);
-        for(Map map : avg3Line){
-            bf1.append(  "[" + map.get("hour") + "," + Long.parseLong(map.get("count").toString()) + "] ,");
-        }
-        String avg3Data = bf1.deleteCharAt(bf1.length() - 1).toString();
+        String avg3Data = CommonUtils.lineMapToString(avg3Line,"hour","count");
         mav.addObject("avg3Data",avg3Data);
-        bf1.setLength(0);
 
 
         //月趋势
         List<Map> thisMonth = visitLogMapper.countDaybyMonth(0);
         List<Map> LastMonth = visitLogMapper.countDaybyMonth(1);
         List<Map> afterLastMonth = visitLogMapper.countDaybyMonth(2);
-        for(Map map : thisMonth){
-            bf1.append(  "[" + map.get("day") + "," + Long.parseLong(map.get("count").toString()) + "] ,");
-        }
-        String thisMonthData = bf1.deleteCharAt(bf1.length() - 1).toString();
+        String thisMonthData = CommonUtils.lineMapToString(thisMonth,"day","count");
         mav.addObject("thisMonthData",thisMonthData);
-        bf1.setLength(0);
-        for(Map map : LastMonth){
-            bf1.append(  "[" + map.get("day") + "," + Long.parseLong(map.get("count").toString()) + "] ,");
-        }
-        String LastMonthData = bf1.deleteCharAt(bf1.length() - 1).toString();
+        String LastMonthData = CommonUtils.lineMapToString(LastMonth,"day","count");
         mav.addObject("LastMonthData",LastMonthData);
-        bf1.setLength(0);
-        for(Map map : afterLastMonth){
-            bf1.append(  "[" + map.get("day") + "," + Long.parseLong(map.get("count").toString()) + "] ,");
-        }
-        String afterLastMonthData = bf1.deleteCharAt(bf1.length() - 1).toString();
+        String afterLastMonthData = CommonUtils.lineMapToString(afterLastMonth,"day","count");
         mav.addObject("afterLastMonthData",afterLastMonthData);
-        bf1.setLength(0);
 
 
         //柱图，分时间段
+        StringBuffer bf1 = new StringBuffer();
         Map yesterdayChinaMap = new HashMap();
         yesterdayChinaMap.put("date",yesterday);
         yesterdayChinaMap.put("country","中国");
@@ -144,7 +106,7 @@ public class VisitMessageController {
 
         //饼图2
         List<Map> tempTimeData = visitLogMapper.countAllGroupByTemptime();
-        mav.addObject("tempTimeData",tempTimeData);
+            mav.addObject("tempTimeData",tempTimeData);
 
         mav.addObject("pageHeader",1);
         return mav;

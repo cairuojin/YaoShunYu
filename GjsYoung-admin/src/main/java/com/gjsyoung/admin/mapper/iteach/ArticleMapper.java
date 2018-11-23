@@ -39,4 +39,6 @@ public interface ArticleMapper {
     Map queryDetailById(Integer articleId);
 
     int countAll();
+
+    List<ArticleVo> selectAll();
 }

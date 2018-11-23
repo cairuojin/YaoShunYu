@@ -8,6 +8,7 @@
     <result column="authorId" jdbcType="INTEGER" property="authorid" />
     <result column="support" jdbcType="INTEGER" property="support" />
     <result column="nonsupport" jdbcType="INTEGER" property="nonsupport" />
+    <result column="clicks" jdbcType="INTEGER" property="clicks" />
     <result column="status" jdbcType="INTEGER" property="status" />
     <result column="image" jdbcType="VARCHAR" property="image" />
     <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
@@ -23,7 +24,7 @@
 
 
   <sql id="Base_Column_List">
-    article.id, title, introduction, authorId, support, nonsupport, article.status, article.image, article.createTime,
+    article.id, title, introduction, authorId, support, nonsupport,clicks, article.status, article.image, article.createTime,
     article.lastUpdateTime
   </sql>
   <sql id="Blob_Column_List">
@@ -43,7 +44,7 @@
   </delete>
   <insert id="insert" parameterType="com.gjsyoung.admin.domain.iteach.Article">
     insert into article (id, title, introduction, 
-      authorId, support, nonsupport, 
+      authorId, support, nonsupport, clicks
       status, image, createTime, 
       lastUpdateTime, content)
     values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{introduction,jdbcType=VARCHAR}, 
@@ -71,6 +72,9 @@
       </if>
       <if test="nonsupport != null">
         nonsupport,
+      </if>
+      <if test="clicks != null">
+        clicks,
       </if>
       <if test="status != null">
         status,
@@ -107,6 +111,9 @@
       <if test="nonsupport != null">
         #{nonsupport,jdbcType=INTEGER},
       </if>
+      <if test="clicks != null">
+        #{clicks,jdbcType=INTEGER},
+      </if>
       <if test="status != null">
         #{status,jdbcType=INTEGER},
       </if>
@@ -142,6 +149,9 @@
       <if test="nonsupport != null">
         nonsupport = #{nonsupport,jdbcType=INTEGER},
       </if>
+      <if test="clicks != null">
+        clicks = #{clicks,jdbcType=INTEGER},
+      </if>
       <if test="status != null">
         status = #{status,jdbcType=INTEGER},
       </if>
@@ -167,6 +177,7 @@
       authorId = #{authorid,jdbcType=INTEGER},
       support = #{support,jdbcType=INTEGER},
       nonsupport = #{nonsupport,jdbcType=INTEGER},
+      clicks = #{clicks,jdbcType=INTEGER},
       status = #{status,jdbcType=INTEGER},
       image = #{image,jdbcType=VARCHAR},
       createTime = #{createtime,jdbcType=TIMESTAMP},
@@ -181,6 +192,7 @@
       authorId = #{authorid,jdbcType=INTEGER},
       support = #{support,jdbcType=INTEGER},
       nonsupport = #{nonsupport,jdbcType=INTEGER},
+      clicks = #{clicks,jdbcType=INTEGER},
       status = #{status,jdbcType=INTEGER},
       image = #{image,jdbcType=VARCHAR},
       createTime = #{createtime,jdbcType=TIMESTAMP},
@@ -280,4 +292,17 @@
   <select id="countAll" resultType="java.lang.Integer">
     select count(id) FROM article
   </select>
+
+  <select id="selectAll" resultMap="ResultMapWithAuthor">
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    ,user.nickname
+    from article
+    LEFT JOIN
+    user ON
+    article.authorId = user.id
+  </select>
+
 </mapper>

@@ -18,7 +18,7 @@
 
 <jsp:include page="header.jsp"></jsp:include>
 <div id="content">
-    <div class="clearfix"></div>
+    <div class="clearfix" style="height: 140px"></div>
     <div class="mainContent">
         <section>
             <article class="blogPost wow animate fadeInUp">
@@ -55,12 +55,14 @@
             <div style="float: left;font-size: 30px">原文翻译：</div><br>
             <div style="margin-top: 20px"><p>${classical.translation}</p></div>
         </div>
+
+        <div style="text-align: center;margin-top: 100px;margin-bottom: 100px" class="wow animate fadeInUp">
+            <p style="font-size: 30px">您觉得这篇文章难度如何？</p>
+            <input type="button" id="hard" value="太难了" style="margin-right: 30px;height: 40px;width: 15%">
+            <input type="button" id="easy" value="很简单" style="height: 40px;width: 15%">
+        </div>
     </div>
-    <div style="text-align: center;margin-top: 50px;margin-bottom: 50px" class="wow animate fadeInUp">
-        <p style="font-size: 30px">您觉得这篇文章难度如何？</p>
-        <input type="button" id="hard" value="太难了" style="margin-right: 20px;height: 40px">
-        <input type="button" id="easy" value="很简单" style="height: 40px">
-    </div>
+
 
 </div>
 <jsp:include page="footer.jsp"></jsp:include>

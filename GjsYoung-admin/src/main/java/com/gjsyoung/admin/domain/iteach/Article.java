@@ -18,6 +18,8 @@ public class Article {
 
     private Integer nonsupport; //反对数
 
+    private Integer clicks;     //支持数
+
     private Integer status;     //状态：0发表 1删除 2置顶
 
     private String image;       //缩略图
@@ -114,5 +116,13 @@ public class Article {
 
     public void setContent(String content) {
         this.content = content == null ? null : content.trim();
+    }
+
+    public Integer getClicks() {
+        return clicks;
+    }
+
+    public void setClicks(Integer clicks) {
+        this.clicks = clicks;
     }
 }

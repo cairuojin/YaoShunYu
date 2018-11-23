@@ -12,6 +12,7 @@ import com.gjsyoung.iteach.utils.CommonUtils;
 import com.gjsyoung.iteach.utils.RedisCache;
 import com.gjsyoung.iteach.vo.ArticleVo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -53,6 +54,9 @@ public class AtricleController {
 
     @Autowired
     AuthorMapper authorMapper;
+
+    @Value("${UploadPath}")
+    String UploadPath;
 
     /**
      * 跳转到作者页面
@@ -189,7 +193,7 @@ public class AtricleController {
     @RequestMapping("/uploadImage")
     @ResponseBody
     public Map<String, String> uploadImage(HttpServletRequest request, @RequestParam(value = "myFileName") MultipartFile mf) {
-        String realPath = request.getSession().getServletContext().getRealPath("upload");
+        String realPath = UploadPath + "images/article/articleDetail";
 
         //获取源文件
         String filename = mf.getOriginalFilename();
@@ -208,7 +212,7 @@ public class AtricleController {
         }
 
         Map<String, String> map = new HashMap<String,String>();
-        map.put("data", "http://localhost:8080/upload/" + uploadFileName);//这里应该是项目路径
+        map.put("data", "images/article/articleDetail/" + uploadFileName);//这里应该是图片的相对路径
         return map;//将图片地址返回
     }
 

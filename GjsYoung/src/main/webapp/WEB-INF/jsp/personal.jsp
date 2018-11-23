@@ -41,6 +41,7 @@
                         </c:choose>
                     </div>
                     <div class="price-bottom">
+
                         <div class="col-md-3 price-grid">
                             <div class="price-block agile">
                                 <br>

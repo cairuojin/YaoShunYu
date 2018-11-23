@@ -141,11 +141,9 @@
 
         <!-- 页码 -->
         <div class="container">
-            <div class="col-md-9 product-left leftDiv">
-                <div class="section" style="text-align: center">
-                    <div class="container">
-                        <div class="row">
-                            <div id="store" class="col-md-9">
+            <div class="leftDiv">
+                <div class="row section" style="text-align: center">
+                            <div id="store">
                                 <div class="store-filter clearfix">
                                     <c:choose>
                                         <c:when test="${random == 0}">
@@ -203,9 +201,7 @@
                                             </c:if>
                                         </ul>
                                     </c:if>
-                                </div>
                             </div>
-                        </div>
                     </div>
                 </div>
             </div></div>

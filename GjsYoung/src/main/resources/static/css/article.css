@@ -539,7 +539,11 @@ a.read:hover {
 
 /*  搜索框 */
 .searchdiv {
-    margin-left: 460px;
+    text-align: center;
+    margin-top: 10px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
 }
 
 .input-select {
@@ -724,14 +728,15 @@ a.read:hover {
 
 .store-qty {
     margin-right: 30px;
-    font-weight: 500;
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: 16px;
     margin-top: -10px;
 }
 
 .store-pagination {
-    margin: auto;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
 }
 
 .store-pagination li.active {
@@ -743,7 +748,6 @@ a.read:hover {
 }
 
 .section {
-    padding-top: 30px;
     padding-bottom: 30px;
 }
 
@@ -1315,10 +1319,9 @@ a.more:hover {
     display: table;
 }
 
-#mainContent {
-    /*display: table-cell;*/
-    width: 1170px;
-    padding-right: 22px;
+.mainContent {
+    margin: 0 auto;
+    width: 75%;
 }
 
 

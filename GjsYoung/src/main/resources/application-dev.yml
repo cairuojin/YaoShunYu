@@ -64,7 +64,7 @@ mybatis:
       map-underscore-to-camel-case: true  #开启驼峰命名映射，当resultType填写为实体类，而不是BaseResultMap的时候，不会导致有下划线的字段无法映射到对应的属性
 
 #文件上传地址
-UploadPath: 'E:\学习\YaoShunYu\GjsYoung\out\production\resources\static\'
+UploadPath: 'E:\YYYY\YaoShunYu\GjsYoung\out\production\resources\static\'
 
 #配置默认路径
 server.max-http-header-size: 10000000

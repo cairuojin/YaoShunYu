@@ -1868,8 +1868,7 @@ ul.wmuSliderPagination {
 }
 .mainContent {
     margin: 0 auto;
-    width: 1170px;
-    margin-top: 140px;
+    width: 70%;
     text-align: center;
     padding-right: 22px;
 }
@@ -1955,4 +1954,8 @@ ul.wmuSliderPagination {
 }
 .title4:hover{
     color: #1e88e5;
+}
+.store-pagination {
+    margin: 0 auto;
+    width: 30%;
 }

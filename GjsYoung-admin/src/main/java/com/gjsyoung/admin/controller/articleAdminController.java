@@ -5,10 +5,13 @@ import com.gjsyoung.admin.mapper.iteach.ArticleMapper;
 import com.gjsyoung.admin.vo.ArticleVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.jws.WebParam.Mode;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -28,11 +31,11 @@ public class articleAdminController {
      * @return
      */
     @RequestMapping
-    public ModelAndView articleAdmin(Integer page){
+    public ModelAndView articleAdmin(Integer page, HttpSession session){
         ModelAndView mav = new ModelAndView("articleAdmin");
         List<ArticleVo> articleVos = articleMapper.selectAll();
         mav.addObject("articleVos",articleVos);
-        mav.addObject("pageHeader",6.1);
+        session.setAttribute("pageHeader",6.1);
         return mav;
     }
 
@@ -47,6 +50,23 @@ public class articleAdminController {
         Article article = articleMapper.selectByPrimaryKey(id);
         mav.addObject("article",article);
         return mav;
+    }
+
+    /**
+     * 修改文章  todo完善
+     * @param article
+     * @return
+     */
+    @RequestMapping("updateMessage")
+    @ResponseBody
+    public String updateMessage(Article article, HttpSession session){
+        try{
+            articleMapper.updateByPrimaryKeySelective(article); //添加图片等
+            session.setAttribute("pageHeader",6.1);
+            return "OK";
+        } catch (Exception e){
+            return e.toString();
+        }
     }
 
 

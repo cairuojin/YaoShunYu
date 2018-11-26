@@ -91,18 +91,19 @@
                     <span class="mws-i-24 i-list">文章修改</span>
                 </div>
                 <div class="mws-panel-body">
+                    <!-- form表单 -->
                     <form class="mws-form">
                         <div class="mws-form-inline">
                             <div class="mws-form-row">
                                 <label>标题</label>
                                 <div class="mws-form-item small">
-                                    <input type="text" class="mws-textinput" value="${article.title}"/>
+                                    <input type="text" class="mws-textinput" id="title" value="${article.title}"/>
                                 </div>
                             </div>
                             <div class="mws-form-row">
                                 <label>文章简介</label>
                                 <div class="mws-form-item large">
-                                    <textarea>${article.introduction}</textarea>
+                                    <textarea id="introduction">${article.introduction}</textarea>
                                 </div>
                             </div>
                             <div class="mws-form-row">
@@ -114,13 +115,13 @@
                                         <option>Option 4</option>
                                         <option>Option 5</option>
                                     </select>
-                                    <input type="text" class="mws-textinput" placeholder="直接填写作者id" style="width: 150px"/>
+                                    <input type="text" id="authorid" class="mws-textinput" placeholder="直接填写作者id" value="${article.authorid}" style="width: 150px"/>
                                 </div>
                             </div>
                             <div class="mws-form-row">
                                 <label>文字状态</label>
                                 <div class="mws-form-item clearfix">
-                                    <ul class="mws-form-list inline">
+                                    <ul class="mws-form-list inline" id="status">
                                         <li><input type="radio"/> <label>发表</label></li>
                                         <li><input type="radio"/> <label>暂停</label></li>
                                         <li><input type="radio"/> <label>置顶</label></li>
@@ -131,7 +132,8 @@
                             <div class="mws-form-row">
                                 <label>文章内容</label>
                                 <div class="mws-form-item large">
-                                    <textarea readonly="readonly">${article.content}</textarea>
+                                    <%--<textarea readonly="readonly" id="content">${article.content}</textarea>--%>
+                                    <textarea id="content">${article.content}</textarea>
                                     <div class="mws-form-message info">
                                         不允许直接修改，请到下方的富文本编辑器中编辑后点击提交，会自动修改此文本内容。
                                     </div>
@@ -140,7 +142,9 @@
                             </div>
                         </div>
                         <div class="mws-button-row">
-                            <input type="submit" value="提交修改" class="mws-button red"/>
+                            <input type="button" value="提交修改" class="mws-button red"
+                                   onclick="updateArticle(${article.id},$('#title').val(),$('#introduction').val(),$('#authorid').val(),$('#status').val(),$('#content').val())"
+                            />
                         </div>
                     </form>
                 </div>
@@ -163,4 +167,28 @@
 <jsp:include page="F-bottom.jsp"></jsp:include>
 </div>
 </body>
+<script>
+    function updateArticle (id,title, introduction, authorid, status, content) {
+        $.ajax({
+            "type":"POST",
+            "url":"${pageContext.request.contextPath}/articleAdmin/updateMessage",	//传输路径
+            "data":{
+                "id":id,
+                "title":title,
+                "introduction":introduction,
+                "authorid":authorid,
+                "status":status,
+                "content":content
+            },
+            "success":function(data){
+                if( "OK" == data){
+                    alert("信息修改成功");
+                    window.location.reload();
+                } else {
+                    alert(data);
+                }
+            }
+        })
+    }
+</script>
 </html>

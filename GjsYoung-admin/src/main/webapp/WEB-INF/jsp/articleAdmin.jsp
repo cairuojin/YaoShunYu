@@ -67,10 +67,10 @@
                                     <td>发表</td>
                                 </c:if>
                                 <c:if test="${articleVo.status == 1}">
-                                    <td>删除</td>
+                                    <td>置顶</td>
                                 </c:if>
                                 <c:if test="${articleVo.status == 2}">
-                                    <td>置顶</td>
+                                    <td>删除</td>
                                 </c:if>
                                 <c:if test="${articleVo.status == 3}">
                                     <td>暂停</td>
@@ -83,13 +83,13 @@
                                                     pattern="yyyy-MM-dd HH:mm:ss"></fmt:formatDate>
                                 </td>
                                 <td>
-                                    <a href="${pageContext.request.contextPath }/articleAdmin/update?id=${articleVo.id}">
+                                    <a href="${pageContext.request.contextPath }/articleAdmin/update?id=${articleVo.id}" title="修改">
                                         <li class="mws-ic-16 ic-application-key"></li>
                                     </a>
-                                    <a href="${pageContext.request.contextPath }/articleAdmin/stop?id=${articleVo.id}">
+                                    <a href="${pageContext.request.contextPath }/articleAdmin/stop?id=${articleVo.id}" title="暂停">
                                         <li class="mws-ic-16 ic-shape-square"></li>
                                     </a>
-                                    <a href="${pageContext.request.contextPath }/articleAdmin/delete?id=${articleVo.id}">
+                                    <a href="${pageContext.request.contextPath }/articleAdmin/delete?id=${articleVo.id}" title="删除">
                                         <li class="mws-ic-16 ic-cross-octagon"></li>
                                     </a>
                                 </td>

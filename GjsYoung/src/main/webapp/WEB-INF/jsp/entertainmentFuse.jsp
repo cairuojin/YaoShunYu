@@ -136,9 +136,9 @@
             <div class="clearfix" style="height: 60px"></div>
         </div>
 
-        <div class="advert" style="height: 300px;width: 100%;text-align: center;background-color: rgba(255,5,0,0.3)">
-            广告位招租
-        </div>
+        <%--<div class="advert" style="height: 300px;width: 100%;text-align: center;background-color: rgba(255,5,0,0.3)">--%>
+            <%--广告位招租--%>
+        <%--</div>--%>
     </div>
 
 </div>

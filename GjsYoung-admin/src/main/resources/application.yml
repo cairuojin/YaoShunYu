@@ -11,8 +11,8 @@ logging:
 
 
 spring:
-    profiles:
-       active: dev
+#    profiles:
+#       active: dev
 
     iteach:
       datasource:

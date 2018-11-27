@@ -83,13 +83,13 @@
                                                     pattern="yyyy-MM-dd HH:mm:ss"></fmt:formatDate>
                                 </td>
                                 <td>
-                                    <a href="${pageContext.request.contextPath }/articleAdmin/update?id=${articleVo.id}" title="修改">
+                                    <a href="${pageContext.request.contextPath }/articleAdmin.update?id=${articleVo.id}" title="修改">
                                         <li class="mws-ic-16 ic-application-key"></li>
                                     </a>
-                                    <a href="${pageContext.request.contextPath }/articleAdmin/stop?id=${articleVo.id}" title="暂停">
+                                    <a href="${pageContext.request.contextPath }/articleAdmin.stop?id=${articleVo.id}" title="暂停">
                                         <li class="mws-ic-16 ic-shape-square"></li>
                                     </a>
-                                    <a href="${pageContext.request.contextPath }/articleAdmin/delete?id=${articleVo.id}" title="删除">
+                                    <a href="${pageContext.request.contextPath }/articleAdmin.delete?id=${articleVo.id}" title="删除">
                                         <li class="mws-ic-16 ic-cross-octagon"></li>
                                     </a>
                                 </td>

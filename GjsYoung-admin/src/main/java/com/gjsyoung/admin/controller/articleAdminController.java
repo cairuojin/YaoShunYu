@@ -18,7 +18,6 @@ import java.util.List;
  * create by cairuojin on 2018/11/23
  */
 @Controller
-@RequestMapping("articleAdmin")
 public class articleAdminController {
 
     @Autowired
@@ -30,7 +29,7 @@ public class articleAdminController {
      * @param page
      * @return
      */
-    @RequestMapping
+    @RequestMapping("articleAdmin")
     public ModelAndView articleAdmin(Integer page, HttpSession session){
         ModelAndView mav = new ModelAndView("articleAdmin");
         List<ArticleVo> articleVos = articleMapper.selectAll();
@@ -44,7 +43,7 @@ public class articleAdminController {
      * @param id
      * @return
      */
-    @RequestMapping("update")
+    @RequestMapping("articleAdmin.update")
     public ModelAndView update(Integer id){
         ModelAndView mav = new ModelAndView("articleAdminUpdate");
         Article article = articleMapper.selectByPrimaryKey(id);
@@ -57,7 +56,7 @@ public class articleAdminController {
      * @param article
      * @return
      */
-    @RequestMapping("updateMessage")
+    @RequestMapping("articleAdmin.updateMessage")
     @ResponseBody
     public String updateMessage(Article article, HttpSession session){
         try{

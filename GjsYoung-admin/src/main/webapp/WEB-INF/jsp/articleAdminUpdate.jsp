@@ -5,21 +5,21 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link rel="icon" href="/images/main/icon.jpg" type="image/x-icon">
+    <link rel="icon" href="images/main/icon.jpg" type="image/x-icon">
     <title>尧舜禹-后台管理系统</title>
-    <script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" src="/plugins/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="plugins/jquery.dataTables.js"></script>
     <!--[if lt IE 9]>
-    <script type="text/javascript" src="/plugins/flot/excanvas.min.js"></script>
+    <script type="text/javascript" src="plugins/flot/excanvas.min.js"></script>
     <![endif]-->
-    <script type="text/javascript" src="/plugins/colorpicker/colorpicker.js"></script>
-    <script type="text/javascript" src="/plugins/spinner/ui.spinner.js"></script>
-    <script type="text/javascript" src="/js/jquery-ui.js"></script>
-    <script type="text/javascript" src="/js/demo.js"></script>
-    <script type="text/javascript" src="/plugins/jimgareaselect/jquery.imgareaselect.min.js"></script>
-    <script type="text/javascript" src="/plugins/fullcalendar/fullcalendar.min.js"></script>
-    <script type="text/javascript" src="/plugins/sourcerer/Sourcerer-1.2.js"></script>
-    <script type="text/javascript" src="/plugins/jquery.validate.js"></script>
+    <script type="text/javascript" src="plugins/colorpicker/colorpicker.js"></script>
+    <script type="text/javascript" src="plugins/spinner/ui.spinner.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/demo.js"></script>
+    <script type="text/javascript" src="plugins/jimgareaselect/jquery.imgareaselect.min.js"></script>
+    <script type="text/javascript" src="plugins/fullcalendar/fullcalendar.min.js"></script>
+    <script type="text/javascript" src="plugins/sourcerer/Sourcerer-1.2.js"></script>
+    <script type="text/javascript" src="plugins/jquery.validate.js"></script>
 </head>
 <body>
 <jsp:include page="F-header.jsp"></jsp:include>
@@ -151,14 +151,6 @@
             </div>
         </div>
 
-        <div id="mws-footer">
-            Copyright &copy; 2014.Company name All rights reserved.More Templates <a
-                href="http://www.cssmoban.com/"
-                target="_blank"
-                title="模板之家">模板之家</a> - Collect
-            from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a>
-        </div>
-
     </div>
 </div>
 
@@ -171,7 +163,7 @@
     function updateArticle (id,title, introduction, authorid, status, content) {
         $.ajax({
             "type":"POST",
-            "url":"${pageContext.request.contextPath}/articleAdmin/updateMessage",	//传输路径
+            "url":"${pageContext.request.contextPath}/articleAdmin.updateMessage",	//传输路径
             "data":{
                 "id":id,
                 "title":title,

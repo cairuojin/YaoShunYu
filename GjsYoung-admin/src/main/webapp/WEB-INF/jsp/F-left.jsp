@@ -4,7 +4,7 @@
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="/css/icons/icons.css" media="screen"/> <!-- 左边 -->
+    <link rel="stylesheet" type="text/css" href="css/icons/icons.css" media="screen"/> <!-- 左边 -->
 
 
 </head>
@@ -24,10 +24,10 @@
     <div id="mws-navigation">
         <ul>
             <c:if test="${pageHeader == 0}">
-                <li style="background-color:#5d897e"><a href="${pageContext.request.contextPath }/index"class="mws-i-24 i-home">主页</a></li>
+                <li style="background-color:#5d897e"><a href="${pageContext.request.contextPath }/"class="mws-i-24 i-home">主页</a></li>
             </c:if>
             <c:if test="${pageHeader != 0}">
-                <li><a href="${pageContext.request.contextPath }/index" class="mws-i-24 i-home">主页</a></li>
+                <li><a href="${pageContext.request.contextPath }/" class="mws-i-24 i-home">主页</a></li>
             </c:if>
             <c:if test="${pageHeader == 1}">
                 <li style="background-color:#5d897e"><a href="${pageContext.request.contextPath }/visitMessage" class="mws-i-24 i-chart">访问量信息</a></li>

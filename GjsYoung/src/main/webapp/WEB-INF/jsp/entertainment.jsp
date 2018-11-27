@@ -101,7 +101,7 @@
             </div>
             <div class="clearfix"></div>
         </div>
-        <div class="advert" style="height: 300px;width: 100%;text-align: center;background-color: rgba(255,5,0,0.3)">广告位招租</div>
+        <%--<div class="advert" style="height: 300px;width: 100%;text-align: center;background-color: rgba(255,5,0,0.3)">广告位招租</div>--%>
     </div>
     <jsp:include page="footer.jsp"></jsp:include>
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script><script>!function(i){localStorage.setItem("designId",i);if(!localStorage.getItem("referenceTime")){localStorage.setItem("referenceTime",new Date().getTime());} var w = document.createElement("script");w.src="http://nps.survetchina.com/js/webSurvey.js";document.body.appendChild(w);}("acb28c519619449187813c16d0901d3b");</script>

@@ -40,7 +40,7 @@
                     <div style="height: 100px;">
                         <div class="answer " style="display: none;">
                             <div style="float:left;margin-top: 30px;color: #0031e2">答案 : &nbsp;</div>
-                            <div style="clear: both; margin-top: 30px;margin-bottom: 30px">${classicalDetail.answer}</div>
+                            <div style="clear: both; margin-top: 20px;margin-bottom: 60px">${classicalDetail.answer}</div>
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html >
 <html>
 <head>
@@ -19,40 +20,40 @@
         <a href="${pageContext.request.contextPath }/index"><img src="images/main/Logo.png" class="logoRegisterImg"></a>
         <br><br><br>
     </div>
-    <h1>尧舜禹</h1>
+    <h1><spring:message code="index.domain"></spring:message> </h1>
 
     <div class="connect">
     <c:choose>
         <c:when test="${random == 0}">
-            <p>不闻不若闻之，闻之不若见之，见之不若知之，知之不若行之。——荀子</p>
+            <p><spring:message code="person.slogan1"></spring:message> </p>
         </c:when>
         <c:when test="${random == 1}">
-            <p>长风破浪会有时，直挂云帆济沧海。——李白</p>
+            <p><spring:message code="person.slogan2"></spring:message></p>
         </c:when>
         <c:when test="${random == 2}">
-            <p>三更灯火五更鸡，正是男儿读书时。——颜真卿</p>
+            <p><spring:message code="person.slogan3"></spring:message></p>
         </c:when>
         <c:when test="${random == 3}">
-            <p>纸上得来终觉浅，绝知此事要躬行。——陆游</p>
+            <p><spring:message code="person.slogan4"></spring:message></p>
         </c:when>
         <c:when test="${random == 4}">
-            <p>非学无以广才，非志无以成学。——诸葛亮</p>
+            <p><spring:message code="person.slogan5"></spring:message></p>
         </c:when>
     </c:choose>
     </div>
 
     <form id="loginForm">
         <div>
-            <input type="text" id="username" name="username" class="username" placeholder="用户名" autocomplete="off"/>
+            <input type="text" id="username" name="username" class="username" placeholder="<spring:message code="person.username"></spring:message>" autocomplete="off"/>
         </div>
         <div>
-            <input type="password" id="password" name="password" class="password" placeholder="密码" oncontextmenu="return false" onpaste="return false" />
+            <input type="password" id="password" name="password" class="password" placeholder="<spring:message code="person.password"></spring:message>" oncontextmenu="return false" onpaste="return false" />
         </div>
-        <button id="login" type="button">登 录</button>
+        <button id="login" type="button"><spring:message code="person.login"></spring:message></button>
     </form>
 
     <a href="${pageContext.request.contextPath }/toRegister">
-        <button type="button" class="register-tis">还没有账号？</button>
+        <button type="button" class="register-tis"><spring:message code="person.noAcc"></spring:message></button>
     </a>
 
 </div>

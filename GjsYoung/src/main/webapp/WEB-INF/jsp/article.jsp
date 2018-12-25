@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -20,8 +21,8 @@
         <div class="row">
             <div class="col-xs-12">
                 <div class="section_heading myTitle">
-                    <div style="font-family: myFirstFont;font-size: 80px;color: #e67e22;">鸾翔凤集</div>
-                    <p style="margin-top: 30px;font-size: 16px;color: black;">学而不思则惘，思而不学则殆。——孔子</p>
+                    <div style="font-family: myFirstFont;font-size: 80px;color: #e67e22;"><spring:message code="header.article"></spring:message> </div>
+                    <p style="margin-top: 30px;font-size: 16px;color: black;"><spring:message code="atricle.slogan"></spring:message> </p>
                 </div>
             </div>
         </div>
@@ -32,25 +33,25 @@
             <form action="${pageContext.request.contextPath }/articlesearch">
                 <select class="input-select" name="type">
                     <c:if test="${empty searchType}">
-                        <option value="0" selected="selected">文章</option>
-                        <option value="1">作者</option>
+                        <option value="0" selected="selected"><spring:message code="atricle.article"></spring:message> </option>
+                        <option value="1"><spring:message code="atricle.author"></spring:message> </option>
                     </c:if>
                     <c:if test="${searchType == 0}">
-                        <option value="0" selected="selected">文章</option>
-                        <option value="1">作者</option>
+                        <option value="0" selected="selected"><spring:message code="atricle.article"></spring:message></option>
+                        <option value="1"><spring:message code="atricle.author"></spring:message></option>
                     </c:if>
                     <c:if test="${searchType == 1}">
-                        <option value="0">文章</option>
-                        <option value="1" selected="selected">作者</option>
+                        <option value="0"><spring:message code="atricle.article"></spring:message></option>
+                        <option value="1" selected="selected"><spring:message code="atricle.author"></spring:message></option>
                     </c:if>
                 </select>
                 <c:if test="${empty searchHistory}">
-                    <input class="input" placeholder="搜索文章或作者" name="value" required>
+                    <input class="input" placeholder="<spring:message code="atricle.searchArticle"></spring:message>" name="value" required>
                 </c:if>
                 <c:if test="${!empty searchHistory}">
                     <input class="input" placeholder="${searchHistory}" name="value" required>
                 </c:if>
-                <button class="search-btn">搜索</button>
+                <button class="search-btn"><spring:message code="celebrity.search"></spring:message> </button>
             </form>
         </div>
     </div>
@@ -59,13 +60,13 @@
         <div class="container">
             <div class="col-md-9 product-left leftDiv">
                 <c:if test="${articles.size() == 0}">
-                    <div class="prod">啊哦好像找不到您要的资料呢！<br></div>
+                    <div class="prod"><spring:message code="atricle.couldnotfind"></spring:message> <br></div>
                 </c:if>
 
                 <c:forEach items="${articles }" var="article">
                     <div class="prod wow animate fadeInUp">
                         <c:if test="${article.status == 1}">
-                            <div class="nullDiv">[置顶]</div>
+                            <div class="nullDiv">[<spring:message code="atricle.top"></spring:message> ]</div>
                         </c:if>
 
                         <div class="col-md-3 product-left1">
@@ -76,17 +77,17 @@
                             <p>${article.introduction}</p>
                         </div>
                         <div class="col-md-4 product-left1">
-                            <a class="more" href="${pageContext.request.contextPath }/articleDetail?articleId=${article.id}">进入</a>
+                            <a class="more" href="${pageContext.request.contextPath }/articleDetail?articleId=${article.id}"><spring:message code="atricle.enter"></spring:message> </a>
                         </div>
                         <div class="clearfix"> </div>
                         <div class="updateDiv">
-                            修改时间：<fmt:formatDate value="${article.lastupdatetime}" pattern="YYYY-MM-dd HH:mm:ss"/>
+                            <spring:message code="atricle.updatetime"></spring:message> ：<fmt:formatDate value="${article.lastupdatetime}" pattern="YYYY-MM-dd HH:mm:ss"/>
                             <div class="authorDiv">
                                 <c:if test="${article.authorid == 1}">
-                                    [转载]
+                                    [<spring:message code="atricle.Reprint"></spring:message> ]
                                 </c:if>
                                 <c:if test="${article.authorid != 1}">
-                                    作者： <a href="${pageContext.request.contextPath }/author?authorId=${article.authorid}">${article.nickname}</a>
+                                    <spring:message code="atricle.author"></spring:message> ： <a href="${pageContext.request.contextPath }/author?authorId=${article.authorid}">${article.nickname}</a>
                                 </c:if>
                             </div>
                         </div>
@@ -103,30 +104,30 @@
                         <div class="row">
                             <div id="store" class="col-md-9">
                                 <div class="store-filter clearfix">
-                                        <c:choose>
-                                            <c:when test="${random == 0}">
-                                                <span class="store-qty">读书患不多,思义患不明。——韩愈</span>
-                                            </c:when>
-                                            <c:when test="${random == 1}">
-                                                <span class="store-qty">读书破万卷，下笔如有神。——杜甫</span>
-                                            </c:when>
-                                            <c:when test="${random == 2}">
-                                                <span class="store-qty">三更灯火五更鸡，正是男儿读书时。——颜真卿</span>
-                                            </c:when>
-                                            <c:when test="${random == 3}">
-                                                <span class="store-qty">人学始知道，不学非自然。——孟郊</span>
-                                            </c:when>
-                                            <c:when test="${random == 4}">
-                                                <span class="store-qty">问渠那得清如许，为有源头活水来。——朱熹</span>
-                                            </c:when>
-                                        </c:choose>
+                                    <c:choose>
+                                        <c:when test="${random == 0}">
+                                            <span class="store-qty"><spring:message code="celebrity.slogan2"></spring:message> </span>
+                                        </c:when>
+                                        <c:when test="${random == 1}">
+                                            <span class="store-qty"><spring:message code="celebrity.slogan3"></spring:message></span>
+                                        </c:when>
+                                        <c:when test="${random == 2}">
+                                            <span class="store-qty"><spring:message code="celebrity.slogan4"></spring:message></span>
+                                        </c:when>
+                                        <c:when test="${random == 3}">
+                                            <span class="store-qty"><spring:message code="celebrity.slogan5"></spring:message></span>
+                                        </c:when>
+                                        <c:when test="${random == 4}">
+                                            <span class="store-qty"><spring:message code="celebrity.slogan6"></spring:message></span>
+                                        </c:when>
+                                    </c:choose>
                                     <br><br>
                                     <c:if test="${page == null}">
-                                        <span class="store-qty">  只能搜索时间倒叙前十五条哦</span>
+                                        <span class="store-qty">  <spring:message code="article.search15"></spring:message> </span>
                                     </c:if>
 
                                     <c:if test="${page == null}">
-                                        <span aria-hidden="true"> <a href="${pageContext.request.contextPath }/atricle?page=1" aria-label="Previous">取消搜索</a></span>
+                                        <span aria-hidden="true"> <a href="${pageContext.request.contextPath }/atricle?page=1" aria-label="Previous"><spring:message code="celebrity.nosearch"></spring:message> </a></span>
                                     </c:if>
 
                                     <c:if test="${page != null}">
@@ -171,7 +172,7 @@
             </div>
 
             <div class="col-md-3 product-right rightDiv">
-                <h3>文人雅士</h3>
+                <h3><spring:message code="article.Literati"></spring:message><h3>
                 <c:forEach items="${authors }" var="author">
                     <div class="product-right1 wow animate fadeInUp">
                         <div class="pro">
@@ -180,7 +181,7 @@
                         <div class="data">
                             <h5><a href="${pageContext.request.contextPath }/author?authorId=${author.id}">${author.nickname}</a></h5>
                             <h6>${author.moodTxt}</h6>
-                            <div class="follow" align="center"><h6><a href="#" style="line-height:30px;color: white">关注他</a></h6></div>
+                            <div class="follow" align="center"><h6><a href="#" style="line-height:30px;color: white"><spring:message code="article.follow"></spring:message> </a></h6></div>
                         </div>
                     </div>
                 </c:forEach>

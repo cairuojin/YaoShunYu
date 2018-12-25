@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -24,8 +25,8 @@
 <div class="col-xs-12" style="padding-bottom: 30px">
     <!-- Section Heading Start -->
     <div class="section_heading myTitle">
-        <div style="font-family: myFirstFont;font-size: 80px;color: #e67e22;">博古通今</div>
-        <p style="font-family: 微软雅黑;font-size: 16px;">别裁伪体亲风雅，转益多师是汝师。——杜甫</p>
+        <div style="font-family: myFirstFont;font-size: 80px;color: #e67e22;"><spring:message code="header.celebrity"></spring:message> </div>
+        <p style="font-family: 微软雅黑;font-size: 16px;"><spring:message code="celebrity.slogan1"></spring:message> </p>
     </div>
 </div>
 
@@ -36,18 +37,18 @@
         <div class="information-main">
             <div class="col-md-4 information-grid">
                 <span class="info-icons hovicon effect-4 sub-b"><img src="images/icn1.png" alt=""></span>
-                <h4>清晰</h4>
-                <p style="width: 60%;margin: 0 auto;">以史为镜，推断未来，以发展的眼光看待世界，心胸开怀，传承文化。</p>
+                <h4><spring:message code="celebrity.goal1"></spring:message> </h4>
+                <p style="width: 60%;margin: 0 auto;"><spring:message code="celebrity.goalContent1"></spring:message> </p>
             </div>
             <div class="col-md-4 information-grid">
                 <span class="info-icons hovicon effect-4 sub-b"><img src="images/icn2.png" alt=""></span>
-                <h4>高效</h4>
-                <p style="width: 60%;margin: 0 auto;">思想活跃，广泛包容，接受多样的思想，方能才思不断，细水长流。</p>
+                <h4><spring:message code="celebrity.goal2"></spring:message> </h4>
+                <p style="width: 60%;margin: 0 auto;"><spring:message code="celebrity.goalContent2"></spring:message> </p>
             </div>
             <div class="col-md-4 information-grid">
                 <span class="info-icons hovicon effect-4 sub-b"><img src="images/icn3.png" alt=""></span>
-                <h4>协助</h4>
-                <p style="width: 60%;margin: 0 auto;">辅助教学内容，减轻教师负担，激发学生对历史人物的兴趣。</p>
+                <h4><spring:message code="celebrity.goal3"></spring:message> </h4>
+                <p style="width: 60%;margin: 0 auto;"><spring:message code="celebrity.goalContent3"></spring:message> </p>
             </div>
             <div class="clearfix"></div>
         </div>
@@ -60,12 +61,12 @@
     <div class="header-search">
         <form action="${pageContext.request.contextPath }/celebritySearch">
             <c:if test="${empty searchHistory}">
-                <input class="input" placeholder="搜索人物" name="celebrityName" required>
+                <input class="input" placeholder="<spring:message code="celebrity.searchCelebrity"></spring:message>" name="celebrityName" required>
             </c:if>
             <c:if test="${!empty searchHistory}">
                 <input class="input" value="" placeholder="${searchHistory}" name="celebrityName" required>
             </c:if>
-            <button class="search-btn">搜索</button>
+            <button class="search-btn"><spring:message code="celebrity.search"></spring:message> </button>
         </form>
     </div>
     <div class="Dynasty">
@@ -105,7 +106,7 @@
                         <div class="learn_more" onclick="goToDetail(${celebritie.id})">
                             <a data-target="#service_details" data-toggle="modal"
                                href="${pageContext.request.contextPath }/celebrityDetail?celebrityId="
-                               +${celebritie.id}><h4 style="background: rgb(234, 155, 86);">了解更多</h4></a>
+                               +${celebritie.id}><h4 style="background: rgb(234, 155, 86);"><spring:message code="index.learnMore"></spring:message> </h4></a>
                         </div>
                         </a>
 
@@ -123,25 +124,25 @@
             <div class="store-filter clearfix">
                 <c:choose>
                     <c:when test="${random == 0}">
-                        <span class="store-qty">读书患不多,思义患不明。——韩愈</span>
+                        <span class="store-qty"><spring:message code="celebrity.slogan2"></spring:message> </span>
                     </c:when>
                     <c:when test="${random == 1}">
-                        <span class="store-qty">读书破万卷，下笔如有神。——杜甫</span>
+                        <span class="store-qty"><spring:message code="celebrity.slogan3"></spring:message></span>
                     </c:when>
                     <c:when test="${random == 2}">
-                        <span class="store-qty">三更灯火五更鸡，正是男儿读书时。——颜真卿</span>
+                        <span class="store-qty"><spring:message code="celebrity.slogan4"></spring:message></span>
                     </c:when>
                     <c:when test="${random == 3}">
-                        <span class="store-qty">人学始知道，不学非自然。——孟郊</span>
+                        <span class="store-qty"><spring:message code="celebrity.slogan5"></spring:message></span>
                     </c:when>
                     <c:when test="${random == 4}">
-                        <span class="store-qty">问渠那得清如许，为有源头活水来。——朱熹</span>
+                        <span class="store-qty"><spring:message code="celebrity.slogan6"></spring:message></span>
                     </c:when>
                 </c:choose>
                 <br><br>
                 <c:if test="${page == null}">
                         <span aria-hidden="true"> <a href="${pageContext.request.contextPath }/celebrity?page=1"
-                                                     aria-label="Previous">取消搜索</a></span>
+                                                     aria-label="Previous"><spring:message code="celebrity.nosearch"></spring:message> </a></span>
                 </c:if>
 
                 <c:if test="${page != null}">

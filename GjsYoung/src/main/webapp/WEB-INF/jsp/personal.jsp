@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -24,19 +25,19 @@
                         <h3>个人中心</h3>
                         <c:choose>
                             <c:when test="${random == 0}">
-                                <p>天生我材必有用，千金散尽还复来。——李白</p>
+                                <p><spring:message code="person.slogan6"></spring:message> </p>
                             </c:when>
                             <c:when test="${random == 1}">
-                                <p>惊涛拍岸，卷起千堆雪。江山如画，一时多少豪杰。——苏轼</p>
+                                <p><spring:message code="person.slogan7"></spring:message></p>
                             </c:when>
                             <c:when test="${random == 2}">
-                                <p>有志不在年高，无志空活百岁。——石玉昆</p>
+                                <p><spring:message code="person.slogan8"></spring:message></p>
                             </c:when>
                             <c:when test="${random == 3}">
-                                <p>痛饮狂歌空度日，飞扬跋扈为谁雄。——李白</p>
+                                <p><spring:message code="person.slogan9"></spring:message></p>
                             </c:when>
                             <c:when test="${random == 4}">
-                                <p>自信人生二百年，会当击流三千里。——毛泽东</p>
+                                <p><spring:message code="person.slogan10"></spring:message></p>
                             </c:when>
                         </c:choose>
                     </div>

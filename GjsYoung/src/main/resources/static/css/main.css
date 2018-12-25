@@ -1406,3 +1406,58 @@ textarea.form-control {
         width: 380px;
     }
 }
+
+/* language */
+.dropdown dd, .dropdown dt, .dropdown ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.dropdown dd {
+    position: relative;
+}
+
+.dropdown a, .dropdown a:visited {
+    color: #ffffff;
+}
+
+.dropdown a:hover {
+    color: #bcfff0;
+}
+
+.dropdown dt a:hover {
+    color: #58d1ff;
+}
+
+.dropdown dt a {
+    background: url(../images/main/arrow.png) no-repeat right;
+    display: block;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    width: 100px;
+}
+
+.dropdown dd ul {
+    background: rgba(139, 139, 139, 0.4);
+    border: rgba(255, 255, 255, 0.7) solid 1px;
+    position: absolute;
+    top: 2px;
+    width: 150px;
+    border-radius: 10px;
+}
+
+.dropdown dd ul li a {
+    padding: 3px;
+    display: block;
+}
+
+.dropdown dd ul li a:hover {
+    background-color: #bcfff0;
+    background-color: #9F9F9F
+}
+
+.dropdown img.flag {
+    border: none;
+    vertical-align: middle;
+    margin-left: 10px;
+}

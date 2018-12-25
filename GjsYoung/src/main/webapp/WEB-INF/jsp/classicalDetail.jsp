@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <!DOCTYPE HTML>
 <html>
@@ -39,7 +40,7 @@
                     <div style="float: left;">${i.index+1}、</div>${classicalDetail.question}
                     <div style="height: 100px;">
                         <div class="answer " style="display: none;">
-                            <div style="float:left;margin-top: 30px;color: #0031e2">答案 : &nbsp;</div>
+                            <div style="float:left;margin-top: 30px;color: #0031e2"><spring:message code="classicalDetail.answer"></spring:message> : &nbsp;</div>
                             <div style="clear: both; margin-top: 20px;margin-bottom: 60px">${classicalDetail.answer}</div>
                         </div>
                     </div>
@@ -48,20 +49,21 @@
         </div>
 
         <div class="wow animate fadeInUp">
-            <input type="button" value="显示答案" id="btnShow"/>
+            <input type="button" value="<spring:message code="classicalDetail.showAnswer"></spring:message>"  id="btnShow"/>
         </div>
 
         <div style="margin-top: 50px;margin-bottom: 30px" class="wow animate fadeInUp">
-            <div style="float: left;font-size: 30px">原文翻译：</div><br>
+            <div style="float: left;font-size: 30px"><spring:message code="classicalDetail.translation"></spring:message> ：</div><br>
             <div style="margin-top: 20px"><p>${classical.translation}</p></div>
         </div>
 
         <div style="text-align: center;margin-top: 100px;margin-bottom: 100px" class="wow animate fadeInUp">
-            <p style="font-size: 30px">您觉得这篇文章难度如何？</p>
-            <input type="button" id="hard" value="太难了" style="margin-right: 30px;height: 40px;width: 15%">
-            <input type="button" id="easy" value="很简单" style="height: 40px;width: 15%">
+            <p style="font-size: 30px"><spring:message code="classicalDetail.whatDiff"></spring:message> </p>
+            <input type="button" id="hard" value="<spring:message code="classicalDetail.difficult"></spring:message>"  style="margin-right: 30px;height: 40px;width: 15%">
+            <input type="button" id="easy" value="<spring:message code="classicalDetail.easy"></spring:message>" style="height: 40px;width: 15%">
         </div>
     </div>
+
 
 
 </div>
@@ -76,10 +78,10 @@
         //判断是否已显示，为block表示已显示，需要隐藏
         if("block"==$(".answer").css("display")){
             $(".answer").fadeOut(2000);//缓慢隐藏
-            $("#btnShow").val("显示答案");
+            $("#btnShow").val("<spring:message code="classicalDetail.showAnswer"></spring:message>");
         }else {
             $(".answer").fadeIn(2000);//缓慢显示
-            $("#btnShow").val("隐藏答案");
+            $("#btnShow").val("<spring:message code="classicalDetail.hideAnswer"></spring:message>");
         }
     });
 

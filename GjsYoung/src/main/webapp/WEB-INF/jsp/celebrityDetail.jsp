@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -31,7 +32,7 @@
                         <div class="col-sm-6 col-md-3 detailLeftTxt">
                             <div class="single_feature wow fadeInUp" data-wow-delay=".2s">
                                 <div class="feature_text">
-                                    <h5>生卒日</h5>
+                                    <h5><spring:message code="celebrityDetail.brithday"></spring:message> </h5>
                                     <p>${celebrity.birthanddeath}</p>
                                 </div>
                             </div>
@@ -39,7 +40,7 @@
                         <div class="col-sm-6 col-md-3 detailLeftTxt">
                             <div class="single_feature wow fadeInUp" data-wow-delay=".2s">
                                 <div class="feature_text">
-                                    <h5>别称</h5>
+                                    <h5><spring:message code="celebrityDetail.alias"></spring:message> </h5>
                                     <p>${celebrity.alias}</p>
                                 </div>
                             </div>
@@ -47,7 +48,7 @@
                         <div class="col-sm-6 col-md-3 detailLeftTxt">
                             <div class="single_feature wow fadeInUp" data-wow-delay=".2s">
                                 <div class="feature_text">
-                                    <h5>简介</h5>
+                                    <h5><spring:message code="celebrityDetail.introduction"></spring:message> </h5>
                                     <p>${celebrity.assess}</p>
                                 </div>
                             </div>
@@ -55,7 +56,7 @@
                         <div class="col-sm-6 col-md-3 detailLeftTxt">
                             <div class="single_feature wow fadeInUp" data-wow-delay=".2s">
                                 <div class="feature_text">
-                                    <h5>出生地</h5>
+                                    <h5><spring:message code="celebrityDetail.hometown"></spring:message> </h5>
                                     <p>${celebrity.homeplace}</p>
                                 </div>
                             </div>

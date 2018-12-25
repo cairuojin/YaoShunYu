@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html >
 <html>
 <head>
@@ -19,52 +20,52 @@
         <a href="${pageContext.request.contextPath }/index"><img src="images/main/Logo.png" class="logoRegisterImg"></a>
         <br><br><br>
     </div>
-    <h1>尧舜禹</h1>
+    <h1><spring:message code="index.domain"></spring:message> </h1>
 
     <div class="connect">
         <c:choose>
             <c:when test="${random == 0}">
-                <p>不闻不若闻之，闻之不若见之，见之不若知之，知之不若行之。——荀子</p>
+                <p><spring:message code="person.slogan1"></spring:message> </p>
             </c:when>
             <c:when test="${random == 1}">
-                <p>长风破浪会有时，直挂云帆济沧海。——李白</p>
+                <p><spring:message code="person.slogan2"></spring:message></p>
             </c:when>
             <c:when test="${random == 2}">
-                <p>三更灯火五更鸡，正是男儿读书时。——颜真卿</p>
+                <p><spring:message code="person.slogan3"></spring:message></p>
             </c:when>
             <c:when test="${random == 3}">
-                <p>纸上得来终觉浅，绝知此事要躬行。——陆游</p>
+                <p><spring:message code="person.slogan4"></spring:message></p>
             </c:when>
             <c:when test="${random == 4}">
-                <p>非学无以广才，非志无以成学。——诸葛亮</p>
+                <p><spring:message code="person.slogan5"></spring:message></p>
             </c:when>
         </c:choose>
     </div>
 
     <form action="${pageContext.request.contextPath }/register" method="post" id="registerForm">
         <div>
-            <input type="text" name="username" class="username" id="username" placeholder="您的用户名" autocomplete="off"/>
+            <input type="text" name="username" class="username" id="username" placeholder="<spring:message code="register.username"></spring:message>" autocomplete="off"/>
         </div>
         <div>
-            <input type="password" name="password" class="password" placeholder="输入密码" oncontextmenu="return false" onpaste="return false" />
+            <input type="password" name="password" class="password" placeholder="<spring:message code="register.password"></spring:message>" oncontextmenu="return false" onpaste="return false" />
         </div>
         <div>
-            <input type="password" name="confirm_password" class="confirm_password" placeholder="再次输入密码" oncontextmenu="return false" onpaste="return false" />
+            <input type="password" name="confirm_password" class="confirm_password" placeholder="<spring:message code="register.rePass"></spring:message>" oncontextmenu="return false" onpaste="return false" />
         </div>
         <div>
-            <input type="text" name="nickname" class="nickname" placeholder="输入昵称" autocomplete="off" id="nickname"/>
+            <input type="text" name="nickname" class="nickname" placeholder="<spring:message code="register.nickname"></spring:message>" autocomplete="off" id="nickname"/>
         </div>
         <div>
-            <input type="text" name="phonenum" class="phone_number" placeholder="输入手机号码" autocomplete="off" id="phonenum"/>
+            <input type="text" name="phonenum" class="phone_number" placeholder="<spring:message code="register.mobile"></spring:message>" autocomplete="off" id="phonenum"/>
         </div>
         <div>
-            <input type="email" name="email" class="email" placeholder="输入邮箱地址" oncontextmenu="return false" onpaste="return false" />
+            <input type="email" name="email" class="email" placeholder="<spring:message code="register.email"></spring:message>" oncontextmenu="return false" onpaste="return false" />
         </div>
 
-        <button id="submit" type="submit">注 册</button>
+        <button id="submit" type="submit"><spring:message code="header.register"></spring:message> </button>
     </form>
     <a href="/toLogin">
-        <button type="button" class="register-tis">已经有账号？</button>
+        <button type="button" class="register-tis"><spring:message code="register.haveAcc"></spring:message></button>
     </a>
 
 </div>

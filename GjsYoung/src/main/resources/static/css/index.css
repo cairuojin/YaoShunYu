@@ -126,3 +126,14 @@ body {
 .numberChange{
 	width: 100%;
 }
+
+
+/* 友情链接 */
+.yqlj {
+	text-align: center;
+	position: relative;
+}
+.clear {
+	display: block;
+	clear: both;
+}

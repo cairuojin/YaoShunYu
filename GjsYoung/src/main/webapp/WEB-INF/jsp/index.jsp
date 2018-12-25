@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html >
 <html>
 <head>
@@ -36,9 +37,9 @@
                                 </div>
                             </div>
                             <div class="banner-grid-info">
-                                <h3 style="font-family: 微软雅黑;">以史为鉴 指导未来</h3>
+                                <h3 style="font-family: 微软雅黑;"><spring:message code="index.title1"></spring:message> </h3>
                                 <p style="font-family: 微软雅黑;">
-                                    高瞻才能远瞩，我们懂得几千年来的历史发展规律，才能更好地预判现今社会发展的趋向，也就能够让自己更好地顺应时代发展的潮流。
+                                    <spring:message code="index.content1"></spring:message>
                                 </p>
                             </div>
                             <div class="clearfix"></div>
@@ -52,9 +53,9 @@
                                 </div>
                             </div>
                             <div class="banner-grid-info">
-                                <h3 style="font-family: 微软雅黑;">启发智能 感动人心</h3>
+                                <h3 style="font-family: 微软雅黑;"><spring:message code="index.title2"></spring:message> </h3>
                                 <p style="font-family: 微软雅黑;">
-                                    书有古今，智慧没有古今。如果想让自己的智慧更加充实而锐利，那么学习历史是最简单的快捷方式。古人们的智慧，才是我们应该活用的宝贵资产。
+                                    <spring:message code="index.content2"></spring:message>
                                 </p>
                             </div>
                             <div class="clearfix"></div>
@@ -72,9 +73,9 @@
 <div class="welcome" style="background-size: 500px;background-image: url(images/main/leaves2.png);width: 100%">
     <div class="container wow animate fadeInUp">
         <div class="welcome-info">
-            <div class="bigTitle">尧舜禹</div>
-            <h5 style="font-family: 微软雅黑;">吾生也有涯，而知也无涯。——庄子</h5>
-            <p style="font-family: 微软雅黑;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;胸中有历史能让人“思接千载，视通万里”。历史记载着人类过去的兴衰成败，每一个被记录的历史事件，都不是简单的花开花落，而是蕴含着复杂的因果。因此，我们通过对历史长河的纵观，从历朝历代政权的更迭、家族的兴衰、个人的荣辱等等，能够总结出丰富厚重的经验教训，从而给我们自身以训诫和启发。</p>
+            <div class="bigTitle"><spring:message code="index.domain"></spring:message> </div>
+            <h5 style="font-family: 微软雅黑;"><spring:message code="index.zhuangzi"></spring:message> </h5>
+            <p style="font-family: 微软雅黑;"><spring:message code="index.content3"></spring:message> </p>
         </div>
     </div>
 </div>
@@ -87,11 +88,11 @@
             <div class="row">
                 <div style="height: 50px"></div>
                 <div class="sec-title">
-                    <h2 class="wow animated bounceInLeft">核心能力</h2>
-                    <p class="wow animated bounceInRight"><a>尧舜禹</a>经过精心的资料收集和技术创新，为您提供一站式历史知识获取平台。<br>只为传承中华优秀文化精华。</p>
+                    <h2 class="wow animated bounceInLeft"><spring:message code="index.core"></spring:message> </h2>
+                    <p class="wow animated bounceInRight"><a><spring:message code="index.domain"></spring:message></a><spring:message code="index.coreContent"></spring:message> </p>
                 </div>
                 <div class="sec-title">
-                    <h1 class="wow animated bounceInLeft">服务目标</h1>
+                    <h1 class="wow animated bounceInLeft"><spring:message code="index.goal"></spring:message></h1>
                     <h5 style="font-size: 40px">·</h5>
                     <hr style="width:80%;margin:0 auto;border: 0;height: 1px;background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));">
                 </div>
@@ -101,8 +102,8 @@
                             <div class="service-icon">
                                 <i class="glyphicon glyphicon-pencil"></i>
                             </div>
-                            <h3>高效学习</h3>
-                            <p>&nbsp;&nbsp;清晰的知识呈现，提供高效、便捷的学习渠道，丰富历史知识、提升文化内涵。</p>
+                            <h3><spring:message code="index.goal1"></spring:message></h3>
+                            <p>&nbsp;&nbsp;<spring:message code="index.goalContent1"></spring:message></p>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.6s" style="height: 340px;">
@@ -110,8 +111,8 @@
                             <div class="service-icon">
                                 <i class="glyphicon glyphicon-th"></i>
                             </div>
-                            <h3>清晰呈现</h3>
-                            <p>&nbsp;&nbsp;专业人员精心整理知识，仔细推敲的页面布局，考究的产品细节，三位一体，展示全面、丰富的知识给用户</p>
+                            <h3><spring:message code="index.goal2"></spring:message></h3>
+                            <p>&nbsp;&nbsp;<spring:message code="index.goalContent2"></spring:message></p>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.3s" style="height: 340px;">
@@ -119,8 +120,8 @@
                             <div class="service-icon">
                                 <i class="glyphicon glyphicon-cloud "></i>
                             </div>
-                            <h3>方式创新</h3>
-                            <p>&nbsp;&nbsp;在“互联网+”的新背景下，利用信息通信技术，让互联网与历史学习进行深度融合，创造新的发展生态。</p>
+                            <h3><spring:message code="index.goal3"></spring:message></h3>
+                            <p>&nbsp;&nbsp;<spring:message code="index.goalContent3"></spring:message></p>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.9s" style="height: 340px;">
@@ -128,8 +129,8 @@
                             <div class="service-icon">
                                 <i class="glyphicon glyphicon-home"></i>
                             </div>
-                            <h3>专业实效</h3>
-                            <p>&nbsp;&nbsp;关注用户体验，倾听用户声音，创造更有趣的学习方式，只为呈现最丰富的内容，欢迎您提出宝贵的建议。</p>
+                            <h3><spring:message code="index.goal4"></spring:message></h3>
+                            <p>&nbsp;&nbsp;<spring:message code="index.goalContent4"></spring:message></p>
                         </div>
                     </div>
                 </div>
@@ -148,7 +149,7 @@
                         <div class="count-outer">
                             <a class="count-text" data-speed="2200" data-stop="${celebrityNum}">0</a>
                         </div>
-                        <h4 class="counter-title">已收集的人物百科</h4>
+                        <h4 class="counter-title"><spring:message code="index.roll1"></spring:message> </h4>
                     </div>
                 </div>
 
@@ -157,7 +158,7 @@
                         <div class="count-outer">
                             <a class="count-text" data-speed="2400" data-stop="${articleNum}">0</a>
                         </div>
-                        <h4 class="counter-title">已发布的文章</h4>
+                        <h4 class="counter-title"><spring:message code="index.roll2"></spring:message></h4>
                     </div>
                 </div>
 
@@ -166,7 +167,7 @@
                         <div class="count-outer">
                             <a class="count-text" data-speed="2000" data-stop="${visitNum}">0</a>
                         </div>
-                        <h4 class="counter-title">已有访问量</h4>
+                        <h4 class="counter-title"><spring:message code="index.roll3"></spring:message></h4>
                     </div>
                 </div>
 
@@ -175,7 +176,7 @@
                         <div class="count-outer">
                             <a class="count-text" data-speed="2600" data-stop="${userNum}">0</a>
                         </div>
-                        <h4 class="counter-title">已注册的用户</h4>
+                        <h4 class="counter-title"><spring:message code="index.roll4"></spring:message></h4>
                     </div>
                 </div>
             </div>
@@ -186,23 +187,23 @@
     <div class="work">
         <div class="container wow animate fadeInUp">
             <div class="work-grids">
-                <div class="bigTitle1">博古通今</div>
+                <div class="bigTitle1"><spring:message code="header.celebrity"></spring:message> </div>
                 <p style="font-size: 60px;width:30px;height:30px;margin: 0 auto">·</p>
                 <hr style="width:80%;margin:0 auto;border: 0;height: 1px;background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));">
                 <div style="height: 50px"></div>
                 <div class="work-grids-top">
                     <div class="col-md-4 work-grid-left" style="border-radius: 50px 0px 0px 0px;">
-                        <h5>曹操</h5>
-                        <p>人称：治世之能臣，乱世之奸雄。<br>英雄不畏孤胆，作为一代奸雄的曹操，却被后人骂了几千年!文治武功，雄才大略的曹操确是当时不可多得人才!</p>
-                        <a href="${pageContext.request.contextPath }/celebrityDetail/1">了解更多</a>
+                        <h5><spring:message code="index.celebrity1"></spring:message> </h5>
+                        <p><spring:message code="index.celebrityContent1"></spring:message> </p>
+                        <a href="${pageContext.request.contextPath }/celebrityDetail/1"><spring:message code="index.learnMore"></spring:message> </a>
                     </div>
                     <div class="col-md-4 work-grid-middle" style="padding-right: 0;padding-left: 0;">
                         <a href="#"><img src="images/index/caocao.jpg"></a>
                     </div>
                     <div class="col-md-4 work-grid-left" style="border-radius: 0px 50px 0px 0px;">
-                        <h5>朱元璋</h5>
-                        <p>我本淮右布衣，天下与我何加焉。<br>朱元璋是中国历史上最杰出的君主之一。<br>一生勤于政事，建树颇多，创设了大量的制度典章，打下明朝近三百年基业。</p>
-                        <a href="${pageContext.request.contextPath }/celebrityDetail/52">了解更多</a>
+                        <h5><spring:message code="index.celebrity2"></spring:message> </h5>
+                        <p><spring:message code="index.celebrityContent2"></spring:message></p>
+                        <a href="${pageContext.request.contextPath }/celebrityDetail/52"><spring:message code="index.learnMore"></spring:message></a>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -211,10 +212,9 @@
                         <img src="images/index/qinshihuang.jpg">
                     </div>
                     <div class="col-md-4 work-grid-left">
-                        <h5>李世民</h5>
-                        <p>太宗文武之才，高出前古。<br>盖三代以还，中国之盛未之有也。<br>唐太宗李世民是中国古代历史上的一位伟大政治家、书法家，卓越的领袖、影响中华乃至世界进程的杰出人物，他任用贤能，选贤任能，从善如流，闻过即改。
-                        </p>
-                        <a href="${pageContext.request.contextPath }/celebrityDetail/40">了解更多</a>
+                        <h5><spring:message code="index.celebrity3"></spring:message> </h5>
+                        <p><spring:message code="index.celebrityContent3"></spring:message> </p>
+                        <a href="${pageContext.request.contextPath }/celebrityDetail/40"><spring:message code="index.learnMore"></spring:message></a>
                     </div>
                     <div class="col-md-4 work-grid-middle" style="padding-right:0;padding-left:0;">
                         <img src="images/index/lishiming.jpg">
@@ -223,31 +223,31 @@
                 </div>
                 <div class="work-grids-top">
                     <div class="col-md-4 work-grid-left" style="border-radius: 0px 0px 0px 50px;">
-                        <h5>秦始皇</h5>
-                        <p>千古一帝震古烁今，独统天下霸道失心。<br>他重用人才，统一六国，南征越族，北击匈奴，结束了诸侯割据的分裂局面，建立我国历史上第一个统一的多民族的封建国家。</p>
-                        <a href="${pageContext.request.contextPath }/celebrityDetail/18">了解更多</a>
+                        <h5><spring:message code="index.celebrity4"></spring:message> </h5>
+                        <p><spring:message code="index.celebrityContent4"></spring:message></p>
+                        <a href="${pageContext.request.contextPath }/celebrityDetail/18"><spring:message code="index.learnMore"></spring:message></a>
                     </div>
                     <div class="col-md-4 work-grid-middle"
                          style="padding-right: 0;padding-left: 0;border-radius: 0px 0px 100px 0px;">
                         <img src="images/index/wuzetian.jpg" style="height: 348px;">
                     </div>
                     <div class="col-md-4 work-grid-left" style="border-radius: 0px 0px 50px 0px;">
-                        <h5>武则天</h5>
-                        <p>功过论争千秋去，无字碑上遍诗文。<br>她是中国历史上唯一的一位女皇帝，她的一生，是辉煌的一生，是令人艳羡的一生；然而又是艰难的一生，孤独寂寞的一生。</p>
-                        <a href="${pageContext.request.contextPath }/celebrityDetail/41">了解更多</a>
+                        <h5><spring:message code="index.celebrity5"></spring:message> </h5>
+                        <p><spring:message code="index.celebrityContent5"></spring:message></p>
+                        <a href="${pageContext.request.contextPath }/celebrityDetail/41"><spring:message code="index.learnMore"></spring:message></a>
                     </div>
                     <div class="clearfix"></div>
                 </div>
             </div>
             <div style="height: 30px"></div>
             <div class="recommend" align="center">
-                <a class="recommendFont" href="${pageContext.request.contextPath }/celebrity?page=1">更多历史人物</a>
+                <a class="recommendFont" href="${pageContext.request.contextPath }/celebrity?page=1"><spring:message code="index.moreCelebrity"></spring:message> </a>
             </div>
         </div>
     </div>
     <div style="height: 200px"></div>
     <div class="news wow animate fadeInUp">
-        <div class="bigTitle1">鸾翔凤集</div>
+        <div class="bigTitle1"><spring:message code="header.article"></spring:message> </div>
         <p style="font-size: 60px;width:30px;height:30px;margin: 0 auto">·</p>
         <hr style="width:80%;margin:0 auto;border: 0;height: 1px;background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));">
         <div class="container">
@@ -255,28 +255,23 @@
                 <div class="col-md-6 news-grid">
                     <img src="images/index/yongantuogu.jpg" class="articleImg"/>
                     <div class="news-grid-info">
-                        <a href="${pageContext.request.contextPath }/articleDetail/103">永安托孤</a>
+                        <a href="${pageContext.request.contextPath }/articleDetail/103"><spring:message code="index.article1"></spring:message> </a>
                         <p class="date">2018-09-11 16:26:08</p>
-                        <p class="text">&nbsp;&nbsp;&nbsp;&nbsp;刘备在弥留之际把自己的儿子刘禅托付给诸葛亮，这就是著名的“永安托孤”，后人常把这看作是刘备的忠厚和对诸葛亮的信任。可是也有人认为，这是刘备的狡诈，
-                            是为了防止诸葛亮专权、篡权，而给诸葛亮套上的一副精神枷锁。那么刘备的托孤究竟是体现刘备的仁义，
-                            还是刘备的诡诈呢？敬请关注《易中天品三国》之——永安托付。</p>
+                        <p class="text">&nbsp;&nbsp;&nbsp;&nbsp;<spring:message code="index.articleContent2"></spring:message></p>
                     </div>
                 </div>
                 <div class="col-md-6 news-grid">
                     <img src="images/index/libaihedufu.jpg" class="articleImg"/>
                     <div class="news-grid-info">
-                        <a href="${pageContext.request.contextPath }/articleDetail/20">李白与杜甫：唐诗里的兄弟之情</a>
+                        <a href="${pageContext.request.contextPath }/articleDetail/20"><spring:message code="index.article2"></spring:message></a>
                         <p class="date">2018-09-11 16:42:31</p>
-                        <p class="text">&nbsp;&nbsp;&nbsp;&nbsp;他们一个是诗仙，一个是诗圣，都是中国诗歌史上泰山北斗级的人物。
-                            李白被举为“仙”，这“仙”对天下大事多有关注；杜甫被尊为“圣”，这“圣”对廊庙之外也多有牵挂。
-                            更传奇的是，李白和杜甫这样百年不遇的诗歌奇才，竟然是生活在同一个时空下的同龄人。而更不可思议的是，
-                            他们之间还有过交往，并留下了一段为后人称道的伟大友谊。</p>
+                        <p class="text">&nbsp;&nbsp;&nbsp;&nbsp;<spring:message code="index.articleContent2"></spring:message> </p>
                     </div>
                 </div>
                 <div class="clearfix"></div>
                 <div style="height: 30px"></div>
                 <div class="recommend" align="center">
-                    <a class="recommendFont" href="${pageContext.request.contextPath }/atricle?page=1">更多历史文章</a>
+                    <a class="recommendFont" href="${pageContext.request.contextPath }/atricle?page=1"><spring:message code="index.moreArticle"></spring:message> </a>
                 </div>
             </div>
         </div>
@@ -287,19 +282,34 @@
         <div class="row text-center">
             <div class="footer-content">
                 <div class="wow animated flipInY">
-                    <p>如果您有什么建议 可以发送给我们</p>
-                    <p>请在下面填写您的建议</p>
+                    <p><spring:message code="index.recommend1"></spring:message> </p>
+                    <p><spring:message code="index.recommend2"></spring:message> </p>
                 </div>
                 <form action="#" method="post" class="subscribe-form wow animated flipInY">
                     <div class="input-field">
-                        <input type="text" class="subscribe form-control" placeholder="您有什么好建议">
-                        <button type="提交建议" class="submit-icon" title="发送">
+                        <input type="text" class="subscribe form-control" placeholder="<spring:message code="index.recommend3"></spring:message>">
+                        <button type="submit" class="submit-icon" title="<spring:message code="index.recommend4"></spring:message>">
                             <i class="glyphicon glyphicon-send" ></i>
                         </button>
                     </div>
                 </form>
             </div>
         </div>
+    </div>
+    <div class="yqlj clear">
+        <div class="yqljtitle"><spring:message code="index.FriendshipLink"></spring:message></div>
+        <hr style="width:80%;margin:0 auto;border: 0;height: 1px;background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(45,97,199,0.75), rgba(0, 0, 0, 0));">
+        <div class="clear">
+            <a href="http://www.lishichunqiu.com" target="_blank">历史春秋网</a>
+            <a href="http://www.hxlsw.com/pic/" target="_blank">老照片</a>
+            <a href="http://www.lsqn.cn/" target="_blank">历史千年</a>
+            <a href="http://www.baijiajiangtan.org" target="_blank">百家讲坛</a>
+            <a href="http://www.artx.cn" target="_blank">艺术中国</a>
+            <a href="http://www.gpnu.edu.cn/" target="_blank">广东技术师范大学</a>
+            <a href="http://jky.gpnu.edu.cn/" target="_blank">教育科学与技术学院</a>
+            <a href="http://www.yaoteach.com:8081/GjsYoung-admin">管理系统</a>
+        </div>
+        <div class="clear"></div>
     </div>
     <div class="clearfix"></div>
 </div>

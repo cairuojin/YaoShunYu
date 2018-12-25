@@ -16,8 +16,8 @@ logging:
 
 
 spring:
-    profiles:
-       active: dev
+#    profiles:
+#       active: dev
 
     datasource:     # linux地址
         url: jdbc:mysql://119.29.203.133:3306/gjsyoung?useSSL=false

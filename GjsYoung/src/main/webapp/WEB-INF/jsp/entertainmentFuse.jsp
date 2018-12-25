@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -24,7 +25,7 @@
                 <div class="section_heading">
                     <div class="myTitle1">
                         <div class="imabackground1"></div>
-                        <div>粉墨登场</div>
+                        <div><spring:message code="entertainment.t2"></spring:message> </div>
                     </div>
                 </div>
             </div>
@@ -36,10 +37,10 @@
     <div style="margin:0 auto;text-align: center;width:80%;background-color: rgba(192,209,255,0.20)">
         <div class="wow animate fadeInUp">
             <div class="clearfix"></div>
-            <h3 style="margin-top: 80px">功能简介</h3>
+            <h3 style="margin-top: 80px"><spring:message code="entertainmentFuse.introduction"></spring:message> </h3>
             <hr>
-            <h4>看看您穿上古装的形象，即刻过一把穿越瘾吧。</h4>
-            <p>该功能是基于Face++人脸识别功能实现，可以对模板图和融合图中的人脸进行融合操作。融合后的图片中将包含融合图中的人脸特征，以及模板图中的其他外貌特征与内容。</p>
+            <h4><spring:message code="entertainmentFuse.title1"></spring:message></h4>
+            <p><spring:message code="entertainmentFuse.title2"></spring:message></p>
             <img src="images/main/click.png" style="margin-top: 20px">
         </div>
         <div style="height: 50px;"></div>
@@ -50,7 +51,7 @@
                 <div style="text-align: center">
 
                     <div style="display: inline-block;margin-right: 30px;vertical-align: top">
-                        <div><h3 style="text-align: center">选择模板</h3></div>
+                        <div><h3 style="text-align: center"><spring:message code="entertainmentFuse.chooseTemp"></spring:message> </h3></div>
                         <div class="swiper-container gallery-top1">
                             <div class="swiper-wrapper">
                                 <c:forEach items="${images}" var="image">
@@ -71,9 +72,9 @@
                     </div>
 
                     <div style="display: inline-block;margin-right: 30px;vertical-align: top">
-                        <div><h3 style="text-align: center">上传照片</h3></div>
+                        <div><h3 style="text-align: center"><spring:message code="entertainmentFuse.uploadPic"></spring:message></h3></div>
                         <div style="width: 300px;height: 300px;text-align: center;border:1px solid rgba(0,0,0,0.6);position: relative;">
-                            <a style="font-size: 20px;" class="uploadImg" id="noUploadImage">未上传图片</a>
+                            <a style="font-size: 20px;" class="uploadImg" id="noUploadImage"><spring:message code="entertainmentFuse.noPic"></spring:message></a>
                             <img id="uploadImg" class="uploadImg"/>
                         </div>
                         <button class="uploadButton" style="font-size: 16px;">
@@ -82,21 +83,21 @@
                     </div>
 
                     <div style="margin-top: 20px">
-                        <p style="font-size: 16px">为保证融合效果，建议不要上传美颜过度的照片哦</p>
+                        <p style="font-size: 16px"><spring:message code="entertainmentFuse.title3"></spring:message></p>
                     </div>
                 </div>
 
                 <div style="margin: 0 auto;width: 120px;padding-bottom: 200px;padding-top: 100px">
                     <button class="confirmButton" style="font-size: 18px;background-size:cover"
-                            onclick="fuse($('#chooseImage').val())">开始合成
+                            onclick="fuse($('#chooseImage').val())"><spring:message code="entertainmentFuse.start"></spring:message>
                     </button>
                 </div>
                 <hr style="width:80%;margin:0 auto;border: 0;height: 1px;background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));"/>
 
                 <div style="text-align: center;margin-top: 40px">
-                    <div><h3>合成结果</h3></div>
+                    <div><h3><spring:message code="entertainmentFuse.result"></spring:message></h3></div>
                     <div style="margin: 0 auto;width: 500px;height: 500px;border:1px solid rgba(0,0,0,0.6);position: relative;">
-                        <a style="font-size: 40px;" class="uploadImg" id="noFuseImage">尚无合成效果</a>
+                        <a style="font-size: 40px;" class="uploadImg" id="noFuseImage"><spring:message code="entertainmentFuse.noResult"></spring:message></a>
                         <img id="fuseImage" class="fuseImage" data-tag="fuseImage"/>
                     </div>
                 </div>
@@ -108,9 +109,9 @@
         <div class="clearfix"></div>
         <div class="wow animate fadeInUp">
             <div class="clearfix"></div>
-            <h2 style="margin-top: 80px">给我们支持</h2>
-            <p>如果您喜欢该功能，不要忘了为我们点赞，并分享给您的好友哦。</p>
-            <p>感谢Face++旷视提供技术支持</p>
+            <h2 style="margin-top: 80px"><spring:message code="entertainmentFuse.getSuppot"></spring:message></h2>
+            <p><spring:message code="entertainmentFuse.like"></spring:message> </p>
+            <p><spring:message code="entertainmentFuse.thankful"></spring:message></p>
             <hr>
             <ul class="social-button" style="margin-bottom: 60px">
                 <li>
@@ -119,7 +120,7 @@
                     </a>
                 </li>
             </ul>
-            <p>分享该页面给您的好友</p>
+            <p><spring:message code="entertainmentFuse.share"></spring:message></p>
             <tr>
                 <td>
                     <div class="bdsharebuttonbox" style="width: 230px;margin: 0 auto">

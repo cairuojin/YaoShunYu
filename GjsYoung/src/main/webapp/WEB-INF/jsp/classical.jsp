@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -21,17 +22,14 @@
             <div class="about-grids">
                 <div class="about-grid1">
                     <div class="col-md-6 about-grid-left">
-                        <h3 class="title1">为什么要学习文言文</h3>
-                        <p>文言文凝聚了中华民族的智慧和思想，是中华文化的宝藏。学习文言文，能使我们真切触摸到中国的气质。它们的智慧与价值，
-                            并没有随着时光的流逝而暗淡，而是愈来愈发出其夺目的光辉，泽被后人。
-                        </p>
-                        <h4 class="title2">多读 多背 多练</h4>
+                        <h3 class="title1"><spring:message code="classical.title1"></spring:message> </h3>
+                        <p><spring:message code="classical.title2"></spring:message></p>
+                        <h4 class="title2"><spring:message code="classical.title3"></spring:message></h4>
                     </div>
                     <div class="col-md-6 about-grid-right">
-                        <h4 class="title3">继承中华优秀传统文化</h4>
-                        <h3 class="title4">文言文的重要性</h3>
-                        <p>&nbsp;&nbsp;文言文是教与学的重点，更是高考的重点。在高考试卷中文言文阅读占的比例很大。教材中所选文言文都是文质兼美的经典篇章，
-                            不但可以增加我知识，提高文言阅读能力，为写作提供丰富典型的素材，更能滋养我们的生命与灵魂。</p>
+                        <h4 class="title3"><spring:message code="classical.title4"></spring:message></h4>
+                        <h3 class="title4"><spring:message code="classical.title5"></spring:message></h3>
+                        <p>&nbsp;&nbsp;<spring:message code="classical.title6"></spring:message></p>
                     </div>
                     <div class="clearfix"> </div>
                 </div>
@@ -39,8 +37,8 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="section_heading myTitle1">
-                        <div style="font-family: myFirstFont;font-size: 80px;color: #e67e22;">开卷有益</div>
-                        <p style="margin-top: 30px;font-size: 16px;font-family: 微软雅黑;">读书之法，在循序而渐进，熟读而精思。——朱熹</p>
+                        <div style="font-family: myFirstFont;font-size: 80px;color: #e67e22;"><spring:message code="header.classical"></spring:message> </div>
+                        <p style="margin-top: 30px;font-size: 16px;font-family: 微软雅黑;"><spring:message code="classical.slogan"></spring:message> </p>
                     </div>
                 </div>
             </div>
@@ -59,19 +57,19 @@
                                 <a href="${pageContext.request.contextPath }/classicalDetail?classicalId=${classical.id}">${classical.title}</a>
                             </div>
                             <div style="text-align: center;margin-top: 10px">
-                                更新时间：
+                                <spring:message code="classical.updatetime"></spring:message> ：
                                 <fmt:formatDate value="${classical.lastupdatetime}" pattern="yyyy-MM-dd HH:mm:ss"></fmt:formatDate>
                                 <br>
                                 <a><span name="support" class="f_left10 support glyphicon glyphicon-thumbs-up"></span></a>
-                                有${classical.simplenum}人认为该文章难度适中
+                                ${classical.simplenum}<spring:message code="classical.easy"></spring:message>
                                 <a><span name="nonsupport" class="f_left10 support glyphicon glyphicon-thumbs-down" style="margin-left: 30px"></span></a>
-                                有${classical.hardnum}人认为该文章比较难
+                                ${classical.hardnum}<spring:message code="classical.difficult"></spring:message>
                             </div>
                             <div class="classicalIntroduce">
                                     ${classical.introduce}
                             </div>
                             <div class="classicalSearch">
-                                <a href="${pageContext.request.contextPath }/classicalDetail?classicalId=${classical.id}">查看该文章</a>
+                                <a href="${pageContext.request.contextPath }/classicalDetail?classicalId=${classical.id}"><spring:message code="classical.viewArticle"></spring:message> </a>
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -87,19 +85,19 @@
                                 <a href="${pageContext.request.contextPath }/classicalDetail?classicalId=${classical.id}">${classical.title}</a>
                             </div>
                             <div style="text-align: center;margin-top: 10px">
-                                更新时间：
+                                <spring:message code="classical.updatetime"></spring:message>：
                                 <fmt:formatDate value="${classical.lastupdatetime}" pattern="yyyy-MM-dd HH:mm:ss"></fmt:formatDate>
                                 <br>
                                 <a><span name="support" id="support" class="f_left10 support glyphicon glyphicon-thumbs-up"></span></a>
-                                有${classical.simplenum}人认为该文章难度适中
+                                ${classical.simplenum}<spring:message code="classical.easy"></spring:message>
                                 <a><span name="nonsupport" id="nonsupport" class="f_left10 support glyphicon glyphicon-thumbs-down" style="margin-left: 30px"></span></a>
-                                有${classical.hardnum}人认为该文章比较难
+                                ${classical.hardnum}<spring:message code="classical.difficult"></spring:message>
                             </div>
                             <div class="classicalIntroduce">
                                     ${classical.introduce}
                             </div>
                             <div class="classicalSearch">
-                                <a href="${pageContext.request.contextPath }/classicalDetail?classicalId=${classical.id}">查看该文章</a>
+                                <a href="${pageContext.request.contextPath }/classicalDetail?classicalId=${classical.id}"><spring:message code="classical.viewArticle"></spring:message></a>
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -118,19 +116,19 @@
                                 <a href="${pageContext.request.contextPath }/classicalDetail?classicalId=${classical.id}">${classical.title}</a>
                             </div>
                             <div style="text-align: center;margin-top: 10px">
-                                更新时间：
+                                <spring:message code="classical.updatetime"></spring:message>：
                                 <fmt:formatDate value="${classical.lastupdatetime}" pattern="yyyy-MM-dd HH:mm:ss"></fmt:formatDate>
                                 <br>
                                 <a><span name="support" class="f_left10 support glyphicon glyphicon-thumbs-up"></span></a>
-                                有${classical.simplenum}人认为该文章难度适中
+                                ${classical.simplenum}<spring:message code="classical.easy"></spring:message>
                                 <a><span name="nonsupport" class="f_left10 support glyphicon glyphicon-thumbs-down" style="margin-left: 30px"></span></a>
-                                有${classical.hardnum}人认为该文章比较难
+                                ${classical.hardnum}<spring:message code="classical.difficult"></spring:message>
                             </div>
                             <div class="classicalIntroduce">
                                     ${classical.introduce}
                             </div>
                             <div class="classicalSearch">
-                                <a href="${pageContext.request.contextPath }/classicalDetail?classicalId=${classical.id}">查看该文章</a>
+                                <a href="${pageContext.request.contextPath }/classicalDetail?classicalId=${classical.id}"><spring:message code="classical.viewArticle"></spring:message></a>
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -147,24 +145,24 @@
                                 <div class="store-filter clearfix">
                                     <c:choose>
                                         <c:when test="${random == 0}">
-                                            <span class="store-qty">读书患不多,思义患不明。——韩愈</span>
+                                            <span class="store-qty"><spring:message code="celebrity.slogan2"></spring:message> </span>
                                         </c:when>
                                         <c:when test="${random == 1}">
-                                            <span class="store-qty">读书破万卷，下笔如有神。——杜甫</span>
+                                            <span class="store-qty"><spring:message code="celebrity.slogan3"></spring:message></span>
                                         </c:when>
                                         <c:when test="${random == 2}">
-                                            <span class="store-qty">三更灯火五更鸡，正是男儿读书时。——颜真卿</span>
+                                            <span class="store-qty"><spring:message code="celebrity.slogan4"></spring:message></span>
                                         </c:when>
                                         <c:when test="${random == 3}">
-                                            <span class="store-qty">人学始知道，不学非自然。——孟郊</span>
+                                            <span class="store-qty"><spring:message code="celebrity.slogan5"></spring:message></span>
                                         </c:when>
                                         <c:when test="${random == 4}">
-                                            <span class="store-qty">问渠那得清如许，为有源头活水来。——朱熹</span>
+                                            <span class="store-qty"><spring:message code="celebrity.slogan6"></spring:message></span>
                                         </c:when>
                                     </c:choose>
                                     <br><br>
                                     <c:if test="${page == null}">
-                                        <span aria-hidden="true"> <a href="${pageContext.request.contextPath }/classical?page=1" aria-label="Previous">取消搜索</a></span>
+                                        <span aria-hidden="true"> <a href="${pageContext.request.contextPath }/classical?page=1" aria-label="Previous"><spring:message code="celebrity.nosearch"></spring:message> </a></span>
                                     </c:if>
 
                                     <c:if test="${page != null}">

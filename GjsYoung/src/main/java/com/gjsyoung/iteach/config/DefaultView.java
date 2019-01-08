@@ -2,6 +2,7 @@ package com.gjsyoung.iteach.config;
 
 import com.gjsyoung.iteach.mapper.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -28,6 +29,9 @@ public class DefaultView {
     @Autowired
     ArticleMapper articleMapper;
 
+    @Autowired
+    RedisTemplate redisTemplate;
+
     /**
      * 进入首页
      * @param session
@@ -47,5 +51,7 @@ public class DefaultView {
     }
     @RequestMapping("/text")
     public void text(HttpSession session){
+        redisTemplate.opsForValue().set("LLLLL","CAIRUROJIN");
+        System.out.println("123");
     }
 }

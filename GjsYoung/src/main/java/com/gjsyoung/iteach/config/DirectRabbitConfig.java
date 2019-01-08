@@ -14,7 +14,7 @@ import java.util.Map;
 
 /**
  * create by cairuojin on 2018/08/20
- * SMS QUEUE配置
+ * QUEUE配置
  */
 @Configuration
 public class DirectRabbitConfig {

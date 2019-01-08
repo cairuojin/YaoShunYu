@@ -163,7 +163,7 @@ public class AtricleController {
         Map data = articleMapper.queryDetailById(articleId);
         ModelAndView nav = new ModelAndView();
         nav.addObject("data",data);
-        nav.addObject("ChatHistory",redisCache.getObject("ChatHistory"));
+        nav.addObject("ChatHistory",redisCache.getObject("ChatHistory"));   //聊天记录
         nav.setViewName("articleDetail");
         return nav;
 

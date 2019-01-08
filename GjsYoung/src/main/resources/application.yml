@@ -6,18 +6,12 @@ server:
         init-parameters:
           development: true
 
-
-
-
 logging:
-        com.example.WChatMonkey: DEBUG
-#    tomcat:
-#      redirect-context-root:
-
+        com.gjsyoung.iteach: DEBUG
 
 spring:
-#    profiles:
-#       active: dev
+    profiles:
+       active: dev  # 激活本地配置
 
     datasource:     # linux地址
         url: jdbc:mysql://119.29.203.133:3306/gjsyoung?useSSL=false
@@ -25,15 +19,19 @@ spring:
         password: 44052100
         driver-class-name: com.mysql.jdbc.Driver
 
+#redis cluster
+#    redis:
+#        cluster:
+#          nodes:
+#          - 119.29.203.133:7001
+#          - 119.29.203.133:7002
+#          - 119.29.203.133:7003
+#          - 119.29.203.133:7004
+#          - 119.29.203.133:7005
+#          - 119.29.203.133:7006
+#        maxRedirects: 3
+#        password:
 
-    redis:
-      database: 0 # Redis数据库索引（默认为0）
-      host: 119.29.203.133
-      port: 6379
-      password: 44052100
-
-#    resources:
-#          static-locations: /WEB-INF/static/
     mvc:
         static:
           static-path-pattern: /**
@@ -45,10 +43,6 @@ spring:
         multipart:
             max-request-size: 100Mb
             max-file-size: 10Mb
-
-#    jackson:  #json格式返回前端时间格式化
-#      date-format: yyyy-MM-dd HH:mm:ss
-#      time-zone: GMT+8 #必须加上时区，否则会显示会晚于数据库8小时
 
     rabbitmq:
         host: 111.230.196.33    #windows rabbitmq

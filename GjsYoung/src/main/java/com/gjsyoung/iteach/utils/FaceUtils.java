@@ -34,9 +34,6 @@ public class FaceUtils {
     String APISecret;
 
     @Autowired
-    RestTemplate restTemplate;
-
-    @Autowired
     ImageUtils imageUtils;
 
     private static final Logger logger = LoggerFactory.getLogger(FaceUtils.class);

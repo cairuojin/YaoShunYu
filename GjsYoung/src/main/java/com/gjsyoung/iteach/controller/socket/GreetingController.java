@@ -21,6 +21,7 @@ public class GreetingController {
 
     @Autowired
     RedisCache redisCache;
+
     @MessageMapping("/hello")   //监听，发送到
     @SendTo("/topic/greetings") //广播模式
     public Message greeting(Message message, SimpMessageHeaderAccessor headerAccessor) throws Exception {

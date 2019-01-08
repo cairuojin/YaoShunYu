@@ -8,13 +8,10 @@ import com.gjsyoung.iteach.mapper.AuthorMapper;
 import com.gjsyoung.iteach.mapper.UserMapper;
 import com.gjsyoung.iteach.utils.CommonUtils;
 import com.gjsyoung.iteach.utils.EmailUtil;
-import com.gjsyoung.iteach.vo.GjsYoungException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.annotation.Id;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
@@ -294,7 +291,7 @@ public class PersonalController {
      * @return
      */
     @RequestMapping("/personal")
-    public ModelAndView personal(HttpSession session){          //todo 前端jsp对状态3的判断
+    public ModelAndView personal(HttpSession session){
         Object obj = session.getAttribute("user");
         if(obj == null){
             return commonUtils.throwException("您还没有登录哦！");

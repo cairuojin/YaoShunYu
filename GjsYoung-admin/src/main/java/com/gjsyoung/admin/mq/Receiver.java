@@ -50,9 +50,14 @@ public class Receiver {
                 try {
                     logger.debug("访问记录：" + sessionId + "," + clientIpAddress);
                     visitLog = new VisitLog();
-                    Map<String, Object> stringObjectMap = GetGeographicOfIp.getrealAddress(clientIpAddress);
-                    String status = stringObjectMap.get("status").toString();
-                    if("true".equals(status)){
+                    Map<String, Object> stringObjectMap = null;
+                    try{
+                        stringObjectMap = GetGeographicOfIp.getrealAddress(clientIpAddress);        //查询IP资料
+                    } catch (Exception e){
+                        logger.error(e.toString());
+                    }
+                    Object status = stringObjectMap.get("status");
+                    if(status != null && "true".equals(status)){
                         JSONObject realData = (JSONObject) stringObjectMap.get("realData");
                         visitLog.setCountry( new String(realData.getString("country").getBytes(),"UTF-8") );//获取国籍信息
                         visitLog.setArea( new String(realData.getString("area").getBytes(),"UTF-8"));//获取地区

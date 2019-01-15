@@ -3,6 +3,7 @@ package com.gjsyoung.iteach.config;
 import com.alibaba.fastjson.JSON;
 import com.gjsyoung.iteach.mq.Sender;
 import com.gjsyoung.iteach.utils.GetIpAddress;
+import com.gjsyoung.iteach.utils.RedisCache;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -29,6 +30,9 @@ public class VisitFilter implements Filter {
     @Value("${Local}")
     String local;
 
+    @Autowired
+    RedisCache redisCache;
+
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
 
@@ -43,15 +47,19 @@ public class VisitFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
-        if (request.getRequestURI().indexOf(".") == -1) {//拒绝静态请求
+        if (request.getRequestURI().indexOf(".") == -1 && "0".equals(local)) {//拒绝静态请求和本地
             String sessionId = request.getSession().getId();
-            String clientIpAddress = GetIpAddress.getClientIpAddress(request);
-            if(clientIpAddress != null && "0".equals(local)){
-                Map data = new HashMap();
-                data.put("clientIpAddress",clientIpAddress);
-                data.put("sessionId",sessionId);
-                String dataJson = JSON.toJSONString(data);
-                sender.sendLog(dataJson);
+            Object cacheSession = redisCache.getObject(sessionId);  //session查询缓存
+            if(cacheSession == null){
+                redisCache.putObject(sessionId , "1");
+                String clientIpAddress = GetIpAddress.getClientIpAddress(request);
+                if(clientIpAddress != null){
+                    Map data = new HashMap();
+                    data.put("clientIpAddress",clientIpAddress);
+                    data.put("sessionId",sessionId);
+                    String dataJson = JSON.toJSONString(data);
+                    sender.sendLog(dataJson);
+                }
             }
         }
         filterChain.doFilter(request, servletResponse);

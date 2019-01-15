@@ -43,18 +43,18 @@ public class Receiver {
         String clientIpAddress = map.get("clientIpAddress").toString();
         String sessionId = map.get("sessionId").toString();
         if(sessionId != null){
+            //todo 缓存存储
             VisitLog visitLog = visitLogMapper.selectBySid(sessionId);
             if(visitLog != null){
                 return;         //多次访问不记录
             }else {
                 try {
-                    logger.debug("访问记录：" + sessionId + "," + clientIpAddress);
                     visitLog = new VisitLog();
                     Map<String, Object> stringObjectMap = null;
                     try{
                         stringObjectMap = GetGeographicOfIp.getrealAddress(clientIpAddress);        //查询IP资料
                     } catch (Exception e){
-                        logger.error(e.toString());
+                        logger.error("连接URL错误" + sessionId + "," + clientIpAddress);
                     }
                     Object status = stringObjectMap.get("status");
                     if(status != null && "true".equals(status)){

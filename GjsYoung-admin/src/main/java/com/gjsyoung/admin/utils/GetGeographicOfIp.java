@@ -31,10 +31,11 @@ public class GetGeographicOfIp {
         connection.setConnectTimeout(5000);
         connection.setRequestMethod("GET");
         connection.connect();
-        if (connection.getResponseCode() != 200) {
+        if (connection.getResponseCode() != 200) {      //接口错误
             resultMap.put("status", false);
-            resultMap.put("errMessage","网络连接异常");
-            throw new Exception("网络连接异常");
+            resultMap.put("errMessage",connection.getResponseCode() + connection.getResponseMessage());
+            logger.error("IP归属地查询接口错误：" + connection.getResponseCode() + connection.getResponseMessage() + " - " + IP);
+            return resultMap;
         }
         InputStream inputStream = connection.getInputStream();
         BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
@@ -49,7 +50,7 @@ public class GetGeographicOfIp {
         if (codeStatus == 1) {
             resultMap.put("status", false);
             resultMap.put("errMessage","获取地理位置失败");
-            logger.error("获取地理位置失败！");
+            logger.error("获取地理位置失败！" + connection.getResponseCode() + connection.getResponseMessage() + " - " + IP);
             return resultMap;
         }
         JSONObject realData = jsonObject.getJSONObject("data");

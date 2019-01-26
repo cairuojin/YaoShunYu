@@ -233,8 +233,11 @@ $(document).ready(function() {
         rules:{
             oldPassword:{
                 required:true,
+                minlength: 6, //最少2个字符
+                maxlength: 20,//最多20个字符
             },
             newPassword:{
+                required:true,
                 minlength: 6, //最少2个字符
                 maxlength: 20,//最多20个字符
             },
@@ -245,8 +248,11 @@ $(document).ready(function() {
         messages:{
             oldPassword:{
                 required:"请输入您的密码",
+                minlength: "旧密码最低6位哦！", //最少2个字符
+                maxlength: "旧密码最高20位哦！",//最多20个字符
             },
             newPassword:{
+                required:"请输入您的密码",
                 minlength: "新密码最低6位哦！", //最少2个字符
                 maxlength: "新密码最高20位哦！",//最多20个字符
             },

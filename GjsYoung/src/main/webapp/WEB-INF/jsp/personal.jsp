@@ -97,8 +97,8 @@
                                 <h4>我的头像</h4>
                                 <div class="price-gd-bottom">
                                     <div class="price-list">
-                                        <div>
-                                            <img src="${user.image}"  id="cropedBigImg" class="head-portrait"/>
+                                        <div style="height: 230px;">
+                                            <img src="${user.image}"  id="cropedBigImg" class="head-portrait" style="width: 80%;"/>
                                         </div>
                                         <ul><li class="uploadTxt">上传新头像：</li></ul>
                                         <input type="file" id="chooseImage" name="chooseImage" class="uploadImage">

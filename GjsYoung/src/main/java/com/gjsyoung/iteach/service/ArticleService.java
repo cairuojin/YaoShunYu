@@ -1,11 +1,10 @@
 package com.gjsyoung.iteach.service;
 
-import com.gjsyoung.iteach.domain.Article;
 import com.gjsyoung.iteach.vo.ArticleVo;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * create by cairuojin on 2018/09/11
@@ -24,7 +23,7 @@ public interface ArticleService {
      * @param content
      * @return
      */
-    public List<ArticleVo> selectContentLike(String content);
+    public Set<ArticleVo> selectContentLike(String content);
 
     /**
      * 搜索作者相关

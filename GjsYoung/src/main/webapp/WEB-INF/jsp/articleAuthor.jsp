@@ -57,7 +57,7 @@
         </div>
     </section>
 
-    <section class="faq_question_area section_padding_60" data-stellar-background-ratio="0.6" style="background-image: url(images/author/yizhongtian1.jpg)"    >
+    <section class="faq_question_area section_padding_60" data-stellar-background-ratio="0.6" style="background-image: url('${author.background}')"    >
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">

@@ -195,7 +195,7 @@
                     <div class="col-md-4 work-grid-left" style="border-radius: 50px 0px 0px 0px;">
                         <h5><spring:message code="index.celebrity1"></spring:message> </h5>
                         <p><spring:message code="index.celebrityContent1"></spring:message> </p>
-                        <a href="${pageContext.request.contextPath }/celebrityDetail/1"><spring:message code="index.learnMore"></spring:message> </a>
+                        <a href="${pageContext.request.contextPath }/celebrityDetail?celebrityId=1"><spring:message code="index.learnMore"></spring:message> </a>
                     </div>
                     <div class="col-md-4 work-grid-middle" style="padding-right: 0;padding-left: 0;">
                         <a href="#"><img src="images/index/caocao.jpg"></a>
@@ -203,7 +203,7 @@
                     <div class="col-md-4 work-grid-left" style="border-radius: 0px 50px 0px 0px;">
                         <h5><spring:message code="index.celebrity2"></spring:message> </h5>
                         <p><spring:message code="index.celebrityContent2"></spring:message></p>
-                        <a href="${pageContext.request.contextPath }/celebrityDetail/52"><spring:message code="index.learnMore"></spring:message></a>
+                        <a href="${pageContext.request.contextPath }/celebrityDetail?celebrityId=52"><spring:message code="index.learnMore"></spring:message></a>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -214,7 +214,7 @@
                     <div class="col-md-4 work-grid-left">
                         <h5><spring:message code="index.celebrity3"></spring:message> </h5>
                         <p><spring:message code="index.celebrityContent3"></spring:message> </p>
-                        <a href="${pageContext.request.contextPath }/celebrityDetail/40"><spring:message code="index.learnMore"></spring:message></a>
+                        <a href="${pageContext.request.contextPath }/celebrityDetail?celebrityId=40"><spring:message code="index.learnMore"></spring:message></a>
                     </div>
                     <div class="col-md-4 work-grid-middle" style="padding-right:0;padding-left:0;">
                         <img src="images/index/lishiming.jpg">
@@ -225,7 +225,7 @@
                     <div class="col-md-4 work-grid-left" style="border-radius: 0px 0px 0px 50px;">
                         <h5><spring:message code="index.celebrity4"></spring:message> </h5>
                         <p><spring:message code="index.celebrityContent4"></spring:message></p>
-                        <a href="${pageContext.request.contextPath }/celebrityDetail/18"><spring:message code="index.learnMore"></spring:message></a>
+                        <a href="${pageContext.request.contextPath }/celebrityDetail?celebrityId=18"><spring:message code="index.learnMore"></spring:message></a>
                     </div>
                     <div class="col-md-4 work-grid-middle"
                          style="padding-right: 0;padding-left: 0;border-radius: 0px 0px 100px 0px;">
@@ -234,7 +234,7 @@
                     <div class="col-md-4 work-grid-left" style="border-radius: 0px 0px 50px 0px;">
                         <h5><spring:message code="index.celebrity5"></spring:message> </h5>
                         <p><spring:message code="index.celebrityContent5"></spring:message></p>
-                        <a href="${pageContext.request.contextPath }/celebrityDetail/41"><spring:message code="index.learnMore"></spring:message></a>
+                        <a href="${pageContext.request.contextPath }/celebrityDetail?celebrityId=41"><spring:message code="index.learnMore"></spring:message></a>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -255,7 +255,7 @@
                 <div class="col-md-6 news-grid">
                     <img src="images/index/yongantuogu.jpg" class="articleImg"/>
                     <div class="news-grid-info">
-                        <a href="${pageContext.request.contextPath }/articleDetail/103"><spring:message code="index.article1"></spring:message> </a>
+                        <a href="${pageContext.request.contextPath }/articleDetail?articleId=103"><spring:message code="index.article1"></spring:message> </a>
                         <p class="date">2018-09-11 16:26:08</p>
                         <p class="text">&nbsp;&nbsp;&nbsp;&nbsp;<spring:message code="index.articleContent2"></spring:message></p>
                     </div>
@@ -263,7 +263,7 @@
                 <div class="col-md-6 news-grid">
                     <img src="images/index/libaihedufu.jpg" class="articleImg"/>
                     <div class="news-grid-info">
-                        <a href="${pageContext.request.contextPath }/articleDetail/20"><spring:message code="index.article2"></spring:message></a>
+                        <a href="${pageContext.request.contextPath }/articleDetail?articleId=20"><spring:message code="index.article2"></spring:message></a>
                         <p class="date">2018-09-11 16:42:31</p>
                         <p class="text">&nbsp;&nbsp;&nbsp;&nbsp;<spring:message code="index.articleContent2"></spring:message> </p>
                     </div>

@@ -78,7 +78,7 @@
                 "type":"POST",
                 "success":function(data){
                     if(data == "true")
-                        window.location.href="http://cairuojin.club/index";
+                        window.location.href="/index";
                     else
                         alert("用户名或密码错误。");
                 }

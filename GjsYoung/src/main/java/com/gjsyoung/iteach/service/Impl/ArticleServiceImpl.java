@@ -46,8 +46,8 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
-    public List<ArticleVo> selectContentLike(String value) {
-        List<ArticleVo> articles = new ArrayList<>();
+    public Set<ArticleVo> selectContentLike(String value) {
+        Set<ArticleVo> articles = new HashSet<>();
         PageHelper.startPage(0, 15, OrdeyByTime);
         articles.addAll(articleMapper.searchTitleLike(value));//搜索标题相似+内容相似
         if(articles.size() != 15){

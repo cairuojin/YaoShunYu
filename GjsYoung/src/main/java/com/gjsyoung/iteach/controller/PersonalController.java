@@ -93,7 +93,7 @@ public class PersonalController {
         userMapper.insert(user);
         //发送激活邮件
         String emailMsg = "恭喜您注册成功，请点击下面的连接进行激活账户"
-                + "<a href='http://cairuojin.club/activeUser?activeCode="+ uuid +"'><br>"	//连接
+                + "<a href='http://yaoteach.com/activeUser?activeCode="+ uuid +"'><br>"	//连接
                 + "http://cairuojin.club/activeUser?activeCode="+ uuid +"</a> <br>开始您的尧舜禹之旅";
         try {
             emailUtil.sendMail(user.getEmail(),emailMsg);

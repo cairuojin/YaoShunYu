@@ -14,7 +14,6 @@ import com.gjsyoung.iteach.vo.ArticleVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -22,12 +21,9 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.File;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author cairuojin
@@ -108,7 +104,7 @@ public class AtricleController {
      */
     @RequestMapping("/articlesearch")
     public ModelAndView ArticleSearch(String value, Integer type){
-        List<ArticleVo> datas = null;
+        Collection<ArticleVo> datas = null;
         if(type == 0){  //搜索内容
             datas = articleService.selectContentLike(value);
         }
